@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup.ForgotPassActivity"
+    android:background="@color/bgVuColor">
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/header" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_100sdpp"
+            android:layout_height="@dimen/_100sdpp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/final_logonew" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/get_help"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end|center"
+                android:text="@string/get_help"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/main_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/rel">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/we_have_sent_otp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_16sdpp"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:textColor="@color/v5_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+971501234567"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_16sdpp"
+                    android:layout_marginStart="@dimen/_5sdpp"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textColor="@color/blueColorNew" />
+
+            </LinearLayout>
+        <com.chaos.view.PinView
+            android:id="@+id/pin_vu"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:layout_marginBottom="@dimen/_5sdpp"
+            android:autofillHints="smsOTPCode"
+            android:cursorVisible="true"
+            android:importantForAutofill="yes"
+            android:inputType="number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/v5_text_color"
+            android:textStyle="bold"
+            android:textCursorDrawable="@drawable/v5_cursor_drawable"
+            app:cursorWidth="@dimen/_1sdpp"
+            app:itemCount="4"
+            android:itemBackground="@drawable/v5_taxt_bg_white"
+            app:itemHeight="@dimen/_55sdpp"
+            app:itemRadius="@dimen/_6sdpp"
+            app:itemSpacing="@dimen/_20sdpp"
+            app:itemWidth="@dimen/_55sdpp"
+            app:lineWidth="@dimen/_1sdpp"
+            app:lineColor="@color/transparent"
+            app:viewType="rectangle" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resend via SMS in"
+                android:textAlignment="center"
+                android:textSize="@dimen/_16sdpp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/v5_text_color" />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/count_vu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:padding="@dimen/_3sdpp"
+                app:isShowDay="false"
+                app:isShowHour="false"
+                app:isShowMillisecond="false"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:isTimeTextBold="true"
+                app:suffixTextColor="@color/v5_text_color"
+                app:timeTextColor="@color/v5_text_color"
+                app:timeTextSize="@dimen/_16sdpp" />
+            <Button
+                android:id="@+id/btn_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:text="@string/resend_underline"
+                android:textAllCaps="false"
+                android:textColor="@color/v5_text_color" />
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdpp"
+            app:cardElevation="2dp"
+            android:layout_marginStart="@dimen/_25sdpp"
+            android:layout_marginTop="@dimen/_40sdpp"
+            android:layout_marginEnd="@dimen/_25sdpp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/v5_button_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verify"
+                android:layout_gravity="center"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/gt_walsheim_pro_medium"
+                android:textSize="@dimen/_18sdpp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

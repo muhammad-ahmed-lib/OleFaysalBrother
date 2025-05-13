@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".owner.OleEmpTipPaymentActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdpp">
+
+        <ImageView
+            android:id="@+id/img_vu_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/reviews_header" />
+
+        <RelativeLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/_25sdpp"
+            android:layoutDirection="locale"
+            android:paddingStart="@dimen/_5sdpp"
+            android:paddingEnd="@dimen/_5sdpp">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="@dimen/_30sdpp"
+                android:layout_height="@dimen/_30sdpp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:padding="@dimen/_5sdpp"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_arrowll" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/payment_detail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_calendar"
+                android:layout_width="@dimen/_30sdpp"
+                android:layout_height="@dimen/_30sdpp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                android:background="@null"
+                android:padding="@dimen/_3sdpp"
+                android:scaleType="centerInside"
+                android:src="@drawable/calendar_ic_new_white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/received_vu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginStart="@dimen/_15sdpp"
+        android:layout_marginTop="@dimen/_minus35sdpp"
+        android:layout_marginEnd="@dimen/_15sdpp"
+        android:background="@drawable/settings_field_bg"
+        android:padding="@dimen/_15sdpp">
+
+        <LinearLayout
+            android:id="@+id/ln"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_12sdpp"
+                android:layout_height="@dimen/_12sdpp"
+                app:cardBackgroundColor="@color/blueColorNew"
+                app:cardCornerRadius="@dimen/_6sdpp"
+                app:cardElevation="0dp" />
+
+            <TextView
+                android:id="@+id/tv_received_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:lines="1"
+                android:text="0 AED"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/blueColorNew" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ln"
+            android:layout_marginStart="@dimen/_22sdpp"
+            android:layout_marginTop="@dimen/_3sdpp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:lines="1"
+            android:text="@string/received_tip"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/darkTextColor" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_15sdpp"
+        android:layout_marginEnd="@dimen/_15sdpp"
+        android:layout_below="@+id/received_vu"
+        android:layout_marginTop="@dimen/_10sdpp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/subTextColor"
+            android:layout_marginTop="@dimen/_5sdpp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_vu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:scrollbars="none" />
+
+    </LinearLayout>
+
+</RelativeLayout>

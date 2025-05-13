@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_vu"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdpp"
+        android:minWidth="@dimen/_50sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardElevation="0.5dp"
+        app:strokeWidth="@dimen/_1sdpp"
+        app:strokeColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_100sdpp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sun"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            android:textColor="@color/darkTextColor"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>

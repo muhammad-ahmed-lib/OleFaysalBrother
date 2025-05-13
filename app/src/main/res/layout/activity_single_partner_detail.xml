@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".partner.SinglePartnerDetailActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:padding="@dimen/_10sdpp"
+                android:src="@drawable/v5_delete_ic" />
+
+
+            <ImageButton
+                android:id="@+id/btn_filter"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:visibility="gone"
+                android:src="@drawable/v5_filter_ic" />
+
+
+            </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_pp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_40sdpp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rel_main_data"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                android:layout_centerInParent="true"
+                app:cardBackgroundColor="#24000000">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#24000000">
+
+                    <ImageView
+                        android:id="@+id/img_vu"
+                        android:layout_width="63dp"
+                        android:layout_height="63dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </androidx.cardview.widget.CardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_call"
+                android:layout_width="@dimen/_35sdpp"
+                android:layout_height="@dimen/_35sdpp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/blueColorNew"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdpp"
+                    android:layout_height="@dimen/_15sdpp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/v5_call_ic_white"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mohammad"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textSize="@dimen/_18sdpp"
+            android:textColor="@color/whiteColor"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/rel_pp"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginBottom="@dimen/_10sdpp" />
+        <LinearLayout
+            android:id="@+id/top_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/summary_card_vu"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/transparent"
+            app:strokeColor="@color/whiteColor"
+            app:strokeWidth="@dimen/_2sdpp"
+            app:cardCornerRadius="@dimen/_18sdpp">
+
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/whiteColor"
+                android:layout_marginStart="@dimen/_25sdpp"
+                android:layout_marginEnd="@dimen/_25sdpp"
+                android:text="@string/summary"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/profits_card_vu"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#33000000"
+            app:strokeColor="@color/club_selection_color"
+            app:strokeWidth="@dimen/_2sdpp"
+            app:cardCornerRadius="@dimen/_18sdpp">
+
+            <TextView
+                android:id="@+id/tv_profits"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/whiteColor"
+                android:layout_marginStart="@dimen/_25sdpp"
+                android:layout_marginEnd="@dimen/_25sdpp"
+                android:text="@string/profit"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/summary_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/doc_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp"
+                        android:layout_marginTop="@dimen/_15sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/club_selection_color"
+                        android:elevation="0.5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Documents"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/whiteColor"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Files"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:textSize="@dimen/_12sdpp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/whiteColor"
+                                    android:textStyle="bold" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:elevation="0.5dp"
+                                    app:cardBackgroundColor="@color/yellowColor"
+                                    app:cardCornerRadius="@dimen/_2sdpp"
+                                    app:contentPadding="@dimen/_3sdpp">
+
+                                    <TextView
+                                        android:id="@+id/doc_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="12"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_12sdpp"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/darkTextColor"
+                                        android:textStyle="bold" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginBottom="@dimen/_10sdpp"
+                                android:layout_below="@+id/tv_text"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                android:elevation="0.5dp">
+
+                                <HorizontalScrollView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:scrollbars="none">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_id"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:layout_gravity="center">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/id_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="ID"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_passport"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/passport_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Passport"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_certificates"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/certificates_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Certificates"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_picture"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/picture_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Picture"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_family_book"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/family_book_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Family Book"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_visa"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/visa_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Visa"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_driving"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/driving_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="Driving"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:id="@+id/btn_others"
+                                            android:layout_width="80dp"
+                                            android:layout_height="80dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:layout_marginStart="@dimen/_10sdpp"
+                                            android:layout_marginEnd="@dimen/_10sdpp"
+                                            android:elevation="0.5dp"
+                                            app:cardCornerRadius="@dimen/_10sdpp"
+                                            app:cardBackgroundColor="@color/club_selection_color">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:layout_width="25dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:scaleType="centerInside"
+                                                    android:layout_marginTop="@dimen/_10sdpp"
+                                                    android:src="@drawable/others_ic" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:text="others"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:textSize="@dimen/_12sdpp"
+                                                    android:textColor="@color/whiteColor"
+                                                    android:layout_marginTop="@dimen/_15sdpp"
+                                                    android:layout_marginBottom="@dimen/_10sdpp" />
+
+
+                                            </LinearLayout>
+
+                                        </androidx.cardview.widget.CardView>
+
+
+                                    </LinearLayout>
+
+                                </HorizontalScrollView>
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bottomContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp"
+                        android:layout_marginTop="@dimen/_10sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/whiteColor"
+                        android:elevation="0.5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_head"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp"
+                                android:layout_marginTop="@dimen/_15sdpp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="start"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Partner Details"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btn_edit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    app:cardBackgroundColor="@color/v5greenColor"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    android:layout_marginTop="@dimen/_2sdpp"
+                                    android:layout_marginBottom="@dimen/_2sdpp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="@dimen/_2sdpp"
+                                        android:layout_marginTop="@dimen/_2sdpp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Edit"
+                                            android:textColor="@color/whiteColor"
+                                            android:textSize="@dimen/_14sdpp" />
+
+
+                                    </RelativeLayout>
+
+
+
+
+                                </androidx.cardview.widget.CardView>
+
+                            </RelativeLayout>
+                            <LinearLayout
+                                android:id="@+id/info_lay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_below="@+id/rel_head"
+                                android:layout_marginTop="@dimen/_15sdpp"
+                                android:layout_marginBottom="@dimen/_15sdpp"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/_10sdpp">
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdpp">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:text="Name"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                                            <TextView
+                                                android:id="@+id/tv_partner_name"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_centerVertical="true"
+                                                android:text="Mohammad"
+                                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                                android:textStyle="bold"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_color" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/_1sdpp"
+                                                android:layout_alignParentBottom="true"
+                                                android:background="@color/separatorColor" />
+
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdpp">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:text="Email"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                                            <TextView
+                                                android:id="@+id/tv_email"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_centerVertical="true"
+                                                android:text="a@ole.com"
+                                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                                android:textStyle="bold"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_color" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/_1sdpp"
+                                                android:layout_alignParentBottom="true"
+                                                android:background="@color/separatorColor" />
+
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdpp">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:text="Share"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                                            <TextView
+                                                android:id="@+id/tv_share"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_centerVertical="true"
+                                                android:text="50%"
+                                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                                android:textStyle="bold"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_color" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/_1sdpp"
+                                                android:layout_alignParentBottom="true"
+                                                android:background="@color/separatorColor" />
+
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdpp">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:text="Mobile"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                                            <TextView
+                                                android:id="@+id/tv_phone"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_centerVertical="true"
+                                                android:text="0551234567"
+                                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                                android:textStyle="bold"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textColor="@color/v5_text_color" />
+
+                                        </RelativeLayout>
+
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp"
+                        android:layout_marginTop="@dimen/_10sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/whiteColor"
+                        android:elevation="0.5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_company_head"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp"
+                                android:layout_marginTop="@dimen/_15sdpp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_toStartOf="@+id/btn_change"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:padding="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Add this partner to another Company"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btn_change"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    app:cardBackgroundColor="@color/v5greenColor"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    android:layout_marginTop="@dimen/_2sdpp"
+                                    android:layout_marginBottom="@dimen/_2sdpp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="@dimen/_2sdpp"
+                                        android:layout_marginTop="@dimen/_2sdpp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="@string/add"
+                                            android:textColor="@color/whiteColor"
+                                            android:textSize="@dimen/_14sdpp" />
+
+
+                                    </RelativeLayout>
+
+
+
+
+                                </androidx.cardview.widget.CardView>
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_below="@+id/rel_company_head"
+                                android:layout_marginTop="@dimen/_15sdpp"
+                                android:layout_marginBottom="@dimen/_15sdpp"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/stadium_de_active_lay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    app:cardElevation="0.5dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:padding="@dimen/_10sdpp">
+
+                                        <RelativeLayout
+                                            android:id="@+id/rel_lifetime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical">
+
+                                            <ImageView
+                                                android:layout_width="75dp"
+                                                android:layout_height="65dp"
+                                                android:scaleType="centerInside"
+                                                android:layout_gravity="center_vertical"
+                                                android:src="@drawable/v5_mini_ground_ic" />
+
+
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tv_club_name"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:text="Al Tahadi Football"
+                                                android:textColor="@color/v5_text_color"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textStyle="bold" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:layout_marginTop="@dimen/_5sdpp"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/_13sdpp"
+                                                    android:layout_height="@dimen/_13sdpp"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                                    android:scaleType="centerInside"
+                                                    android:src="@drawable/loc_pin" />
+
+                                                <TextView
+                                                    android:id="@+id/tv_loc"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                    android:lines="1"
+                                                    android:text="Sharjah"
+                                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                                    android:textColor="@color/subTextColor" />
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/profits_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp"
+                        android:layout_marginTop="@dimen/_15sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/club_selection_color"
+                        android:elevation="0.5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_text1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Shareholder Profit"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/whiteColor"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Share"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:textSize="@dimen/_12sdpp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/whiteColor"
+                                    android:textStyle="bold" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:elevation="0.5dp"
+                                    app:cardBackgroundColor="@color/yellowColor"
+                                    app:cardCornerRadius="@dimen/_2sdpp"
+                                    app:contentPadding="@dimen/_3sdpp">
+
+                                    <TextView
+                                        android:id="@+id/partner_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="20%"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_12sdpp"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/darkTextColor"
+                                        android:textStyle="bold" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginBottom="@dimen/_10sdpp"
+                                android:layout_below="@+id/tv_text1"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                android:elevation="0.5dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Total"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="#60FFFFFF"
+                                        android:layout_marginStart="@dimen/_10sdpp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="AED 2300"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_20sdpp"
+                                        android:textColor="@color/whiteColor"
+                                        android:layout_marginTop="@dimen/_10sdpp"
+                                        android:layout_marginStart="@dimen/_10sdpp"
+                                        android:textStyle="bold" />
+
+
+
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btn_pay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    app:cardBackgroundColor="@color/blueColorNew"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    android:layout_marginBottom="@dimen/_10sdpp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_gravity="center_vertical|end"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_15sdpp"
+                                        android:layout_marginEnd="@dimen/_15sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Pay"
+                                        android:textColor="@color/whiteColor" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp"
+                        android:layout_marginTop="@dimen/_10sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/whiteColor"
+                        android:elevation="0.5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_head1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp"
+                                android:layout_marginTop="@dimen/_15sdpp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="start"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Payment History"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </RelativeLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_below="@+id/rel_head1"
+                                android:layout_marginTop="@dimen/_15sdpp"
+                                android:layout_marginBottom="@dimen/_15sdpp"
+                                android:layout_marginStart="@dimen/_15sdpp"
+                                android:layout_marginEnd="@dimen/_15sdpp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recycler_vu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layoutDirection="ltr"
+                                    android:layout_below="@+id/head_bar"
+                                    android:orientation="horizontal"
+                                    android:scrollbars="none" />
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

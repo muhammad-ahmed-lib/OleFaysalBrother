@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10sdpp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/_10sdpp"
+        app:cardElevation="0.5dp"
+        app:strokeColor="@color/separatorColor"
+        app:strokeWidth="@dimen/_1sdpp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdpp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <io.github.vejei.cupertinoswitch.CupertinoSwitch
+                    android:id="@+id/my_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdpp"
+                    android:layout_gravity="center_vertical"
+                    app:trackOffColor="@color/v5grayColor"
+                    app:trackOnColor="@color/v5greenColor" />
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/arrow1"
+                    android:layout_toEndOf="@+id/my_switch"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:lines="1"
+                    android:text="Monday"
+                    android:textColor="@color/darkTextColor"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/arrow1"
+                    android:layout_width="@dimen/_15sdpp"
+                    android:layout_height="@dimen/_15sdpp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/arrow_down_gray" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/price_vu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdpp"
+                android:weightSum="3"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <EditText
+                        android:id="@+id/tv_one_hour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@null"
+                        android:hint="1 Hour"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textColor="@color/v5_text_color"
+                        android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <EditText
+                        android:id="@+id/tv_one_half_hour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@null"
+                        android:hint="1.5 Hour"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textColor="@color/v5_text_color"
+                        android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <EditText
+                        android:id="@+id/tv_two_hour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@null"
+                        android:hint="2 Hours"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textColor="@color/v5_text_color"
+                        android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
+
+
+
+
+

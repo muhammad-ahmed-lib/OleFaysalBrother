@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/info_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_10sdpp"
+        android:layout_marginStart="@dimen/_10sdpp"
+        android:layout_marginEnd="@dimen/_10sdpp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="@dimen/_10sdpp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/separatorColor"
+            app:strokeWidth="@dimen/_1sdpp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdpp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdpp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="Received By"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdpp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/separatorColor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdpp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/date"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/date"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdpp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/separatorColor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdpp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="Amount"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                    <TextView
+                        android:id="@+id/tv_amt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/amount"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdpp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/separatorColor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdpp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/payment_method"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                    <TextView
+                        android:id="@+id/tv_method"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/payment_method"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_16sdpp"
+                        android:textColor="@color/v5_text_color" />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/rel_invoice"
+            android:layout_width="@dimen/_150sdpp"
+            android:layout_height="@dimen/_150sdpp"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginBottom="@dimen/_10sdpp"
+            android:visibility="gone"
+            android:background="@drawable/red_dotted_border_for_banner">
+
+            <ImageView
+                android:id="@+id/img_vu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:layout_marginEnd="@dimen/_5sdpp"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:layout_marginBottom="@dimen/_5sdpp"
+                android:scaleType="centerInside"
+                android:src="@drawable/attachment_img"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".employee.ui.employeenote.AddNoteFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ae.oleapp.employee.ui.employeedetail.EmployeeDetailVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_12sdp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/green_bg_circular_shape"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/red_cross"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/employeeNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_medium"
+            android:text="Add Note"
+            android:textColor="@color/darkTextColor"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addNoteCV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_101sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cardBackgroundColor="@color/v5grayColor"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+            <EditText
+                android:id="@+id/employeeNameET"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:afterTextChanged="@{(text) -> viewModel.setNote(text.toString())}"
+                android:text="@{viewModel.employeeNote}"
+                android:background="@null"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:hint="Write a note here"
+                android:gravity="start"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnAddNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@color/v5greenColor"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="0.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addNoteCV"
+            app:layout_constraintVertical_bias="0">
+
+            <TextView
+                android:id="@+id/btnContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="Done"
+                android:textColor="@color/whiteColor"
+                android:textSize="@dimen/_14ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

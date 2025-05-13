@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_3sdpp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/count_vu"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_100sdpp"
+        app:cardElevation="0dp"
+        android:layout_gravity="center"
+        app:strokeColor="@color/v5_text_color"
+        app:strokeWidth="@dimen/_2sdpp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/transparent">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:text="1"
+            android:textColor="@color/v5_text_color"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textSize="17sp"
+            android:layout_gravity="center" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

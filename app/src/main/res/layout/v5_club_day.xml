@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10sdpp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/_10sdpp"
+        app:cardElevation="0.5dp"
+        app:strokeColor="@color/separatorColor"
+        app:strokeWidth="@dimen/_1sdpp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdpp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <io.github.vejei.cupertinoswitch.CupertinoSwitch
+                    android:id="@+id/my_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdpp"
+                    android:layout_gravity="center_vertical"
+                    app:trackOffColor="@color/v5grayColor"
+                    app:trackOnColor="@color/v5greenColor" />
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/arrow1"
+                    android:layout_toEndOf="@+id/my_switch"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:lines="1"
+                    android:text="Monday"
+                    android:textColor="@color/darkTextColor"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/arrow1"
+                    android:layout_width="@dimen/_15sdpp"
+                    android:layout_height="@dimen/_15sdpp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/arrow_down_gray" />
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/vu_shift_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:weightSum="2"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <TextView
+                        android:id="@+id/tv_open_shift_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:background="@null"
+                        android:hint="Open"
+                        android:textColor="@color/v5_text_hint_color_grey"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:src="@drawable/v5_clock_ic" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:text="To"
+                    android:textColor="@color/v5_text_hint_color_grey"
+                    android:textColorHint="@color/v5_text_hint_color_grey"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_10sdpp"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <TextView
+                        android:id="@+id/tv_close_shift_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:background="@null"
+                        android:hint="Close"
+                        android:textColor="@color/v5_text_hint_color_grey"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:src="@drawable/v5_clock_ic" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_add_extra_shift"
+                    android:layout_width="@dimen/_20sdpp"
+                    android:layout_height="@dimen/_20sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="0.5dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_10sdpp"
+                        android:layout_height="@dimen/_10sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/plus_icon" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/vu_shift_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdpp"
+                android:weightSum="2"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <TextView
+                        android:id="@+id/tv_open_shift_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:background="@null"
+                        android:hint="Open"
+                        android:textColor="@color/v5_text_hint_color_grey"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:src="@drawable/v5_clock_ic" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:text="To"
+                    android:textColor="@color/v5_text_hint_color_grey"
+                    android:textColorHint="@color/v5_text_hint_color_grey"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_10sdpp"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                    <TextView
+                        android:id="@+id/tv_close_shift_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:background="@null"
+                        android:hint="Close"
+                        android:textColor="@color/v5_text_hint_color_grey"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:src="@drawable/v5_clock_ic" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_remove_extra_shift"
+                    android:layout_width="@dimen/_20sdpp"
+                    android:layout_height="@dimen/_20sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="0.5dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_10sdpp"
+                        android:layout_height="@dimen/_10sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/red_cross" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
+
+
+
+
+

@@ -1,0 +1,210 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    tools:context=".booking.bottomSheets.CallSheetFragment">
+
+    <RelativeLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_botton_bg"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/_2sdpp"
+        android:layout_marginTop="@dimen/_10sdpp">
+
+        <RelativeLayout
+            android:id="@+id/rel_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginEnd="@dimen/_5sdpp"
+            android:layout_marginTop="@dimen/_10sdpp">
+
+
+            <ImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:src="@drawable/v5_cross" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gt_walsheim_pro_medium"
+                android:gravity="center"
+                android:text="Call Options"
+                android:layout_centerInParent="true"
+                android:textColor="@color/v5_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_head"
+            android:layout_marginStart="@dimen/_25sdpp"
+            android:layout_marginEnd="@dimen/_25sdpp"
+            android:layout_marginTop="@dimen/_15sdpp"
+            android:layout_marginBottom="@dimen/_15sdpp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_marginTop="@dimen/_10sdpp"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/v5_blue_button_bg" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdpp"
+                        android:src="@drawable/v5_call_ic_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call on mobile number"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_call_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_marginTop="@dimen/_20sdpp"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/v5_green_button_bg" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdpp"
+                        android:src="@drawable/in_app_call_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call on OLE App"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_marginTop="@dimen/_20sdpp"
+                android:layout_marginBottom="@dimen/_10sdpp"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/v5_app_color_button_bg" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdpp"
+                        android:src="@drawable/v5_whatsapp_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WhatsApp Message"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

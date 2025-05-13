@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_95sdpp"
+    android:layout_height="@dimen/_90sdpp"
+    android:src="@drawable/middle_tab"
+    android:scaleType="centerCrop"
+    android:background="@color/transparent"
+    android:layout_marginStart="@dimen/_20sdpp">
+</ImageView>

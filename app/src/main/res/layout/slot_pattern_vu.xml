@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/slot_vu"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/_42sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        android:layout_marginTop="@dimen/_10sdpp"
+        android:layout_marginBottom="@dimen/_10sdpp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_6sdpp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="@dimen/_1sdpp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/_15sdpp">
+
+            <ImageView
+                android:id="@+id/clock_img"
+                android:layout_width="@dimen/_12sdpp"
+                android:layout_height="@dimen/_14sdpp"
+                android:scaleType="centerInside"
+                android:src="@drawable/v5_slot_clock_ic"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdpp"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#BDBDBD"
+                android:layout_margin="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_slot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textStyle="bold"
+                    android:text="1 Hour"
+                    android:textSize="@dimen/_14sdpp"
+                    android:textColor="@color/v5_text_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="Timeslot"
+                    android:textSize="@dimen/_10sdpp"
+                    android:textColor="@color/v5_text_hint_color_grey" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mainCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_7sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/FieldCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Field One: 5X5"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:textSize="@dimen/_9ssp"
+                    android:layout_marginHorizontal="@dimen/_9sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/employeeBookedCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/grayColor"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@id/FieldCV"
+                app:layout_constraintStart_toEndOf="@id/FieldCV"
+                app:layout_constraintTop_toTopOf="@id/FieldCV">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Field One: 5X5"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:textSize="@dimen/_9ssp"
+                    android:layout_marginHorizontal="@dimen/_9sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/employeeNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/_14ssp"
+                android:text="Name"
+                android:layout_marginTop="@dimen/_7sdp"
+                app:layout_constraintTop_toBottomOf="@id/FieldCV"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/timerIV"
+                android:layout_width="@dimen/_11sdp"
+                android:layout_height="@dimen/_11sdp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:src="@drawable/v5_call_ic_white"
+                app:layout_constraintTop_toBottomOf="@id/employeeNameTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/darkTextColor" />
+
+            <TextView
+                android:id="@+id/dateRangeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                android:text="6:30PM - 7:50PM"
+                android:layout_marginStart="@dimen/_7sdp"
+                app:layout_constraintTop_toTopOf="@id/timerIV"
+                app:layout_constraintStart_toEndOf="@id/timerIV"
+                app:layout_constraintBottom_toBottomOf="@id/timerIV"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_call"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/v5greenColor"
+                app:cardCornerRadius="@dimen/_100sdp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/timerIV"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/v5_call_ic_white" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:background="#C9C9C9"
+                app:layout_constraintTop_toBottomOf="@id/timerIV" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ratingCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/very_light_pink"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_4sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_9sdp"
+                        android:layout_height="@dimen/_9sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/ic_star" />
+
+                    <TextView
+                        android:id="@+id/titleBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:textColor="@color/redColor"
+                        android:textSize="@dimen/_9ssp"
+                        android:text="Pending" />
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tipCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/very_light_pink"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ratingCV"
+                app:layout_constraintStart_toEndOf="@id/ratingCV"
+                app:layout_constraintTop_toTopOf="@id/ratingCV">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_4sdp">
+
+
+                    <TextView
+                        android:id="@+id/tipTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="Balance :"
+                        android:textColor="@color/redColor"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <TextView
+                        android:id="@+id/tipValueTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:textColor="@color/redColor"
+                        android:textSize="@dimen/_9ssp"
+                        android:text="500 AED" />
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/stadiumCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/v5grayColor"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/tipCV"
+                app:layout_constraintTop_toTopOf="@id/ratingCV">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_4sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_9sdp"
+                        android:layout_height="@dimen/_9sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/field_black"
+                        app:tint="@color/darkTextColor" />
+
+                    <TextView
+                        android:id="@+id/stadiumValueTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="Al tahadi"
+                        android:textColor="@color/darkTextColor"
+                        android:textSize="@dimen/_9ssp" />
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

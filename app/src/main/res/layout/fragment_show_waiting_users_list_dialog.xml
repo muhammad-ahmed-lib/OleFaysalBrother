@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/bgVuColor"
+tools:context=".fragments.showWaitingUsersListDialogFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/p_club_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/v5_small_owner_bg"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/head_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdpp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="@dimen/_15sdpp"
+        android:layout_marginEnd="@dimen/_15sdpp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Players on Waiting List"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textSize="@dimen/_18sdpp"
+            android:textColor="@color/whiteColor"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/v5_circle_blue"
+            android:scaleType="centerInside"
+            android:src="@drawable/left_arrow_white" />
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_vu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@id/head_bar"
+        android:layoutDirection="ltr"
+        android:layout_marginTop="@dimen/_15sdpp"
+        android:layout_marginStart="@dimen/_17sdpp"
+        android:layout_marginEnd="@dimen/_17sdpp"
+        android:layout_marginBottom="@dimen/_10sdpp"/>
+
+
+</RelativeLayout>
+
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".fragments.showWaitingUsersListDialogFragment">-->
+
+<!--<RelativeLayout-->
+<!--    android:id="@+id/bottomContainer"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:background="@drawable/income_detail_bg"-->
+<!--    android:visibility="visible"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintHeight_percent=".7">-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:isScrollContainer="false"-->
+<!--        android:visibility="visible">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_marginStart="@dimen/_20sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_20sdpp"-->
+<!--            android:paddingBottom="@dimen/_10sdpp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/card_vu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_50sdpp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:cardBackgroundColor="@color/transparent"-->
+<!--                app:cardElevation="0dp">-->
+<!--                <ImageButton-->
+<!--                    android:id="@+id/btn_close"-->
+<!--                    android:layout_width="@dimen/_40sdpp"-->
+<!--                    android:layout_height="@dimen/_40sdpp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:src="@drawable/close_button" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:fontFamily="@font/dubai_bold"-->
+<!--                    android:text="@string/waiting_user"-->
+<!--                    android:textColor="#0084FF"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/recycler_vu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scrollbars="none"-->
+<!--                android:layoutDirection="ltr" />-->
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/empty"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="36sp"-->
+<!--        android:fontFamily="@font/dubai_medium"-->
+<!--        android:text="@string/no_waiting_user"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_centerInParent="true"/>-->
+
+<!--</RelativeLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+

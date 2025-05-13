@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bookingData"
+            type="ae.oleapp.employee.data.model.response.GetEmployeeDetails.BookingsData" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:paddingHorizontal="@dimen/_5sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text='@{bookingData != null ? bookingData.detail : ""}'
+            tools:text="Total Bookings"
+            android:textColor="@color/v5_text_hint_color_grey"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tv_total_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@+id/ta_info"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            app:bindAnyText="@{bookingData != null ? bookingData.count : 0.0}"
+            tools:text="300"
+            android:textColor="@color/v5_text_color"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ta_info"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:scaleType="centerInside"
+            android:src="@drawable/info_ic_green" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/separatorColor" />
+
+
+    </RelativeLayout>
+</layout>

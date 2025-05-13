@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".booking.BookingCompletedActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/booking_completed"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/step4_vu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head_bar"
+            android:layout_marginStart="@dimen/_17sdpp"
+            android:layout_marginEnd="@dimen/_17sdpp"
+            android:layout_marginTop="@dimen/_15sdpp"
+            android:layout_marginBottom="@dimen/_15sdpp"
+            app:cardCornerRadius="@dimen/_15sdpp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rel"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_40sdpp"
+                    android:src="@drawable/v5_success_ic_green" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdpp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/booking_completed"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textColor="@color/v5_text_color"
+                    android:textSize="@dimen/_32sdpp" />
+
+                <TextView
+                    android:id="@+id/tagline_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdpp"
+                    android:text="We are excited to inform you that your booking has been successfully completed! 🎉"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/_16sdpp"
+                    android:layout_marginStart="@dimen/_30sdpp"
+                    android:layout_marginEnd="@dimen/_30sdpp"
+                    android:textColor="@color/v5_text_color"
+                    android:fontFamily="@font/gt_walsheim_pro_regular" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_goto_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="@dimen/_25sdpp"
+                    android:layout_marginTop="@dimen/_30sdpp"
+                    android:layout_marginEnd="@dimen/_25sdpp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_green_button_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Go to Booking"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="@dimen/_25sdpp"
+                    android:layout_marginTop="@dimen/_20sdpp"
+                    android:layout_marginEnd="@dimen/_25sdpp"
+                    android:layout_marginBottom="@dimen/_40sdpp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_taxt_bg_white" />
+
+                    <TextView
+                        android:id="@+id/tv_guest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Back to Home"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v5_text_color"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_vu"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        app:cardElevation="0dp"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="#33000000"
+        app:strokeColor="@color/club_selection_color"
+        app:strokeWidth="@dimen/_2sdpp"
+        app:cardCornerRadius="@dimen/_18sdpp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/whiteColor"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp"
+            android:text="Club Name"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-medium"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

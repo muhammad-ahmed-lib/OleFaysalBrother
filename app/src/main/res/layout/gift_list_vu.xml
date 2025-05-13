@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/_15sdpp"
+        app:contentPadding="@dimen/_10sdpp"
+        android:layout_marginBottom="@dimen/_5sdpp"
+        android:fitsSystemWindows="true"
+        app:cardElevation="0.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/club_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="start"
+                    android:layout_centerVertical="true"
+                    app:cardBackgroundColor="@color/v5grayColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="0dp"
+                    app:contentPaddingBottom="@dimen/_1sdpp"
+                    app:contentPaddingLeft="@dimen/_4sdpp"
+                    app:contentPaddingRight="@dimen/_4sdpp"
+                    app:contentPaddingTop="@dimen/_1sdpp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:layout_marginEnd="@dimen/_5sdpp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdpp"
+                            android:layout_height="@dimen/_12sdpp"
+                            android:src="@drawable/v5_club_ic_new"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5sdpp" />
+
+                        <TextView
+                            android:id="@+id/tv_club_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/club_name"
+                            android:textColor="@color/v5_text_color" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/month_card_vu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    android:layout_alignParentEnd="true"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="0dp"
+                    app:contentPaddingBottom="@dimen/_2sdpp"
+                    app:contentPaddingLeft="@dimen/_5sdpp"
+                    app:contentPaddingRight="@dimen/_5sdpp"
+                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:layout_marginEnd="@dimen/_5sdpp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Month: June 2025"
+                            android:textSize="@dimen/_12sdpp"
+                            android:textColor="@color/whiteColor" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/whiteColor"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                android:layout_marginTop="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separatorColor"
+                app:strokeWidth="@dimen/_1sdpp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_vu"
+                        android:layout_width="@dimen/_58sdpp"
+                        android:layout_height="@dimen/_58sdpp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/birday_ic" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_20sdpp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Iphone 14 Pro Max"
+                            android:textSize="@dimen/_14sdpp"
+                            android:textColor="@color/v5_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_target"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Most Booking"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginTop="@dimen/_5sdpp"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:textSize="@dimen/_14sdpp"
+                            android:textStyle="bold"
+                            android:textColor="@color/v5greenColor"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_gift"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_owner_right_arrow" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background Green -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#24000000" /> <!-- Black transparent circle -->
+            <size
+                android:width="100dp"
+                android:height="100dp" />
+            <corners android:radius="100dp" />
+            <padding
+                android:left="60dp"
+                android:top="60dp"
+                android:right="60dp"
+                android:bottom="60dp" />
+        </shape>
+    </item>
+
+    <!-- Center Circle with shadow -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#66000000" /> <!-- Black transparent circle -->
+            <size
+                android:width="300dp"
+                android:height="300dp" />
+            <corners android:radius="100dp" />
+            <padding
+                android:left="60dp"
+                android:top="60dp"
+                android:right="60dp"
+                android:bottom="60dp" />
+        </shape>
+    </item>
+
+</layer-list>

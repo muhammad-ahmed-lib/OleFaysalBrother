@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/club_vu"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_42sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        android:layout_marginTop="@dimen/_10sdpp"
+        android:layout_marginBottom="@dimen/_10sdpp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_6sdpp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="@dimen/_1sdpp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_10sdpp"
+            android:paddingEnd="@dimen/_10sdpp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/club_img"
+                android:layout_width="@dimen/_26sdpp"
+                android:layout_height="@dimen/_16sdpp"
+                android:scaleType="centerInside"
+                android:src="@drawable/v5_club_ic_new"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdpp"/>
+            <View
+                android:id="@+id/hor_vu"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#BDBDBD"
+                android:layout_margin="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textStyle="bold"
+                    android:text="Al Tahadi"
+                    android:textSize="@dimen/_14sdpp"
+                    android:textColor="@color/v5_text_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_booking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/bookings"
+                        android:textSize="@dimen/_10sdpp"
+                        android:textColor="@color/v5_text_color" />
+
+                    <TextView
+                        android:id="@+id/tv_booking_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="80"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:textSize="@dimen/_10sdpp"
+                        android:textStyle="bold"
+                        android:textColor="@color/v5_text_color" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_8sdpp"-->
+<!--        android:layout_marginTop="@dimen/_15sdpp"-->
+<!--        android:layout_marginEnd="@dimen/_8sdpp"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:text="Small Field 1"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--        android:textColor="@color/darkTextColor" />-->
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/_15sdpp"
+        android:layout_marginTop="@dimen/_7sdpp"
+        android:fitsSystemWindows="true"
+        app:cardElevation="0.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                app:cardBackgroundColor="#EBEBEB"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:layout_marginTop="@dimen/_15sdpp"
+                android:layout_marginEnd="@dimen/_8sdpp"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                app:cardElevation="0dp"
+                app:contentPaddingBottom="@dimen/_2sdpp"
+                app:contentPaddingLeft="@dimen/_5sdpp"
+                app:contentPaddingRight="@dimen/_5sdpp"
+                app:contentPaddingTop="@dimen/_2sdpp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdpp"
+                    android:layout_marginEnd="@dimen/_5sdpp"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="Field One (5x5)"
+                    android:textColor="@color/v5_text_color" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/slots_recycler_vu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginTop="@dimen/_20sdpp"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                android:layout_marginBottom="@dimen/_20sdpp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:cardBackgroundColor="#EBEBEB"-->
+<!--        android:layout_marginStart="@dimen/_8sdpp"-->
+<!--        android:layout_marginTop="@dimen/_15sdpp"-->
+<!--        android:layout_marginEnd="@dimen/_8sdpp"-->
+<!--        app:cardCornerRadius="@dimen/_100sdpp"-->
+<!--        app:cardElevation="0dp"-->
+<!--        app:contentPaddingBottom="@dimen/_2sdpp"-->
+<!--        app:contentPaddingLeft="@dimen/_5sdpp"-->
+<!--        app:contentPaddingRight="@dimen/_5sdpp"-->
+<!--        app:contentPaddingTop="@dimen/_2sdpp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="@dimen/_5sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--            android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--            android:text="Field One (5x5)"-->
+<!--            android:textColor="@color/v5_text_color" />-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/slots_recycler_vu"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/title"-->
+<!--        android:layout_marginTop="@dimen/_7sdpp"-->
+<!--        android:layoutDirection="ltr" />-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/_1sdpp"-->
+<!--        android:background="@color/separatorColor"-->
+<!--        android:layout_marginTop="@dimen/_15sdpp"-->
+<!--        android:layout_below="@+id/slots_recycler_vu"-->
+<!--        android:layout_marginStart="@dimen/_8sdpp"/>-->
+
+</RelativeLayout>

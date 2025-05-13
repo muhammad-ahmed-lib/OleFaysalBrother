@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="ae.oleapp.employee.ui.employeedetail.EmployeeDetailVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/empMainCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:elevation="0.5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/club_selection_color"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_12sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/tipsCL"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_59sdp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/v5greenColor"
+                            app:cardCornerRadius="@dimen/_11sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingHorizontal="@dimen/_14sdp"
+                                android:paddingVertical="@dimen/_8sdp">
+
+                                <TextView
+                                    android:id="@+id/payableTipsTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="payable tips"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0"
+                                    app:layout_constraintHorizontal_bias="0"/>
+
+                                <TextView
+                                    android:id="@+id/payableTipsAmountTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    app:bindAnyText="@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.tipsData.payableTips : 0.0}"
+                                    tools:text="123.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14ssp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/payableTipsTV"
+                                    app:layout_constraintVertical_bias="0"
+                                    app:layout_constraintHorizontal_bias="0"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/tipsCL">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/todayCV"
+                                android:layout_width="@dimen/_88sdp"
+                                android:layout_height="@dimen/_47sdp"
+                                android:layout_marginEnd="@dimen/_7sdp"
+                                android:layout_weight="1"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_7sdp"
+                                app:layout_constraintEnd_toStartOf="@+id/lastWeekCL"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tipsCL">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="@dimen/_14sdp"
+                                    android:paddingVertical="@dimen/_6sdp">
+
+                                    <TextView
+                                        android:id="@+id/toDayAEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        app:bindAnyText="@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.tipsData.currentMonthTips : 0.0}"
+                                        tools:text="325"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14ssp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0" />
+
+                                    <TextView
+                                        android:id="@+id/toDayTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Today"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/toDayAEDTV"
+                                        app:layout_constraintVertical_bias="0.7" />
+
+                                    <TextView
+                                        android:id="@+id/AEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="AED"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9ssp"
+                                        app:layout_constraintBottom_toBottomOf="@id/toDayAEDTV"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.3"
+                                        app:layout_constraintStart_toEndOf="@id/toDayAEDTV"
+                                        app:layout_constraintTop_toTopOf="@id/toDayAEDTV" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/lastWeekCL"
+                                android:layout_width="@dimen/_88sdp"
+                                android:layout_height="@dimen/_47sdp"
+                                android:layout_marginEnd="@dimen/_7sdp"
+                                android:layout_weight="1"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_7sdp"
+                                app:layout_constraintEnd_toStartOf="@+id/lifeTimeCL"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/todayCV"
+                                app:layout_constraintTop_toTopOf="@id/todayCV">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="@dimen/_14sdp"
+                                    android:paddingVertical="@dimen/_6sdp">
+
+                                    <TextView
+                                        android:id="@+id/lastWeekValueAEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        app:bindAnyText="@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.tipsData.lastWeekTips : 0.0}"
+                                        tools:text="325"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14ssp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0" />
+
+                                    <TextView
+                                        android:id="@+id/lastWeekTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Last Week"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/lastWeekValueAEDTV"
+                                        app:layout_constraintVertical_bias="0.7" />
+
+                                    <TextView
+                                        android:id="@+id/lastWeekAEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="AED"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9ssp"
+                                        app:layout_constraintBottom_toBottomOf="@id/lastWeekValueAEDTV"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.3"
+                                        app:layout_constraintStart_toEndOf="@id/lastWeekValueAEDTV"
+                                        app:layout_constraintTop_toTopOf="@id/lastWeekValueAEDTV" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/lifeTimeCL"
+                                android:layout_width="@dimen/_88sdp"
+                                android:layout_height="@dimen/_47sdp"
+                                android:layout_weight="1"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_7sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/lastWeekCL"
+                                app:layout_constraintTop_toTopOf="@id/todayCV">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="@dimen/_14sdp"
+                                    android:paddingVertical="@dimen/_6sdp">
+
+                                    <TextView
+                                        android:id="@+id/lifeTimeValueAEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        app:bindAnyText="@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.tipsData.lifetimeTips : 0.0}"
+                                        tools:text="325"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14ssp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0" />
+
+                                    <TextView
+                                        android:id="@+id/lifeTimeTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Life Time"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/lifeTimeValueAEDTV"
+                                        app:layout_constraintVertical_bias="0.7" />
+
+                                    <TextView
+                                        android:id="@+id/lifeTimeAEDTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="AED"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9ssp"
+                                        app:layout_constraintBottom_toBottomOf="@id/lifeTimeValueAEDTV"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.3"
+                                        app:layout_constraintStart_toEndOf="@id/lifeTimeValueAEDTV"
+                                        app:layout_constraintTop_toTopOf="@id/lifeTimeValueAEDTV" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/employeeDetailMainCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="0.5dp"
+                    app:layout_constraintTop_toBottomOf="@id/empMainCV">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginVertical="@dimen/_13sdp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/companyCV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/v5grayColor"
+                            app:cardCornerRadius="@dimen/_12sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/companyTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_marginVertical="@dimen/_4sdp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Company"
+                                android:textColor="@color/darkTextColor"
+                                android:textSize="@dimen/_12ssp"
+                                app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/AssignCV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/v5greenColor"
+                            app:cardCornerRadius="@dimen/_12sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/AssignTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:layout_marginVertical="@dimen/_5sdp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Assign"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12ssp"
+                                app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/employeeNameCV"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_56sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_6sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/companyCV"
+                            app:strokeColor="@color/grayColor"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:paddingVertical="@dimen/_6sdp">
+
+                                <ImageView
+                                    android:id="@+id/fieldIV"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_42sdp"
+                                    android:src="@drawable/field_with_plus"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/markerIV"
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:src="@drawable/ic_marker"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="@id/stadiumNameTV"
+                                    app:layout_constraintTop_toBottomOf="@id/stadiumNameTV"
+                                    app:layout_constraintVertical_bias="0.4" />
+
+                                <TextView
+                                    android:id="@+id/stadiumNameTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text='@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.assignedClubs.name : ""}'
+                                    tools:text="Al Tahadi Football"
+                                    android:textColor="@color/darkTextColor"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toEndOf="@id/fieldIV"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0" />
+
+                                <TextView
+                                    android:id="@+id/distanceTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text='@{viewModel.getEmployeeDetail !=null ? viewModel.getEmployeeDetail.assignedClubs.country : ""}'
+                                    tools:text="12.75km - Sharjah"
+                                    android:textColor="@color/subTextColor"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:layout_constraintBottom_toBottomOf="@id/markerIV"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toEndOf="@id/markerIV"
+                                    app:layout_constraintTop_toTopOf="@id/markerIV"
+                                    app:layout_constraintVertical_bias="0.4" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_17sdp"
+                    android:fitsSystemWindows="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="0.5dp"
+                    app:contentPadding="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@id/employeeDetailMainCV">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_2sdp"
+                                app:contentPaddingLeft="@dimen/_5sdp"
+                                app:contentPaddingRight="@dimen/_5sdp"
+                                app:contentPaddingTop="@dimen/_2sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="@dimen/_10sdp"
+                                    android:layout_marginVertical="@dimen/_3sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Booking History"
+                                    android:textColor="@color/darkTextColor" />
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </RelativeLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/bookingDataRV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    android:orientation="vertical"
+                                    tools:listitem="@layout/item_booking_data"
+                                    android:nestedScrollingEnabled="false"/>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

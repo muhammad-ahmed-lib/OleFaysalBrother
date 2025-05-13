@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor">
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="260dp"-->
+<!--            android:layout_alignParentTop="true">-->
+<!--            <ImageView-->
+<!--                android:id="@+id/p_club_bg"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/v5_owner_bg"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:scaleType="fitXY"/>-->
+
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/head_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_40sdpp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_marginStart="@dimen/_15sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_15sdpp">-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_back"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:background="@drawable/v5_circle_blue"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/left_arrow_white" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/club_recycler_vu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_40sdpp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_toEndOf="@+id/btn_back"-->
+<!--                android:layoutDirection="ltr"-->
+<!--                android:scrollbars="none" />-->
+
+<!--    </RelativeLayout>-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/days_lay"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_15sdpp"-->
+<!--            android:layout_marginStart="@dimen/_15sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_15sdpp"-->
+<!--            android:foreground="?attr/selectableItemBackgroundBorderless"-->
+<!--            app:cardBackgroundColor="@color/whiteColor"-->
+<!--            android:layout_below="@+id/head_bar"-->
+<!--            app:cardCornerRadius="@dimen/_15sdpp"-->
+<!--            android:fitsSystemWindows="true"-->
+<!--            app:cardElevation="0.5dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_marginStart="@dimen/_10sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_10sdpp">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/days_recycler_vu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layoutDirection="ltr"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/slot60_vu"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_42sdpp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                    android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--                    android:layout_marginTop="@dimen/_20sdpp"-->
+<!--                    android:layout_marginBottom="@dimen/_20sdpp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:cardBackgroundColor="@color/whiteColor"-->
+<!--                    app:cardCornerRadius="@dimen/_6sdpp"-->
+<!--                    app:cardElevation="2dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:layout_marginStart="@dimen/_10sdpp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/_12sdpp"-->
+<!--                            android:layout_height="@dimen/_14sdpp"-->
+<!--                            android:scaleType="centerInside"-->
+<!--                            android:src="@drawable/v5_slot_clock_ic"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginStart="@dimen/_5sdpp"/>-->
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="#BDBDBD"-->
+<!--                            android:layout_margin="8dp" />-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="start|center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:text="1 Hour"-->
+<!--                                android:textSize="@dimen/_14sdpp"-->
+<!--                                android:textColor="@color/v5_text_color" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="start|center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                                android:text="Timeslot"-->
+<!--                                android:textSize="@dimen/_10sdpp"-->
+<!--                                android:textColor="@color/v5_text_hint_color_grey" />-->
+
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+
+<!--                </androidx.cardview.widget.CardView>-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/slot90_vu"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_42sdpp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                    android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--                    android:layout_marginTop="@dimen/_20sdpp"-->
+<!--                    android:layout_marginBottom="@dimen/_20sdpp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:cardBackgroundColor="@color/whiteColor"-->
+<!--                    app:cardCornerRadius="@dimen/_6sdpp"-->
+<!--                    app:cardElevation="2dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:layout_marginStart="@dimen/_10sdpp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/_12sdpp"-->
+<!--                            android:layout_height="@dimen/_14sdpp"-->
+<!--                            android:scaleType="centerInside"-->
+<!--                            android:src="@drawable/v5_slot_clock_ic"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginStart="@dimen/_5sdpp"/>-->
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="#BDBDBD"-->
+<!--                            android:layout_margin="8dp" />-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="start|center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:text="1.5 Hour"-->
+<!--                                android:textSize="@dimen/_14sdpp"-->
+<!--                                android:textColor="@color/v5_text_color" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="start|center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                                android:text="Timeslot"-->
+<!--                                android:textSize="@dimen/_10sdpp"-->
+<!--                                android:textColor="@color/v5_text_hint_color_grey" />-->
+
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/slot120_vu"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_42sdpp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                    android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--                    android:layout_marginTop="@dimen/_20sdpp"-->
+<!--                    android:layout_marginBottom="@dimen/_20sdpp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:cardBackgroundColor="@color/whiteColor"-->
+<!--                    app:cardCornerRadius="@dimen/_6sdpp"-->
+<!--                    app:cardElevation="2dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:layout_marginStart="@dimen/_10sdpp"-->
+<!--                        android:layout_marginEnd="@dimen/_10sdpp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/_12sdpp"-->
+<!--                            android:layout_height="@dimen/_14sdpp"-->
+<!--                            android:scaleType="centerInside"-->
+<!--                            android:src="@drawable/v5_slot_clock_ic"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginStart="@dimen/_5sdpp"/>-->
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="#BDBDBD"-->
+<!--                            android:layout_margin="8dp" />-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:text="2 Hours"-->
+<!--                                android:textSize="@dimen/_14sdpp"-->
+<!--                                android:textColor="@color/v5_text_color" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                                android:text="Timeslot"-->
+<!--                                android:textSize="@dimen/_10sdpp"-->
+<!--                                android:textColor="@color/v5_text_hint_color_grey" />-->
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+
+<!--                </androidx.cardview.widget.CardView>-->
+<!--            </LinearLayout>-->
+
+
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_below="@+id/days_lay"-->
+<!--            android:layout_marginTop="@dimen/_15sdpp"-->
+<!--            android:layout_marginStart="@dimen/_15sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_15sdpp"-->
+<!--            android:layout_above="@+id/bottomContainer"-->
+<!--            android:scrollbars="none">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:paddingBottom="@dimen/_5sdpp">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/field_recycler_vu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layoutDirection="ltr"/>-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:foreground="?attr/selectableItemBackgroundBorderless"-->
+<!--                app:cardBackgroundColor="@color/whiteColor"-->
+<!--                app:cardCornerRadius="@dimen/_15sdpp"-->
+<!--                android:layout_marginTop="@dimen/_5sdpp"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                app:cardElevation="0.5dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="start"-->
+<!--                        app:cardBackgroundColor="#EBEBEB"-->
+<!--                        android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                        app:cardCornerRadius="@dimen/_100sdpp"-->
+<!--                        app:cardElevation="0dp"-->
+<!--                        android:layout_marginTop="@dimen/_20sdpp"-->
+<!--                        app:contentPaddingBottom="@dimen/_2sdpp"-->
+<!--                        app:contentPaddingLeft="@dimen/_5sdpp"-->
+<!--                        app:contentPaddingRight="@dimen/_5sdpp"-->
+<!--                        app:contentPaddingTop="@dimen/_2sdpp">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                            android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--                            android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                            android:text="Facilities"-->
+<!--                            android:textColor="@color/v5_text_color" />-->
+
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/fac_recycler_vu"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:scrollbars="none"-->
+<!--                        android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                        android:layout_marginTop="@dimen/_5sdpp"-->
+<!--                        android:layout_marginBottom="@dimen/_5sdpp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.core.widget.NestedScrollView>-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/bottomContainer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:background="@drawable/bottom_botton_bg"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginTop="@dimen/_10sdpp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_toStartOf="@+id/btn_continue"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                    android:text="TOTAL"-->
+<!--                    android:textColor="@color/v5_text_color"-->
+<!--                    android:textSize="14sp" />-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="@dimen/_5sdpp">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_price"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                        android:text="120"-->
+<!--                        android:textColor="@color/v5_text_color"-->
+<!--                        android:textSize="24sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_currency"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                        android:text="AED"-->
+<!--                        android:layout_marginStart="@dimen/_3sdpp"-->
+<!--                        android:textColor="@color/v5_text_hint_color_grey"-->
+<!--                        android:textSize="12sp" />-->
+
+
+<!--                </LinearLayout>-->
+
+
+<!--            </LinearLayout>-->
+
+
+
+
+
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/btn_continue"-->
+<!--            android:layout_width="110dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardBackgroundColor="@null"-->
+<!--            app:cardCornerRadius="@dimen/_10sdpp"-->
+<!--            app:cardElevation="0.5dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginEnd="@dimen/_15sdpp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/btn_continue_img"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/v5_green_button_bg"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_btn_continue"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/continue_"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textColor="@color/whiteColor"-->
+<!--                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                android:textSize="@dimen/_18sdpp" />-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+
+<!--    </RelativeLayout>-->
+
+</RelativeLayout>

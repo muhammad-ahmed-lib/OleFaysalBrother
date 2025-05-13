@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@color/transparent"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginBottom="@dimen/_10sdpp"
+            app:cardCornerRadius="@dimen/_10sdpp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/separatorColor"
+            app:strokeWidth="@dimen/_1sdpp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdpp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdpp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="Title"
+                    android:textSize="@dimen/_16sdpp"
+                    android:textColor="@color/v5_text_hint_color_grey" />
+
+                <TextView
+                    android:id="@+id/tv_amt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="000 AED"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_16sdpp"
+                    android:textColor="@color/v5_text_color" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/bgVuColor"
+        android:layout_marginTop="@dimen/_50sdpp"
+        android:layout_marginBottom="@dimen/_50sdpp"
+        app:cardCornerRadius="@dimen/_5sdpp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdpp"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/facilities"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/darkTextColor" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_vu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/btn_update"
+                android:layout_below="@+id/tv"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:layout_marginBottom="@dimen/_15sdpp"
+                android:scrollbars="none" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdpp"
+                app:cardCornerRadius="@dimen/_5sdpp"
+                android:layout_marginStart="@dimen/_15sdpp"
+                android:layout_marginEnd="@dimen/_15sdpp"
+                android:layout_alignParentBottom="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/green_btn_bg"
+                    android:scaleType="centerCrop"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/update"
+                    android:textColor="@color/whiteColor"
+                    android:fontFamily="sans-serif"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAllCaps="false"
+                    android:clickable="false"
+                    android:background="@null" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

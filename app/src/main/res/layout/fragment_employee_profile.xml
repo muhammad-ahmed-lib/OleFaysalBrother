@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".employee.ui.employeeprofile.EmployeeProfileFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="ae.oleapp.employee.ui.employeedetail.EmployeeDetailVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/doc_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="0.5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/club_selection_color"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/tv_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_9sdp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:gravity="center"
+                            android:text="Documents"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_below="@+id/tv_text"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:elevation="0.5dp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:cardBackgroundColor="@color/v5greenColor"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/documentRV"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:paddingEnd="@dimen/_10sdp"
+                                        android:clipToPadding="false"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        tools:listitem="@layout/item_document_rv"/>
+
+                                </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bottomContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="0.5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rel_head"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_4sdp"
+                                app:contentPaddingLeft="@dimen/_6sdp"
+                                app:contentPaddingRight="@dimen/_6sdp"
+                                app:contentPaddingTop="@dimen/_4sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Employee Details"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:textColor="@color/darkTextColor" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btn_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_5sdp"
+                                app:contentPaddingLeft="@dimen/_13sdp"
+                                app:contentPaddingRight="@dimen/_13sdp"
+                                app:contentPaddingTop="@dimen/_5sdp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Edit"
+                                        android:textColor="@color/whiteColor"
+                                        android:textSize="@dimen/_12sdp" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/info_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rel_head"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_13sdp"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/whiteColor"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/v5grayColor"
+                                app:strokeWidth="@dimen/_1sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:paddingVertical="@dimen/_8sdp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Employee for"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/employeeForTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:text="General"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdp"
+                                        android:layout_marginTop="@dimen/_9sdp"
+                                        android:background="@color/v5grayColor" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Name"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/nameTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            bindAnyText="@{viewModel.getEmployeeDetail.name}"
+                                            tools:text="Mohammad"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdp"
+                                        android:layout_marginTop="@dimen/_9sdp"
+                                        android:background="@color/v5grayColor" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Employee ID"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/EmployeeIDTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            tools:text="NAZIR42324"
+                                            bindAnyText="@{viewModel.employeeId}"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdp"
+                                        android:layout_marginTop="@dimen/_9sdp"
+                                        android:background="@color/v5grayColor" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Role"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/roleTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            tools:text="Staff"
+                                            bindAnyText="@{viewModel.getEmployeeDetail.designation.name}"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdp"
+                                        android:layout_marginTop="@dimen/_9sdp"
+                                        android:background="@color/v5grayColor" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Salary"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/SalaryTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            tools:text="1200"
+                                            bindAnyText="@{viewModel.getEmployeeDetail.salary}"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdp"
+                                        android:layout_marginTop="@dimen/_9sdp"
+                                        android:background="@color/v5grayColor" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_7sdp"
+                                        android:paddingHorizontal="@dimen/_14sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Mobile"
+                                            android:textColor="@color/v5_text_hint_color_grey"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                        <TextView
+                                            android:id="@+id/tv_partner_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            tools:text="0588325151"
+                                            bindAnyText="@{viewModel.getEmployeeDetail.phone}"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnChangeCredentialMainCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="0.5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/_15sdp" >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_4sdp"
+                                app:contentPaddingLeft="@dimen/_6sdp"
+                                app:contentPaddingRight="@dimen/_6sdp"
+                                app:contentPaddingTop="@dimen/_4sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Employee Credentials"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:textColor="@color/darkTextColor" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btnChangeCredential"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_5sdp"
+                                app:contentPaddingLeft="@dimen/_13sdp"
+                                app:contentPaddingRight="@dimen/_13sdp"
+                                app:contentPaddingTop="@dimen/_5sdp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Change"
+                                        android:textColor="@color/whiteColor"
+                                        android:textSize="@dimen/_12ssp" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnChangePermissionMainCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="0.5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/_15sdp" >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_4sdp"
+                                app:contentPaddingLeft="@dimen/_6sdp"
+                                app:contentPaddingRight="@dimen/_6sdp"
+                                app:contentPaddingTop="@dimen/_4sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Employee Permission"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:textColor="@color/darkTextColor" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btnChangePermission"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_100sdp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_5sdp"
+                                app:contentPaddingLeft="@dimen/_13sdp"
+                                app:contentPaddingRight="@dimen/_13sdp"
+                                app:contentPaddingTop="@dimen/_5sdp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Change"
+                                        android:textColor="@color/whiteColor"
+                                        android:textSize="@dimen/_12ssp" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".promotions.gifts.ActiveGiftsActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Gift"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/clubName_recycler_vu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp"
+            android:layout_below="@id/head_bar"
+            android:layoutDirection="ltr"
+            android:scrollbars="none"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_vu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rel_expired"
+            android:layout_below="@id/clubName_recycler_vu"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp"
+            android:layout_marginBottom="10dp"
+            android:layoutDirection="ltr"
+            android:scrollbars="none" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rel_expired"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/add"
+            android:src="@drawable/plus_icon_yellow"
+            app:backgroundTint="@color/v5greenColor" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rel_expired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginStart="@dimen/_17sdpp"
+            android:layout_marginEnd="@dimen/_17sdpp"
+            android:layout_marginBottom="@dimen/_20sdpp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/whiteColor"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="@dimen/_8sdpp"
+            app:cardElevation="0.5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdpp">
+
+            <TextView
+                android:id="@+id/exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expired"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/v5_text_color"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_total_expired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Total: 234)"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_14sdpp"
+                android:textColor="@color/redBookingColor" />
+
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:padding="@dimen/_5sdpp"
+            android:layout_marginEnd="@dimen/_10sdpp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/right_arrow_dark" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

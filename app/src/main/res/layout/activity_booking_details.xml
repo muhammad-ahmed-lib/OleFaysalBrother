@@ -1,0 +1,2394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".booking.BookingDetailsActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/booking_detail"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_edit"
+                android:layout_width="@dimen/_40sdpp"
+                android:layout_height="@dimen/_40sdpp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="#9926334A"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdpp"
+                    android:layout_height="@dimen/_20sdpp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/v5_pencil_ic"
+                    android:padding="@dimen/_2sdpp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rel_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layout_marginStart="@dimen/_17sdpp"
+            android:layout_marginEnd="@dimen/_17sdpp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/whiteColor"
+            app:cardCornerRadius="@dimen/_100sdpp"
+            android:fitsSystemWindows="true"
+            android:layout_below="@id/head_bar"
+            app:cardElevation="0.5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/_10sdpp"
+                    android:fitsSystemWindows="true"
+                    app:strokeColor="@color/v5grayColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="0.5dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/emoji_vu"
+                        android:layout_width="@dimen/_30sdpp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/emoji_img_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdpp"
+                            android:elevation="4dp"
+                            android:scaleType="centerInside" />
+
+                        <ImageView
+                            android:id="@+id/shirt_img_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdpp"
+                            android:layout_marginTop="@dimen/_minus7sdpp"
+                            android:src="@drawable/bibl"
+                            android:elevation="2dp"
+                            android:scaleType="centerInside" />
+
+                    </LinearLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/main_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@+id/btn_call"
+                    android:layout_toEndOf="@+id/cardView"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:text="@string/name"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:textColor="@color/v5_text_color"
+                        android:textSize="@dimen/_16sdpp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_view_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_5sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:layout_marginBottom="@dimen/_2sdpp"
+                        app:cardBackgroundColor="@color/v5grayColor"
+                        app:cardCornerRadius="@dimen/_100sdpp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="@dimen/_2sdpp"
+                        app:contentPaddingLeft="@dimen/_5sdpp"
+                        app:contentPaddingRight="@dimen/_5sdpp"
+                        app:contentPaddingTop="@dimen/_2sdpp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_2sdpp"
+                            android:layout_marginBottom="@dimen/_2sdpp">
+
+                            <ImageView
+                                android:id="@+id/pp"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/player_ic_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_toEndOf="@+id/pp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="@string/view_profile"
+                                android:textColor="@color/blueColorNew"
+                                android:textSize="@dimen/_14sdpp" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_call"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    app:cardElevation="2dp"
+                    android:layout_marginEnd="@dimen/_20sdpp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_call_ic_white"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rel_player"
+            android:layout_above="@id/bottomContainer"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_2sdpp"
+                                app:contentPaddingLeft="@dimen/_5sdpp"
+                                app:contentPaddingRight="@dimen/_5sdpp"
+                                app:contentPaddingTop="@dimen/_2sdpp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Booking Details"
+                                    android:textColor="@color/v5_text_color" />
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/booking_status_lay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_10sdpp"
+                                app:cardBackgroundColor="@color/redBookingColorOpacity"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_1sdpp"
+                                app:contentPaddingLeft="@dimen/_4sdpp"
+                                app:contentPaddingRight="@dimen/_4sdpp"
+                                app:contentPaddingTop="@dimen/_1sdpp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/booking_status_ic"
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_12sdpp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/v5_sand_ic" />
+
+                                    <TextView
+                                        android:id="@+id/tv_booking_status"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Pending"
+                                        android:textColor="@color/redBookingColor" />
+
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            app:cardCornerRadius="@dimen/_10sdpp"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdpp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_field_size"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:text="6X6"
+                                        android:textSize="@dimen/_24sdpp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <TextView
+                                        android:id="@+id/tv_field_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Field One"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_12sdpp"
+                                        android:textColor="@color/v5_text_color"/>
+
+
+
+                                </LinearLayout>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#C9C9C9"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    android:layout_marginTop="@dimen/_20sdpp"
+                                    android:layout_marginBottom="@dimen/_20sdpp"/>
+                                <LinearLayout
+                                    android:id="@+id/ln"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_bookings_date"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="18/04/2024"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdpp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_12sdpp"
+                                            android:layout_height="@dimen/_12sdpp"
+                                            android:src="@drawable/v5_clock_ic"
+                                            android:layout_gravity="center_vertical"
+                                            android:scaleType="centerInside"/>
+
+                                        <TextView
+                                            android:id="@+id/tv_time_duration"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="06:00PM - 07:00PM"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_gravity="center_vertical"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:textColor="@color/v5greenColor"/>
+
+                                    </LinearLayout>
+
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/btn_change_time"
+                                android:layout_width="@dimen/_40sdpp"
+                                android:layout_height="@dimen/_40sdpp"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/v5greenColor"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="2dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="@dimen/_10sdpp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdpp"
+                                    android:layout_height="@dimen/_20sdpp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/change_time_ic"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdpp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/club_lay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_gravity="start"
+                                android:layout_centerVertical="true"
+                                app:cardBackgroundColor="@color/v5grayColor"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_1sdpp"
+                                app:contentPaddingLeft="@dimen/_4sdpp"
+                                app:contentPaddingRight="@dimen/_4sdpp"
+                                app:contentPaddingTop="@dimen/_1sdpp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_12sdpp"
+                                        android:src="@drawable/v5_club_ic_new"
+                                        android:scaleType="centerInside"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_club_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="Al tahadi"
+                                        android:textColor="@color/v5_text_color" />
+
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/dur_lay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/club_lay"
+                                app:cardBackgroundColor="@color/v5grayColor"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_1sdpp"
+                                app:contentPaddingLeft="@dimen/_4sdpp"
+                                app:contentPaddingRight="@dimen/_4sdpp"
+                                app:contentPaddingTop="@dimen/_1sdpp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+
+
+                                    <TextView
+                                        android:id="@+id/tv_dur"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="60 Min"
+                                        android:textColor="@color/v5_text_color" />
+
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/booking_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_centerVertical="true"
+                                app:cardBackgroundColor="@color/v5grayColor"
+                                android:layout_toEndOf="@+id/dur_lay"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_2sdpp"
+                                app:contentPaddingLeft="@dimen/_5sdpp"
+                                app:contentPaddingRight="@dimen/_5sdpp"
+                                app:contentPaddingTop="@dimen/_2sdpp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_booked_by"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Owner Booked"
+                                        android:textColor="#0077B6" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_12sdpp"
+                                        android:src="@drawable/v5_info_ic"
+                                        android:layout_gravity="center_vertical"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginStart="@dimen/_5sdpp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/rel_gk1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:layout_marginStart="@dimen/_17sdpp"
+                            android:layout_marginBottom="@dimen/_10sdpp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            app:cardCornerRadius="@dimen/_15sdpp"
+                            app:contentPadding="@dimen/_15sdpp"
+                            android:fitsSystemWindows="true"
+                            app:cardElevation="0.5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    android:layout_gravity="center"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Hire Goalkeeper"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="156dp"
+                                    android:layout_height="132dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/gk1_plus"
+                                        android:layout_width="76dp"
+                                        android:layout_height="76dp"
+                                        android:src="@drawable/white_plus_ic"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside" />
+
+                                    <LinearLayout
+                                        android:id="@+id/gk1_info_lay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:visibility="gone">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="64dp"
+                                            android:layout_height="64dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:theme="@style/Theme.MaterialComponents.Light"
+                                            android:layout_marginBottom="@dimen/_10sdpp"
+                                            android:fitsSystemWindows="true"
+                                            app:strokeColor="@color/v5grayColor"
+                                            android:background="@color/transparent"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_gravity="center"
+                                            app:cardCornerRadius="@dimen/_100sdpp"
+                                            app:cardElevation="0.5dp">
+
+
+                                            <LinearLayout
+                                                android:id="@+id/gk1_emoji_vu"
+                                                android:layout_width="@dimen/_30sdpp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:id="@+id/gk1_emoji_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:elevation="4dp"
+                                                    android:scaleType="centerInside" />
+
+                                                <ImageView
+                                                    android:id="@+id/gk1_shirt_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:layout_marginTop="@dimen/_minus7sdpp"
+                                                    android:src="@drawable/bibl"
+                                                    android:elevation="2dp"
+                                                    android:scaleType="centerInside" />
+
+                                            </LinearLayout>
+
+
+
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tv_gk1_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:text="@string/name"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_16sdpp" />
+
+
+                                        <TextView
+                                            android:id="@+id/tv_gk1_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="35 AED"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5greenColor"/>
+
+
+                                    </LinearLayout>
+
+
+
+
+
+
+
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:id="@+id/gk1_actions"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    android:layout_marginBottom="@dimen/_5sdpp"
+                                    android:visibility="gone">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_gk1_call"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_call_ic_white"/>
+
+                                    </com.google.android.material.card.MaterialCardView>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_gk1_delete"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/redBookingColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:src="@drawable/v5_delete_ic"/>
+
+                                    </com.google.android.material.card.MaterialCardView>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_change_gk1"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:src="@drawable/v5_owner_right_arrow" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/rel_gk2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:layout_marginStart="@dimen/_17sdpp"
+                            android:layout_marginBottom="@dimen/_10sdpp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            app:cardCornerRadius="@dimen/_15sdpp"
+                            app:contentPadding="@dimen/_15sdpp"
+                            android:fitsSystemWindows="true"
+                            app:cardElevation="0.5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    android:layout_gravity="center"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Hire Goalkeeper"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="156dp"
+                                    android:layout_height="132dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/gk2_plus"
+                                        android:layout_width="76dp"
+                                        android:layout_height="76dp"
+                                        android:src="@drawable/white_plus_ic"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside" />
+
+                                    <LinearLayout
+                                        android:id="@+id/gk2_info_lay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:visibility="gone">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="64dp"
+                                            android:layout_height="64dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:theme="@style/Theme.MaterialComponents.Light"
+                                            android:layout_marginBottom="@dimen/_10sdpp"
+                                            android:fitsSystemWindows="true"
+                                            app:strokeColor="@color/v5grayColor"
+                                            android:background="@color/transparent"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_gravity="center"
+                                            app:cardCornerRadius="@dimen/_100sdpp"
+                                            app:cardElevation="0.5dp">
+
+
+                                            <LinearLayout
+                                                android:id="@+id/gk2_emoji_vu"
+                                                android:layout_width="@dimen/_30sdpp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:id="@+id/gk2_emoji_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:elevation="4dp"
+                                                    android:scaleType="centerInside" />
+
+                                                <ImageView
+                                                    android:id="@+id/gk2_shirt_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:layout_marginTop="@dimen/_minus7sdpp"
+                                                    android:src="@drawable/bibl"
+                                                    android:elevation="2dp"
+                                                    android:scaleType="centerInside" />
+
+                                            </LinearLayout>
+
+
+
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tv_gk2_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:text="@string/name"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_16sdpp" />
+
+
+                                        <TextView
+                                            android:id="@+id/tv_gk2_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="35 AED"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5greenColor"/>
+
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:id="@+id/gk2_actions"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    android:visibility="gone"
+                                    android:layout_marginBottom="@dimen/_5sdpp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_gk2_call"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_call_ic_white"/>
+
+                                    </com.google.android.material.card.MaterialCardView>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_gk2_delete"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/redBookingColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:src="@drawable/v5_delete_ic"/>
+
+                                    </com.google.android.material.card.MaterialCardView>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_change_gk2"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:src="@drawable/v5_owner_right_arrow" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/rel_ref"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:layout_marginStart="@dimen/_17sdpp"
+                            android:layout_marginBottom="@dimen/_10sdpp"
+                            android:layout_marginEnd="@dimen/_17sdpp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            app:cardCornerRadius="@dimen/_15sdpp"
+                            app:contentPadding="@dimen/_15sdpp"
+                            android:fitsSystemWindows="true"
+                            app:cardElevation="0.5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    app:cardBackgroundColor="#EBEBEB"
+                                    android:layout_gravity="center"
+                                    app:cardCornerRadius="@dimen/_100sdpp"
+                                    app:cardElevation="0dp"
+                                    app:contentPaddingBottom="@dimen/_2sdpp"
+                                    app:contentPaddingLeft="@dimen/_5sdpp"
+                                    app:contentPaddingRight="@dimen/_5sdpp"
+                                    app:contentPaddingTop="@dimen/_2sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Hire Referee"
+                                        android:textColor="@color/v5_text_color" />
+
+                                </androidx.cardview.widget.CardView>
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="156dp"
+                                    android:layout_height="132dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/ref_plus"
+                                        android:layout_width="76dp"
+                                        android:layout_height="76dp"
+                                        android:src="@drawable/white_plus_ic"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside" />
+
+                                    <LinearLayout
+                                        android:id="@+id/ref_info_lay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:visibility="gone"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="64dp"
+                                            android:layout_height="64dp"
+                                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                                            android:theme="@style/Theme.MaterialComponents.Light"
+                                            android:layout_marginBottom="@dimen/_10sdpp"
+                                            android:fitsSystemWindows="true"
+                                            app:strokeColor="@color/v5grayColor"
+                                            android:background="@color/transparent"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_gravity="center"
+                                            app:cardCornerRadius="@dimen/_100sdpp"
+                                            app:cardElevation="0.5dp">
+
+
+                                            <LinearLayout
+                                                android:id="@+id/ref_emoji_vu"
+                                                android:layout_width="@dimen/_30sdpp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:orientation="vertical">
+
+                                                <ImageView
+                                                    android:id="@+id/ref_emoji_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:elevation="4dp"
+                                                    android:scaleType="centerInside" />
+
+                                                <ImageView
+                                                    android:id="@+id/ref_shirt_img_vu"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="@dimen/_30sdpp"
+                                                    android:layout_marginTop="@dimen/_minus7sdpp"
+                                                    android:src="@drawable/bibl"
+                                                    android:elevation="2dp"
+                                                    android:scaleType="centerInside" />
+
+                                            </LinearLayout>
+
+
+
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tv_ref_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:text="@string/name"
+                                            android:maxLines="1"
+                                            android:ellipsize="end"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5_text_color"
+                                            android:textSize="@dimen/_16sdpp" />
+
+
+                                        <TextView
+                                            android:id="@+id/tv_ref_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="35 AED"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:layout_marginTop="@dimen/_5sdpp"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:layout_marginEnd="@dimen/_5sdpp"
+                                            android:textColor="@color/v5greenColor"/>
+
+
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <LinearLayout
+                                    android:id="@+id/ref_actions"
+                                    android:layout_width="151dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    android:layout_marginBottom="@dimen/_5sdpp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_ref_call"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_call_ic_white" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_ref_delete"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/redBookingColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_delete_ic" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_change_ref"
+                                        android:layout_width="@dimen/_35sdpp"
+                                        android:layout_height="@dimen/_35sdpp"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/_2sdpp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_owner_right_arrow" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_2sdpp"
+                                app:contentPaddingLeft="@dimen/_5sdpp"
+                                app:contentPaddingRight="@dimen/_5sdpp"
+                                app:contentPaddingTop="@dimen/_2sdpp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Payment Details"
+                                    android:textColor="@color/v5_text_color" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/paid_unpaid_bg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_10sdpp"
+                                app:cardBackgroundColor="@color/redBookingColorOpacity"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                app:contentPaddingBottom="@dimen/_1sdpp"
+                                app:contentPaddingLeft="@dimen/_4sdpp"
+                                app:contentPaddingRight="@dimen/_4sdpp"
+                                app:contentPaddingTop="@dimen/_1sdpp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/is_paid_ic"
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_12sdpp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/balance_ic" />
+
+                                    <TextView
+                                        android:id="@+id/tv_is_paid"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Unpaid"
+                                        android:textColor="@color/redBookingColor" />
+
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                        </RelativeLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:cardCornerRadius="@dimen/_10sdpp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdpp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Total Amount"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    <TextView
+                                        android:id="@+id/tv_total_amt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toStartOf="@+id/ta_info"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:text="300 AED"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <ImageView
+                                        android:id="@+id/ta_info"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/info_ic_green" />
+
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdpp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="@color/separatorColor" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Total Paid"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    <TextView
+                                        android:id="@+id/tv_total_paid"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toStartOf="@+id/tp_info"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:text="300 AED"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <ImageView
+                                        android:id="@+id/tp_info"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:src="@drawable/info_ic_green"  />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdpp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="@color/separatorColor" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Players Paid"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    <TextView
+                                        android:id="@+id/tv_player_paid"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toStartOf="@+id/pp_info"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:text="300 AED"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <ImageView
+                                        android:id="@+id/pp_info"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:src="@drawable/info_ic_green" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_1sdpp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="@color/separatorColor" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdpp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="Discount"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    <TextView
+                                        android:id="@+id/tv_discount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toStartOf="@+id/discount_info"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:text="300 AED"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/v5_text_color" />
+
+                                    <ImageView
+                                        android:id="@+id/discount_info"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        android:src="@drawable/info_ic_green"  />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:cardCornerRadius="@dimen/_10sdpp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdpp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_70sdpp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toStartOf="@+id/ta_info"
+                                            android:layout_marginEnd="@dimen/_10sdpp"
+                                            android:text="Share Payment Link"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_16sdpp"
+                                            android:textColor="@color/v5_text_color" />
+
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Share the payment link with other players to pay."
+                                            android:layout_marginTop="@dimen/_10sdpp"
+                                            android:textSize="@dimen/_12sdpp"
+                                            android:textColor="@color/v5_text_hint_color_grey" />
+
+
+                                    </LinearLayout>
+
+
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:src="@drawable/v5_share_ic" />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:cardCornerRadius="@dimen/_10sdpp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdpp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_70sdpp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toStartOf="@+id/ta_info"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="@dimen/_10sdpp"
+                                            android:text="Implement points section"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:textSize="@dimen/_16sdpp"
+                                            android:textColor="@color/v5_text_color" />
+
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Share the payment link with other players to pay."
+                                            android:textSize="@dimen/_12sdpp"
+                                            android:textColor="@color/v5_text_hint_color_grey" />
+
+
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Total Balance"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/whiteColor"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:cardCornerRadius="@dimen/_10sdpp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/separatorColor"
+                            app:strokeWidth="@dimen/_1sdpp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_44sdpp">
+
+
+                                    <ImageView
+                                        android:id="@+id/bal_ic"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:scaleType="centerInside"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:src="@drawable/balance_ic" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_total_balance"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/bal_ic"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:text="450 AED"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_16sdpp"
+                                        android:textColor="@color/redBookingColor" />
+
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/btn_balance"
+                                        android:layout_width="@dimen/_40sdpp"
+                                        android:layout_height="@dimen/_40sdpp"
+                                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                                        android:theme="@style/Theme.MaterialComponents.Light"
+                                        android:layout_centerVertical="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginEnd="@dimen/_5sdpp"
+                                        app:cardBackgroundColor="@color/v5greenColor"
+                                        app:cardCornerRadius="@dimen/_100sdpp"
+                                        app:cardElevation="2dp">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_20sdpp"
+                                            android:layout_height="@dimen/_20sdpp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/v5_owner_right_arrow" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="@string/cancellation_history"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/cancellation_history_recycler_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10sdpp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Facilities"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/facility_recycler_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10sdpp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:contentPadding="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Booking History"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:orientation="horizontal">
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/whiteColor"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/separatorColor"
+                                app:strokeWidth="@dimen/_1sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdpp">
+
+                                    <TextView
+                                        android:id="@+id/tv_completed_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="80"
+                                        android:textColor="@color/v5greenColor"
+                                        android:textSize="18sp" />
+
+
+                                    <ImageView
+                                        android:id="@+id/img_comp"
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_below="@+id/tv_completed_count"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/info_ic_green" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/img_comp"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Completed"
+                                        android:textColor="@color/black"
+                                        android:textSize="10sp" />
+
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/whiteColor"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/separatorColor"
+                                app:strokeWidth="@dimen/_1sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdpp">
+
+                                    <TextView
+                                        android:id="@+id/tv_cancelled_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="80"
+                                        android:textColor="@color/redBookingColor"
+                                        android:textSize="18sp" />
+
+
+                                    <ImageView
+                                        android:id="@+id/img_can"
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_below="@+id/tv_cancelled_count"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/info_ic_green" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/img_can"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Cancelled"
+                                        android:textColor="@color/black"
+                                        android:textSize="10sp" />
+
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/whiteColor"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/separatorColor"
+                                app:strokeWidth="@dimen/_1sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdpp">
+
+                                    <TextView
+                                        android:id="@+id/tv_upcoming_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="80"
+                                        android:textColor="@color/v5greenColor"
+                                        android:textSize="18sp" />
+
+
+                                    <ImageView
+                                        android:id="@+id/img_upc"
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_below="@+id/tv_upcoming_count"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/info_ic_green" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/img_upc"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="Upcoming"
+                                        android:textColor="@color/black"
+                                        android:textSize="10sp" />
+
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@color/whiteColor"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                app:cardCornerRadius="@dimen/_10sdpp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/separatorColor"
+                                app:strokeWidth="@dimen/_1sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdpp">
+
+                                    <TextView
+                                        android:id="@+id/tv_curr_month_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="80"
+                                        android:textColor="@color/v5greenColor"
+                                        android:textSize="18sp" />
+
+
+                                    <ImageView
+                                        android:id="@+id/img_curr_month"
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_below="@+id/tv_curr_month_count"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/info_ic_green" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/img_curr_month"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:text="This month"
+                                        android:textColor="@color/black"
+                                        android:textSize="10sp" />
+
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_app_color_button_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Block Player"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_red_button_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel Booking"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        <RelativeLayout
+            android:id="@+id/bottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bottom_botton_bg"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_10sdpp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btn_continue"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="TOTAL"
+                    android:textColor="@color/v5_text_color"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_5sdpp">
+
+                    <TextView
+                        android:id="@+id/tv_final_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:text="00.00"
+                        android:textColor="@color/v5_text_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_final_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:text="AED"
+                        android:layout_marginStart="@dimen/_3sdpp"
+                        android:textColor="@color/v5_text_hint_color_grey"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@null"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="0.5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdpp">
+
+                <ImageView
+                    android:id="@+id/btn_continue_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/v5_green_button_bg"/>
+
+                <TextView
+                    android:id="@+id/tv_btn_continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirm"
+                    android:layout_marginStart="@dimen/_10sdpp"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/whiteColor"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textSize="@dimen/_18sdpp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+
+</RelativeLayout>

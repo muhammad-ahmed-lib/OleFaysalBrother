@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdpp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/whiteColor"
+    android:id="@+id/main_layout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdpp">
+
+            <ImageView
+                android:id="@+id/img_vu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/rate_vu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginTop="@dimen/_7sdpp">
+
+            <ImageView
+                android:layout_width="@dimen/_12sdpp"
+                android:layout_height="@dimen/_12sdpp"
+                android:src="@drawable/rate_starl"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:id="@+id/tv_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.0"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:textColor="@color/subTextColor"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="@dimen/_30sdpp"
+            android:layout_height="@dimen/_30sdpp"
+            android:background="@null"
+            android:src="@drawable/club_unfavl"
+            android:padding="@dimen/_3sdpp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5sdpp"
+            android:layout_marginTop="@dimen/_5sdpp"
+            android:scaleType="centerInside"/>
+
+        <ImageView
+            android:id="@+id/fast_delivery_vu"
+            android:layout_width="@dimen/_45sdpp"
+            android:layout_height="@dimen/_30sdpp"
+            android:src="@drawable/fast_deliveryl"
+            android:scaleType="centerInside"
+            android:layout_marginTop="@dimen/_3sdpp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginEnd="@dimen/_5sdpp"
+            android:layout_below="@+id/vu"
+            android:textColor="@color/subTextColor"
+            android:fontFamily="sans-serif"
+            android:autoSizeMinTextSize="@dimen/_10sdpp"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:gravity="center_horizontal"
+            android:text="fdsafdsafdsafdsafd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_name"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_3sdpp"
+            android:layout_marginBottom="@dimen/_3sdpp"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginEnd="@dimen/_5sdpp">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkTextColor"
+                android:fontFamily="sans-serif"
+                android:autoSizeMinTextSize="@dimen/_8sdpp"
+                android:autoSizeTextType="uniform"
+                android:ellipsize="marquee"
+                android:text="100 AED"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_10sdpp"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/tv_actual_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdpp"
+                android:textColor="@color/subTextColor"
+                android:fontFamily="sans-serif"
+                android:autoSizeMinTextSize="@dimen/_5sdpp"
+                android:autoSizeTextType="uniform"
+                android:ellipsize="end"
+                android:lines="1"
+                android:gravity="center_vertical"
+                android:text="100"
+                android:textSize="@dimen/_10sdpp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

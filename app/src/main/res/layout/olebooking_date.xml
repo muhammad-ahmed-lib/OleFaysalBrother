@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        android:layout_marginTop="@dimen/_5sdpp"
+        android:layout_marginBottom="@dimen/_5sdpp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_100sdpp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="@dimen/_1sdpp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@null">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_5sdpp"
+            android:layout_marginEnd="@dimen/_5sdpp"
+            android:layout_marginTop="@dimen/_5sdpp"
+            android:layout_marginBottom="@dimen/_5sdpp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_day_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sun"
+                android:textColor="@color/v5_text_color"
+                android:fontFamily="@font/gt_walsheim_pro_medium"
+                android:textSize="@dimen/_10sdpp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/date_circle"
+                android:layout_width="@dimen/_36sdpp"
+                android:layout_height="@dimen/_36sdpp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:background="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/v5_text_color"
+                app:strokeWidth="@dimen/_1sdpp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/transparent">
+
+                <!-- "app:strokeColor="#004025"  -->
+
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="31"
+                    android:textColor="@color/v5_text_color"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_16sdpp" />
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdpp"
+                android:text="Jan"
+                android:textColor="@color/v5_text_color"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_10sdpp" />
+
+
+        </LinearLayout>
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".owner.OleAddClubActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/p_club_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/v5_small_owner_bg"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/head_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdpp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="@dimen/_15sdpp"
+        android:layout_marginEnd="@dimen/_15sdpp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Company Details"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textSize="@dimen/_18sdpp"
+            android:textColor="@color/whiteColor"
+            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/v5_circle_blue"
+            android:scaleType="centerInside"
+            android:src="@drawable/left_arrow_white" />
+
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/head_bar"
+        android:layout_above="@+id/bottomContainer"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/step1_vu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/head"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:cardElevation="0.5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/cover_img_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bgl" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_vu_banner"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardBackgroundColor="#9926334A"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0.5dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:layout_marginStart="@dimen/_10sdpp"
+                            android:layout_marginEnd="@dimen/_10sdpp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdpp"
+                                    android:layout_height="@dimen/_20sdpp"
+                                    android:scaleType="centerInside"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/v5_cam_ic" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_80sdpp"
+                            android:layout_height="@dimen/_80sdpp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:cardBackgroundColor="@color/v5greenColor"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0.5dp"
+                            app:strokeColor="@color/whiteColor"
+                            app:strokeWidth="@dimen/_2sdpp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical|end">
+
+                            <ImageView
+                                android:id="@+id/img_vu_logo"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"/>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btn_logo"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                app:cardBackgroundColor="#99004025"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0.5dp"
+                                android:layout_gravity="center"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentTop="true"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_20sdpp"
+                                        android:layout_height="@dimen/_20sdpp"
+                                        android:scaleType="centerInside"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/v5_cam_ic" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rel_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:id="@+id/main_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/v5_edit_text_bg_light_gray"
+                            android:layout_height="@dimen/_60sdpp"
+                            android:layout_marginTop="@dimen/_20sdpp"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:orientation="horizontal"
+                            android:elevation="@dimen/_2sdpp">
+
+                            <EditText
+                                android:id="@+id/et_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Company Name"
+                                android:background="@null"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:textColorHint="@color/v5_text_hint_color_grey"
+                                android:textColor="@color/v5_text_color"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="18sp"
+                                android:layout_centerVertical="true"
+                                android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                                android:inputType="text"/>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/v5_edit_text_bg_light_gray"
+                            android:layout_height="@dimen/_60sdpp"
+                            android:layout_marginTop="@dimen/_20sdpp"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:orientation="horizontal"
+                            android:elevation="@dimen/_2sdpp">
+
+                            <EditText
+                                android:id="@+id/et_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="@string/oleCountry"
+                                android:background="@null"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:textColorHint="@color/v5_text_hint_color_grey"
+                                android:textColor="@color/v5_text_color"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="18sp"
+                                android:layout_centerVertical="true"
+                                android:inputType="text"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:focusableInTouchMode="false"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sdpp"
+                                android:layout_height="@dimen/_15sdpp"
+                                android:src="@drawable/down_arrow_dark"
+                                android:scaleType="centerInside"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"/>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/v5_edit_text_bg_light_gray"
+                            android:layout_height="@dimen/_60sdpp"
+                            android:layout_marginTop="@dimen/_20sdpp"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:orientation="horizontal"
+                            android:elevation="@dimen/_2sdpp">
+
+                            <EditText
+                                android:id="@+id/et_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="@string/city"
+                                android:background="@null"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:textColorHint="@color/v5_text_hint_color_grey"
+                                android:textColor="@color/v5_text_color"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="18sp"
+                                android:layout_centerVertical="true"
+                                android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                                android:inputType="text" />
+
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:id="@+id/phoneVu"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdpp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_20sdpp"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:layout_marginBottom="@dimen/_20sdpp"
+                            android:background="@drawable/v5_edit_text_bg_light_gray"
+                            android:elevation="@dimen/_2sdpp">
+
+<!--                            <com.hbb20.CountryCodePicker-->
+<!--                                android:id="@+id/ccp"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="0.9"-->
+<!--                                app:ccp_arrowSize="50dp"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                app:ccp_arrowColor="@color/v5_text_hint_color_grey"-->
+<!--                                app:ccpDialog_keyboardAutoPopup="false"-->
+<!--                                app:ccp_textSize="@dimen/_14sdpp"-->
+<!--                                app:ccp_textGravity="CENTER"-->
+<!--                                app:ccp_showFullName="false"-->
+<!--                                app:ccp_showNameCode="false"-->
+<!--                                app:ccp_showPhoneCode="true"-->
+<!--                                app:ccp_showArrow="true"-->
+<!--                                app:ccp_autoDetectCountry="true"-->
+<!--                                app:ccp_contentColor="@color/v5_text_hint_color_grey"-->
+<!--                                app:ccp_showFlag="true"-->
+<!--                                app:ccpDialog_cornerRadius="10dp"-->
+<!--                                android:background="@drawable/v5_taxt_bg_white"-->
+<!--                                android:layout_marginTop="@dimen/_8sdpp"-->
+<!--                                android:layout_marginStart="@dimen/_8sdpp"-->
+<!--                                android:layout_marginEnd="@dimen/_8sdpp"-->
+<!--                                android:layout_marginBottom="@dimen/_8sdpp" />-->
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1.9"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                                <EditText
+                                    android:id="@+id/et_phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="541234567"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    android:background="@null"
+                                    android:textColorHint="@color/v5_text_hint_color_grey"
+                                    android:textColor="@color/v5_text_color"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:textSize="18sp"
+                                    android:layout_centerVertical="true"
+                                    android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                                    android:inputType="phone"
+                                    android:autofillHints="phone" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rel_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:layout_marginBottom="@dimen/_15sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    android:fitsSystemWindows="true"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_marginStart="@dimen/_10sdpp"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            android:layout_marginEnd="@dimen/_10sdpp"
+                            android:layout_marginBottom="@dimen/_10sdpp"
+                            app:cardCornerRadius="@dimen/_15sdpp"
+                            app:cardElevation="0.5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/map_img_vu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bgl" />
+
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:layout_marginBottom="@dimen/_5sdpp">
+
+                                <ImageView
+                                    android:id="@+id/flag"
+                                    android:layout_width="@dimen/_22sdpp"
+                                    android:layout_height="@dimen/_28sdpp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/map_flag_ic"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp" />
+
+                                <LinearLayout
+                                    android:id="@+id/linear"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_toStartOf="@+id/imageView2"
+                                    android:layout_toEndOf="@+id/flag"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdpp">
+
+                                    <TextView
+                                        android:id="@+id/tv_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/_5sdpp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:lines="1"
+                                        android:text="Current location"
+                                        android:textColor="@color/darkTextColor"
+                                        android:textSize="20sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginTop="@dimen/_2sdpp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/tv_loc"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:lines="1"
+                                            android:text="Sharjah"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textColor="@color/subTextColor" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imageView2"
+                                    android:layout_width="@dimen/_22sdpp"
+                                    android:layout_height="@dimen/_22sdpp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/map_center_ic" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/step2_vu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:layout_marginTop="@dimen/_15sdpp"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    app:cardElevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_15sdpp"
+                        android:layout_marginEnd="@dimen/_15sdpp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="start"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            android:layout_marginTop="@dimen/_20sdpp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Slot Pattern"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/slot60_vu"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_42sdpp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginBottom="@dimen/_20sdpp"
+                                android:background="@android:color/transparent"
+                                app:cardCornerRadius="@dimen/_6sdpp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/transparent"
+                                app:strokeWidth="@dimen/_1sdpp"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@null">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/clock_img60"
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_14sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/v5_slot_clock_ic"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"/>
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#BDBDBD"
+                                        android:layout_margin="8dp" />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tv_slot60"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:text="1 Hour"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:textColor="@color/v5_text_color" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Timeslot"
+                                            android:textSize="@dimen/_10sdpp"
+                                            android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/slot90_vu"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_42sdpp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginBottom="@dimen/_20sdpp"
+                                android:background="@android:color/transparent"
+                                app:cardCornerRadius="@dimen/_6sdpp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/transparent"
+                                app:strokeWidth="@dimen/_1sdpp"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@null">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/clock_img90"
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_14sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/v5_slot_clock_ic"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"/>
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#BDBDBD"
+                                        android:layout_margin="8dp" />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tv_slot90"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:text="1.5 Hours"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:textColor="@color/v5_text_color" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Timeslot"
+                                            android:textSize="@dimen/_10sdpp"
+                                            android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/slot120_vu"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_42sdpp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginBottom="@dimen/_20sdpp"
+                                android:background="@android:color/transparent"
+                                app:cardCornerRadius="@dimen/_6sdpp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/transparent"
+                                app:strokeWidth="@dimen/_1sdpp"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardBackgroundColor="@null">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp">
+
+                                    <ImageView
+                                        android:id="@+id/clock_img120"
+                                        android:layout_width="@dimen/_12sdpp"
+                                        android:layout_height="@dimen/_14sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/v5_slot_clock_ic"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="@dimen/_5sdpp"/>
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="#BDBDBD"
+                                        android:layout_margin="8dp" />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tv_slot120"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                                            android:textStyle="bold"
+                                            android:text="2 Hours"
+                                            android:textSize="@dimen/_14sdpp"
+                                            android:textColor="@color/v5_text_color" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start|center"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:text="Timeslot"
+                                            android:textSize="@dimen/_10sdpp"
+                                            android:textColor="@color/v5_text_hint_color_grey" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:layout_marginTop="@dimen/_10sdpp"
+                    app:cardElevation="0.5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdpp"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:layout_marginBottom="@dimen/_10sdpp">
+
+                                <ImageView
+                                    android:id="@+id/clock_ic"
+                                    android:layout_width="@dimen/_20sdpp"
+                                    android:layout_height="@dimen/_20sdpp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/v5_clock_ic"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp" />
+
+                                <LinearLayout
+                                    android:id="@+id/step2_linear"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_toStartOf="@+id/hour_switch"
+                                    android:layout_toEndOf="@+id/clock_ic"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdpp">
+
+                                    <TextView
+                                        android:id="@+id/step2_tv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/_5sdpp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                                        android:lines="1"
+                                        android:text="24 Hours open"
+                                        android:textColor="@color/darkTextColor"
+                                        android:textSize="20sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginTop="@dimen/_2sdpp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                                            android:lines="1"
+                                            android:text="Enable if the company is open 24 hours."
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textColor="@color/subTextColor" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <io.github.vejei.cupertinoswitch.CupertinoSwitch
+                                    android:id="@+id/hour_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    app:trackOffColor="@color/v5grayColor"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    app:trackOnColor="@color/v5greenColor"/>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/week_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_15sdpp"
+                    android:layout_marginStart="@dimen/_17sdpp"
+                    android:layout_marginEnd="@dimen/_17sdpp"
+                    android:layout_marginTop="@dimen/_10sdpp"
+                    android:layout_marginBottom="@dimen/_15sdpp"
+                    android:elevation="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="start"
+                            app:cardBackgroundColor="#EBEBEB"
+                            app:cardCornerRadius="@dimen/_100sdpp"
+                            app:cardElevation="0dp"
+                            android:layout_marginStart="@dimen/_10sdpp"
+                            android:layout_marginTop="@dimen/_10sdpp"
+                            app:contentPaddingBottom="@dimen/_2sdpp"
+                            app:contentPaddingLeft="@dimen/_5sdpp"
+                            app:contentPaddingRight="@dimen/_5sdpp"
+                            app:contentPaddingTop="@dimen/_2sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Company Timing"
+                                android:textColor="@color/v5_text_color" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/days_recycler_vu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step3_vu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_17sdpp"
+                android:layout_marginEnd="@dimen/_17sdpp"
+                android:layout_marginTop="@dimen/_15sdpp"
+                android:layout_marginBottom="@dimen/_15sdpp"
+                app:cardCornerRadius="@dimen/_15sdpp"
+                app:cardElevation="0.5dp"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fac_recycler_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step4_vu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_17sdpp"
+                android:layout_marginEnd="@dimen/_17sdpp"
+                android:layout_marginTop="@dimen/_15sdpp"
+                android:layout_marginBottom="@dimen/_15sdpp"
+                app:cardCornerRadius="@dimen/_15sdpp"
+                app:cardElevation="2dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/success_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rel"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/reset_done_img"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:src="@drawable/v5_success_ic_green" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/completed"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textColor="@color/v5_text_color"
+                        android:textSize="@dimen/_32sdpp" />
+
+                    <TextView
+                        android:id="@+id/tagline_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:text="Your stadium has been successfully added, and now fields can be included under the stadium."
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/_16sdpp"
+                        android:layout_marginStart="@dimen/_30sdpp"
+                        android:layout_marginEnd="@dimen/_30sdpp"
+                        android:textColor="@color/v5_text_color"
+                        android:fontFamily="@font/gt_walsheim_pro_regular" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_add_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        app:cardElevation="2dp"
+                        android:layout_marginStart="@dimen/_25sdpp"
+                        android:layout_marginTop="@dimen/_30sdpp"
+                        android:layout_marginEnd="@dimen/_25sdpp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/v5_green_button_bg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Fields"
+                            android:layout_gravity="center"
+                            android:textColor="@color/whiteColor"
+                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                            android:textSize="@dimen/_18sdpp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="@dimen/_10sdpp"
+                        app:cardElevation="2dp"
+                        android:layout_marginStart="@dimen/_25sdpp"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:layout_marginEnd="@dimen/_25sdpp"
+                        android:layout_marginBottom="@dimen/_20sdpp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/v5_taxt_bg_white" />
+
+                        <TextView
+                            android:id="@+id/tv_guest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Back to home "
+                            android:layout_gravity="center"
+                            android:textColor="@color/v5_text_color"
+                            android:fontFamily="@font/gt_walsheim_pro_medium"
+                            android:textSize="@dimen/_18sdpp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bottom_botton_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdpp">
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdpp"
+            android:padding="10dp"
+            app:sv_animationType="Circle"
+            app:sv_doneCircleRadius="20dp"
+            app:sv_selectedCircleRadius="17dp"
+            app:sv_doneCircleColor="@color/v5greenColor"
+            app:sv_doneStepLineColor="@color/v5greenColor"
+            app:sv_doneStepMarkColor="@color/whiteColor"
+            app:sv_selectedCircleColor="@color/v5_text_color"
+            app:sv_selectedStepNumberColor="@color/whiteColor"
+            app:sv_nextTextColor="#868686"
+            app:sv_nextStepCircleColor="#EBEBEB"
+            app:sv_nextStepCircleEnabled="true"
+            app:sv_nextStepLineColor="@android:color/darker_gray"
+            app:sv_stepLineWidth="@dimen/_2sdpp"
+            app:sv_stepsNumber="3" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_continue"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@null"
+            app:cardCornerRadius="@dimen/_10sdpp"
+            app:cardElevation="0.5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <ImageView
+                android:id="@+id/btn_continue_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/v5_green_button_bg"/>
+
+            <TextView
+                android:id="@+id/tv_btn_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_"
+                android:layout_gravity="center"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/gt_walsheim_pro_medium"
+                android:textSize="@dimen/_18sdpp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

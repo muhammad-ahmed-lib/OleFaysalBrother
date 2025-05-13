@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/rel_main"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/_48sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        android:layout_marginTop="@dimen/_10sdpp"
+        android:layout_marginBottom="@dimen/_10sdpp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_10sdpp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="@dimen/_1sdpp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/_5sdpp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/facility_circle"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_100sdpp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center"
+                app:strokeColor="@color/v5_text_color"
+                app:strokeWidth="@dimen/_2sdpp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/img_vu"
+                    android:layout_width="@dimen/_20sdpp"
+                    android:layout_height="@dimen/_20sdpp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/bottle_ic"
+                    android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:fontFamily="@font/gt_walsheim_pro_medium"
+                    android:textStyle="bold"
+                    android:text="Water"
+                    android:textSize="@dimen/_16sdpp"
+                    android:textColor="@color/v5_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="20 AED (2)"
+                    android:layout_marginTop="@dimen/_2sdpp"
+                    android:textSize="@dimen/_10sdpp"
+                    android:textColor="@color/v5_text_hint_color_grey" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@android:color/transparent">-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/ln"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layoutDirection="ltr"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_minus"-->
+<!--            android:layout_width="@dimen/_30sdpp"-->
+<!--            android:layout_height="@dimen/_30sdpp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:background="@null"-->
+<!--            android:fontFamily="sans-serif"-->
+<!--            android:text="-"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--            android:textColor="@color/blueColorNew" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rel_main"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_3sdpp"-->
+<!--            android:layout_marginEnd="@dimen/_3sdpp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginStart="@dimen/_5sdpp"-->
+<!--                android:layout_marginTop="@dimen/_3sdpp"-->
+<!--                android:layout_marginEnd="@dimen/_5sdpp"-->
+<!--                android:fontFamily="sans-serif"-->
+<!--                android:text="title"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                android:textColor="@color/blueColorNew" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/img_vu"-->
+<!--                android:layout_width="@dimen/_40sdpp"-->
+<!--                android:layout_height="@dimen/_40sdpp"-->
+<!--                android:layout_below="@id/tv_title"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_marginTop="@dimen/_3sdpp"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/location_icon" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_price"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/img_vu"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="@dimen/_3sdpp"-->
+<!--                android:layout_marginBottom="@dimen/_3sdpp"-->
+<!--                android:fontFamily="sans-serif"-->
+<!--                android:text="35 AED (1)"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                android:textColor="@color/blueColorNew" />-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_plus"-->
+<!--            android:layout_width="@dimen/_30sdpp"-->
+<!--            android:layout_height="@dimen/_30sdpp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:background="@null"-->
+<!--            android:fontFamily="sans-serif"-->
+<!--            android:text="+"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--            android:textColor="@color/blueColorNew" />-->
+
+<!--    </LinearLayout>-->
+
+<!--</RelativeLayout>-->

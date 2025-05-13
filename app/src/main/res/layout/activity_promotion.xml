@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".promotions.PromotionActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Promotions"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdpp"
+            android:layout_marginStart="@dimen/_17sdpp"
+            android:layout_marginEnd="@dimen/_17sdpp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/whiteColor"
+            android:layout_below="@+id/head_bar"
+            app:cardCornerRadius="@dimen/_15sdpp"
+            app:contentPadding="@dimen/_15sdpp"
+            android:fitsSystemWindows="true"
+            app:cardElevation="0.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/whiteColor"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separatorColor"
+                app:strokeWidth="@dimen/_1sdpp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdpp"
+                        android:layout_height="@dimen/_35sdpp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/promo_codes_ic" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#C9C9C9"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:layout_marginBottom="@dimen/_20sdpp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_promo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Promo Codes"
+                            android:textSize="@dimen/_16sdpp"
+                            android:textColor="@color/v5_text_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdpp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_promo_active"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Active: 34"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/v5greenColor"/>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/v5_text_color"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_2sdpp"
+                                android:layout_marginBottom="@dimen/_2sdpp" />
+
+                            <TextView
+                                android:id="@+id/tv_promo_expire"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Expire: 25"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/redBookingColor"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_promo"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_owner_right_arrow" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/whiteColor"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                android:layout_marginTop="@dimen/_10sdpp"
+                app:strokeColor="@color/separatorColor"
+                app:strokeWidth="@dimen/_1sdpp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdpp"
+                        android:layout_height="@dimen/_35sdpp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/gift_ic" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#C9C9C9"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:layout_marginBottom="@dimen/_20sdpp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_gift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Gift"
+                            android:textSize="@dimen/_16sdpp"
+                            android:textColor="@color/v5_text_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdpp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_gift_active"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Active: 34"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/v5greenColor"/>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/v5_text_color"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_2sdpp"
+                                android:layout_marginBottom="@dimen/_2sdpp" />
+
+                            <TextView
+                                android:id="@+id/tv_gift_expire"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Expire: 25"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/redBookingColor"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_gift"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_owner_right_arrow" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/whiteColor"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                android:layout_marginTop="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separatorColor"
+                app:strokeWidth="@dimen/_1sdpp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdpp"
+                        android:layout_height="@dimen/_35sdpp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/field_offer_ic" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#C9C9C9"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:layout_marginBottom="@dimen/_20sdpp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_field_offer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Field Offers"
+                            android:textSize="@dimen/_16sdpp"
+                            android:textColor="@color/v5_text_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdpp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_field_offer_active"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Active: 34"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/v5greenColor"/>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/v5_text_color"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_2sdpp"
+                                android:layout_marginBottom="@dimen/_2sdpp" />
+
+                            <TextView
+                                android:id="@+id/tv_field_offer_expire"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Expire: 25"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/redBookingColor"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_field_offer"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_owner_right_arrow" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/whiteColor"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                android:layout_marginTop="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separatorColor"
+                app:strokeWidth="@dimen/_1sdpp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdpp"
+                        android:layout_height="@dimen/_35sdpp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/discount_card_ic" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#C9C9C9"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:layout_marginTop="@dimen/_20sdpp"
+                        android:layout_marginBottom="@dimen/_20sdpp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdpp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_loyalty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Loyalty Card"
+                            android:textSize="@dimen/_16sdpp"
+                            android:textColor="@color/v5_text_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdpp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_loyalty_active"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Active: 34"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/v5greenColor"/>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/v5_text_color"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_2sdpp"
+                                android:layout_marginBottom="@dimen/_2sdpp" />
+
+                            <TextView
+                                android:id="@+id/tv_loyalty_expire"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Expire: 25"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:textSize="@dimen/_14sdpp"
+                                android:textColor="@color/redBookingColor"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_loyalty"
+                    android:layout_width="@dimen/_40sdpp"
+                    android:layout_height="@dimen/_40sdpp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/v5greenColor"
+                    app:cardCornerRadius="@dimen/_100sdpp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdpp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdpp"
+                        android:layout_height="@dimen/_20sdpp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/v5_owner_right_arrow" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_marginTop="@dimen/_5sdpp"
+        android:layout_marginBottom="@dimen/_5sdpp"
+        android:layout_marginStart="@dimen/_5sdpp"
+        android:layout_marginEnd="@dimen/_5sdpp"
+        app:cardCornerRadius="@dimen/_10sdpp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/separatorColor"
+        app:strokeWidth="@dimen/_1sdpp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_44sdpp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_10sdpp">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                android:text="@string/date"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_16sdpp"
+                android:textColor="@color/v5_text_color" />
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                android:text="@string/note"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_16sdpp"
+                android:textColor="@color/redBookingColor" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
+
+
+

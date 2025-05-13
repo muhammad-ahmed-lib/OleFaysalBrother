@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup.ForgotPassActivity"
+    android:background="@color/bgVuColor">
+
+
+        <RelativeLayout
+            android:id="@+id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/_100sdpp"
+                android:layout_height="@dimen/_100sdpp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/final_logonew" />
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_back"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginStart="15dp"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:background="@drawable/v5_circle_blue"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/left_arrow_white" />-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdpp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="@dimen/_15sdpp"
+                android:layout_marginEnd="@dimen/_15sdpp">
+
+                <TextView
+                    android:id="@+id/get_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="end|center"
+                    android:text="@string/get_help"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:textColor="@color/whiteColor"
+                    android:textStyle="bold" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/v5_circle_blue"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/left_arrow_white" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/main_lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/rel">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#26334A"
+                android:text="@string/forgot_password"
+                android:gravity="start"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gt_walsheim_pro_medium"
+                android:layout_marginTop="@dimen/_25sdpp"
+                android:layout_marginStart="@dimen/_25sdpp"
+                android:layout_marginEnd="@dimen/_25sdpp"
+                android:layout_marginBottom="@dimen/_30sdpp"
+                android:textSize="@dimen/_18sdpp" />
+            <LinearLayout
+                android:id="@+id/phoneVu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdpp"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdpp"
+                android:layout_marginStart="@dimen/_25sdpp"
+                android:layout_marginEnd="@dimen/_25sdpp"
+                android:background="@drawable/v5_taxt_bg_white"
+                android:elevation="@dimen/_2sdpp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/v5_taxt_bg_white">
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/email"
+                        android:layout_marginStart="@dimen/_10sdpp"
+                        android:layout_marginEnd="@dimen/_10sdpp"
+                        android:textColorHint="@color/v5_text_hint_color_grey"
+                        android:textColor="@color/v5_text_color"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:textSize="16sp"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                        android:inputType="textEmailAddress" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="@dimen/_25sdpp"
+                    android:layout_marginTop="@dimen/_25sdpp"
+                    android:layout_marginEnd="@dimen/_25sdpp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_button_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/submit"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/success_lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_lay"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+            android:id="@+id/reset_done_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:src="@drawable/v5_success_ic" />
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/success"
+            android:fontFamily="@font/gt_walsheim_pro_medium"
+            android:textColor="@color/v5_text_color"
+            android:textSize="@dimen/_32sdpp" />
+            <TextView
+            android:id="@+id/tagline_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:text="@string/email_sent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/_16sdpp"
+            android:fontFamily="@font/gt_walsheim_pro_regular" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_10sdpp"
+                app:cardElevation="2dp"
+                android:layout_marginStart="@dimen/_25sdpp"
+                android:layout_marginTop="@dimen/_50sdpp"
+                android:layout_marginEnd="@dimen/_25sdpp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/v5_button_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:fontFamily="@font/gt_walsheim_pro_medium"
+                        android:textSize="@dimen/_18sdpp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

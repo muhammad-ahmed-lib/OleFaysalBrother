@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".promotions.gifts.AddUpdateGiftActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Create Gift"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+
+
+
+
+        </RelativeLayout>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/head_bar"
+            android:layout_above="@+id/btn_add"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/step1_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_17sdpp"
+                        android:layout_marginEnd="@dimen/_17sdpp"
+                        android:layout_marginTop="@dimen/_15sdpp"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardCornerRadius="@dimen/_15sdpp"
+                        app:cardElevation="0.5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="@dimen/_15sdpp"
+                            android:layout_marginEnd="@dimen/_15sdpp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="start"
+                                app:cardBackgroundColor="#EBEBEB"
+                                app:cardCornerRadius="@dimen/_100sdpp"
+                                app:cardElevation="0dp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                app:contentPaddingBottom="@dimen/_2sdpp"
+                                app:contentPaddingLeft="@dimen/_5sdpp"
+                                app:contentPaddingRight="@dimen/_5sdpp"
+                                app:contentPaddingTop="@dimen/_2sdpp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:text="Select Club"
+                                    android:textColor="@color/v5_text_color" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="@dimen/_10sdpp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="@color/whiteColor"
+                                    app:cardCornerRadius="@dimen/_10sdpp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/separatorColor"
+                                    app:strokeWidth="@dimen/_1sdpp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginStart="@dimen/_5sdpp"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tv_promo"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/_5sdpp"
+                                                android:layout_marginEnd="@dimen/_5sdpp"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:text="Allow for All Club"
+                                                android:textSize="@dimen/_16sdpp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/v5_text_color" />
+                                            <TextView
+                                                android:id="@+id/tv_promo_active"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="A player can avail this offer at any club."
+                                                android:layout_marginTop="@dimen/_5sdpp"
+                                                android:layout_marginStart="@dimen/_5sdpp"
+                                                android:layout_gravity="center_vertical"
+                                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                                android:textSize="@dimen/_12sdpp"
+                                                android:textColor="@color/v5_text_color"/>
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                    <io.github.vejei.cupertinoswitch.CupertinoSwitch
+                                        android:id="@+id/switch_all_club"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:trackOffColor="@color/v5grayColor"
+                                        android:layout_centerVertical="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_gravity="center_vertical|end"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        app:trackOnColor="@color/v5greenColor"/>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/clubName_recycler_vu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdpp"
+                                    android:layout_marginBottom="@dimen/_10sdpp"
+                                    android:layoutDirection="ltr"
+                                    android:scrollbars="none"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdpp"
+                        android:layout_marginStart="@dimen/_17sdpp"
+                        android:layout_marginEnd="@dimen/_17sdpp"
+                        android:layout_marginBottom="@dimen/_15sdpp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardBackgroundColor="@color/whiteColor"
+                        app:cardCornerRadius="@dimen/_15sdpp"
+                        android:fitsSystemWindows="true"
+                        app:cardElevation="0.5dp">
+
+                        <LinearLayout
+                            android:id="@+id/main_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="@dimen/_15sdpp"
+                            android:layout_marginEnd="@dimen/_15sdpp">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/v5_edit_text_bg_light_gray"
+                                android:layout_height="@dimen/_60sdpp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:orientation="horizontal"
+                                android:elevation="@dimen/_2sdpp">
+
+                                <EditText
+                                    android:id="@+id/et_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Gift Name"
+                                    android:background="@null"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    android:textColorHint="@color/v5_text_hint_color_grey"
+                                    android:textColor="@color/v5_text_color"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:textSize="18sp"
+                                    android:layout_centerVertical="true"
+                                    android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                                    android:inputType="text"/>
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/v5_edit_text_bg_light_gray"
+                                android:layout_height="@dimen/_120sdpp"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:orientation="horizontal"
+                                android:elevation="@dimen/_2sdpp">
+
+                                <EditText
+                                    android:id="@+id/et_desc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Gift Details"
+                                    android:background="@null"
+                                    android:layout_marginStart="@dimen/_10sdpp"
+                                    android:layout_marginEnd="@dimen/_10sdpp"
+                                    android:textColorHint="@color/v5_text_hint_color_grey"
+                                    android:textColor="@color/v5_text_color"
+                                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                                    android:textSize="18sp"
+                                    android:gravity="start"
+                                    android:paddingTop="@dimen/_10sdpp"
+                                    android:layout_centerVertical="true"
+                                    android:textCursorDrawable="@drawable/v5_cursor_drawable"
+                                    android:inputType="textMultiLine"
+                                    android:scrollHorizontally="false"
+                                    android:singleLine="false"
+                                    android:imeOptions="actionDone"
+                                    android:overScrollMode="ifContentScrolls" />
+
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_60sdpp"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_20sdpp"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginEnd="@dimen/_5sdpp"
+                                android:layout_marginBottom="@dimen/_20sdpp"
+                                android:background="@drawable/v5_edit_text_bg_light_gray"
+                                android:elevation="@dimen/_2sdpp">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1.9"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/v5_edit_text_bg_light_gray">
+
+                                    <TextView
+                                        android:id="@+id/et_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="dd/mm/yyy - dd/mm/yyy"
+                                        android:layout_marginStart="@dimen/_10sdpp"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:textColorHint="@color/v5_text_hint_color_grey"
+                                        android:textColor="@color/v5_text_color"
+                                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                                        android:textSize="18sp"
+                                        android:gravity="center_vertical"
+                                        android:layout_centerVertical="true" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_22sdpp"
+                                        android:layout_height="@dimen/_22sdpp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="@dimen/_10sdpp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/v5_calender" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/gift_target_recycler_vu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layoutDirection="ltr"
+                                android:orientation="horizontal"
+                                android:scrollbars="none" />
+
+                            <RelativeLayout
+                                android:id="@+id/rel_invoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_150sdpp"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="@dimen/_5sdpp"
+                                android:layout_marginTop="@dimen/_10sdpp"
+                                android:layout_marginBottom="@dimen/_10sdpp"
+                                android:background="@drawable/red_dotted_border_for_banner">
+
+                                <ImageView
+                                    android:id="@+id/img_vu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_5sdpp"
+                                    android:layout_marginEnd="@dimen/_5sdpp"
+                                    android:layout_marginTop="@dimen/_5sdpp"
+                                    android:layout_marginBottom="@dimen/_5sdpp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/attachment_img"/>
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdpp"
+            app:cardCornerRadius="@dimen/_10sdpp"
+            app:cardElevation="0.5dp"
+            android:layout_marginStart="@dimen/_25sdpp"
+            android:layout_marginTop="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_25sdpp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/v5_green_button_bg" />
+
+        <TextView
+            android:id="@+id/tv_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:layout_gravity="center"
+            android:textColor="@color/whiteColor"
+            android:fontFamily="@font/gt_walsheim_pro_medium"
+            android:textSize="@dimen/_18sdpp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>

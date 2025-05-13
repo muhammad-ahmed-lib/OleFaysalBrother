@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_vu"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_gravity="center_vertical|end"
+        app:cardBackgroundColor="@color/whiteColor"
+        android:layout_marginStart="@dimen/_10sdpp"
+        app:cardCornerRadius="@dimen/_100sdpp"
+        app:cardElevation="2dp"
+        android:layout_marginEnd="@dimen/_2sdpp"
+        android:layout_marginTop="@dimen/_2sdpp"
+        android:layout_marginBottom="@dimen/_2sdpp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gt_walsheim_pro_medium"
+            android:text="5 x 5"
+            android:textColor="@color/v5_text_color"
+            android:textSize="16sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

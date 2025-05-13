@@ -1,0 +1,41 @@
+buildscript {
+    ext.kotlinVersion = '2.1.0'
+    repositories {
+        google()
+        mavenCentral()
+        mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    dependencies {
+//        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.1.4'
+        classpath 'com.google.gms:google-services:4.4.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
+        classpath "io.realm:realm-gradle-plugin:10.18.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.8.9"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        flatDir {
+            dirs 'libs'
+        }
+
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

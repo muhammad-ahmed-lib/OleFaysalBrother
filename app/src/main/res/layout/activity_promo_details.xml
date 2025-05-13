@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgVuColor"
+    tools:context=".promotions.promoCode.PromoDetailsActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/p_club_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/v5_small_owner_bg"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdpp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_15sdpp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/promo_details"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textSize="@dimen/_18sdpp"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow_white" />
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/v5_circle_blue"
+                android:scaleType="centerInside"
+                android:padding="@dimen/_10sdpp"
+                android:src="@drawable/v5_delete_ic" />
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/top_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdpp"
+            android:layout_marginStart="@dimen/_20sdpp"
+            android:layout_marginEnd="@dimen/_20sdpp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/details_card_vu"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdpp"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/transparent"
+                app:strokeColor="@color/whiteColor"
+                app:strokeWidth="@dimen/_2sdpp"
+                app:cardCornerRadius="@dimen/_18sdpp">
+
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/whiteColor"
+                    android:layout_marginStart="@dimen/_25sdpp"
+                    android:layout_marginEnd="@dimen/_25sdpp"
+                    android:text="@string/details"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/applied_card_vu"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdpp"
+                android:layout_marginStart="@dimen/_10sdpp"
+                android:layout_marginEnd="@dimen/_10sdpp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#33000000"
+                app:strokeColor="@color/club_selection_color"
+                app:strokeWidth="@dimen/_2sdpp"
+                app:cardCornerRadius="@dimen/_18sdpp">
+
+                <TextView
+                    android:id="@+id/tv_applied"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/whiteColor"
+                    android:layout_marginStart="@dimen/_25sdpp"
+                    android:layout_marginEnd="@dimen/_25sdpp"
+                    android:text="Applied"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdpp"
+        android:layout_below="@+id/top_lay"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdpp"
+            android:layout_marginStart="@dimen/_17sdpp"
+            android:layout_marginBottom="@dimen/_15sdpp"
+            android:layout_marginEnd="@dimen/_17sdpp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/whiteColor"
+            app:cardCornerRadius="@dimen/_15sdpp"
+            app:contentPadding="@dimen/_15sdpp"
+            android:fitsSystemWindows="true"
+            app:cardElevation="0.5dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:cardBackgroundColor="#EBEBEB"
+                        app:cardCornerRadius="@dimen/_100sdpp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="@dimen/_2sdpp"
+                        app:contentPaddingLeft="@dimen/_5sdpp"
+                        app:contentPaddingRight="@dimen/_5sdpp"
+                        app:contentPaddingTop="@dimen/_2sdpp">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdpp"
+                            android:layout_marginEnd="@dimen/_5sdpp"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Ramadan Promo"
+                            android:textColor="@color/v5_text_color" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/_10sdpp"
+                        app:cardBackgroundColor="@color/v5greenColor"
+                        app:cardCornerRadius="@dimen/_100sdpp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="@dimen/_1sdpp"
+                        app:contentPaddingLeft="@dimen/_4sdpp"
+                        app:contentPaddingRight="@dimen/_4sdpp"
+                        app:contentPaddingTop="@dimen/_1sdpp">
+
+                        <TextView
+                            android:id="@+id/tv_is_paid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="Edit"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_15sdpp"
+                            android:layout_marginEnd="@dimen/_15sdpp"
+                            android:textColor="@color/whiteColor" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/whiteColor"
+                    android:layout_marginTop="@dimen/_10sdpp"
+                    app:cardCornerRadius="@dimen/_10sdpp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/separatorColor"
+                    app:strokeWidth="@dimen/_1sdpp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdpp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Club"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_club"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="All Club"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Promo"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_promo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="Birthday"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Discount Type"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_discount_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="Percentage % "
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Discount"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="40 AED"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Promo Code"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_promo_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="NAZIR42324"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Valid"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="12/10/2015 to 12/11/2025"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Eligible Players"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_eligible_player"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="50"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Auto Message"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_auto_message"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="On"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Total Discount"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_total_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="0"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Total Time Used"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_total_usage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="0"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Usage Limit"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_usage_limit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="0"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Each Player Limit"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_each_player_limit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="0"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdpp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/separatorColor" />
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdpp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gt_walsheim_pro_regular"
+                                android:text="Status"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_hint_color_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10sdpp"
+                                android:text="Active"
+                                android:fontFamily="@font/gt_walsheim_pro_medium"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_16sdpp"
+                                android:textColor="@color/v5_text_color" />
+
+                        </RelativeLayout>
+
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/_40sdpp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                                android:text="Assign Players"-->
+<!--                                android:textSize="@dimen/_16sdpp"-->
+<!--                                android:textColor="@color/v5_text_hint_color_grey" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/tv_assigned_player"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_alignParentEnd="true"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:layout_marginEnd="@dimen/_10sdpp"-->
+<!--                                android:text="50"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:textSize="@dimen/_16sdpp"-->
+<!--                                android:textColor="@color/v5_text_color" />-->
+
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="@dimen/_1sdpp"-->
+<!--                                android:layout_alignParentBottom="true"-->
+<!--                                android:background="@color/separatorColor" />-->
+
+<!--                        </RelativeLayout>-->
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/_40sdpp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_regular"-->
+<!--                                android:text="Player Type"-->
+<!--                                android:textSize="@dimen/_16sdpp"-->
+<!--                                android:textColor="@color/v5_text_hint_color_grey" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/tv_player_type"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_alignParentEnd="true"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:layout_marginEnd="@dimen/_10sdpp"-->
+<!--                                android:text="All Players"-->
+<!--                                android:fontFamily="@font/gt_walsheim_pro_medium"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:textSize="@dimen/_16sdpp"-->
+<!--                                android:textColor="@color/v5_text_color" />-->
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="@dimen/_1sdpp"-->
+<!--                                android:layout_alignParentBottom="true"-->
+<!--                                android:background="@color/separatorColor" />-->
+
+
+<!--                        </RelativeLayout>-->
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_vu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdpp"
+            android:layoutDirection="ltr"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
