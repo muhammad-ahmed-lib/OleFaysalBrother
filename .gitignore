@@ -13,6 +13,4 @@
 .externalNativeBuild
 .cxx
 secure.properties
-ResideMenu/
-ActionSheet/
 app/release/
