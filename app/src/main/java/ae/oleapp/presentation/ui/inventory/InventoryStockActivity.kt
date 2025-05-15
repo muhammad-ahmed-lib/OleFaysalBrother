@@ -77,16 +77,18 @@ class InventoryStockActivity : AppCompatActivity() {
                 binding.root.setOnClickListener {
                     // From your Activity or Fragment:
                     val productId =item?.id.toString()
-                    val bottomSheet = AddStockBottomSheetFragment.newInstance(productId)
+                    val bottomSheet = AddStockBottomSheetFragment.newInstance(productId, onDone = {
+                        if (it){
+                            viewModel.getInventoryStockReport()
+                            observeSalesData()
+                        }
+                    })
                     bottomSheet.show(supportFragmentManager, "AddStockBottomSheet")
                 }
             } ?: run {
                 binding.titleTv.text = "No Item"
                 binding.stockTv.text = "Stock: 0"
             }
-
-
-
         }
         binding.moneyRec.adapter = adapter
     }

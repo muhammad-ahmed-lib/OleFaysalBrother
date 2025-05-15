@@ -13,6 +13,7 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
 import ae.oleapp.utils.openActivity
+import ae.oleapp.utils.splitToDayMonthAndYear
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -102,13 +103,20 @@ class InventoryActivity : AppCompatActivity() {
 
     private fun updateMoneyData(summary: InventorySummary) {
         moneyRecList.clear()
+        summary.let {
+            Log.d(TAG, "updateMoneyData: $summary")
+            val (dayMonth, year) = it.date.splitToDayMonthAndYear()
+            binding.currentDateMonthTv.text = dayMonth     // e.g., "18 May"
+            binding.currentYearTv.text = year              // e.g., "2025"
 
+            binding.currentAmountTv.text=it.currency+" "+it.profit.total.toString()
+        }
         // Add sales data
         moneyRecList.add(
             InventoryMoneyModelClass(
                 title = "Total Sell",
                 icon = R.drawable.total_sell_img,
-                amount = "${summary.currency} ${summary.total_sales}",
+                amount = "${summary.currency} ${summary.sales.total}",
                 totalPercentage = "" // Add your percentage calculation if available
             )
         )
@@ -118,7 +126,7 @@ class InventoryActivity : AppCompatActivity() {
             InventoryMoneyModelClass(
                 title = "Total Purchase",
                 icon = R.drawable.total_purchase_img,
-                amount = "${summary.currency} ${summary.total_purchase}",
+                amount = "${summary.currency} ${summary.purchase.total}",
                 totalPercentage = "" // Add your percentage calculation if available
             )
         )

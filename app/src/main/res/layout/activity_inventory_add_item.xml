@@ -135,16 +135,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_100sdp">
                         <androidx.constraintlayout.utils.widget.ImageFilterView
-                            android:layout_width="@dimen/_50sdp"
-                            android:layout_height="@dimen/_50sdp"
-                            android:padding="@dimen/_8sdp"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
                             android:src="@drawable/menu_icon"
                             />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
                             android:text="@string/attachment"
                             android:layout_gravity="center"
                             android:textColor="#26334A"

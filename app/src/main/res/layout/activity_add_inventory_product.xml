@@ -142,7 +142,7 @@
                         android:textColor="#868686"
                         android:textColorHint="#868686" />
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/pickImageBtn"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_100sdp"
@@ -153,28 +153,44 @@
                         android:orientation="vertical">
 
                         <androidx.constraintlayout.utils.widget.ImageFilterView
-                            android:layout_width="@dimen/_50sdp"
-                            android:layout_height="@dimen/_50sdp"
-                            android:padding="@dimen/_8sdp"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:id="@+id/iamgehint"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            app:layout_constraintBottom_toTopOf="@id/imageHintTv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             android:src="@drawable/add_gallery_img" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_8sdp"
                             android:gravity="center"
+                            android:id="@+id/imageHintTv"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/gC"
                             android:text="@string/attachment"
                             android:textColor="#26334A"
                             android:textSize="@dimen/_12ssp" />
-
+                        <androidx.constraintlayout.widget.Guideline
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.50"
+                            android:id="@+id/gC"/>
                         <androidx.constraintlayout.utils.widget.ImageFilterView
                             android:id="@+id/imagePreview"
                             android:layout_width="match_parent"
+                            android:padding="@dimen/_7sdp"
                             android:layout_height="match_parent"
-
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
                             />
-                    </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

@@ -24,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/titleTv"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:textSize="@dimen/_11ssp"
             android:text="Sales Report"
             android:gravity="center"
             android:textColor="#26334A"/>

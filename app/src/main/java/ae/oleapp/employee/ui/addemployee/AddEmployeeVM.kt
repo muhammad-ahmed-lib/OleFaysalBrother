@@ -33,7 +33,7 @@ class AddEmployeeVM(
     val isLoading = _isLoading.asStateFlow()
 
 
-var desingationId : Int? = null
+    var desingationId: Int? = null
 
     private val _getEmployeeDesignationState =
         MutableStateFlow<List<GetDesignationDataResponse>>(emptyList())
@@ -62,7 +62,8 @@ var desingationId : Int? = null
     val employeeSalary = _employeeSalary.asStateFlow()
 
     private val _getClickedDesignation = MutableStateFlow<GetDesignationDataResponse?>(null)
-    val getClickedDesignationState : StateFlow<GetDesignationDataResponse?> = _getClickedDesignation.asStateFlow()
+    val getClickedDesignationState: StateFlow<GetDesignationDataResponse?> =
+        _getClickedDesignation.asStateFlow()
 
     private val _employeeCountryId = MutableStateFlow("")
     val employeeCountryId = _employeeCountryId.asStateFlow()
@@ -86,16 +87,16 @@ var desingationId : Int? = null
     val isEmployeeAdded: StateFlow<Boolean> = _isEmployeeAdded.asStateFlow()
 
     private val _clubId = MutableStateFlow<Int?>(null)
-    val clubId :StateFlow<Int?> = _clubId.asStateFlow()
+    val clubId: StateFlow<Int?> = _clubId.asStateFlow()
 
     private val _isEmployeeCredentialUpdate = MutableStateFlow(false)
-    val isEmployeeCredentialUpdate : StateFlow<Boolean> = _isEmployeeCredentialUpdate.asStateFlow()
+    val isEmployeeCredentialUpdate: StateFlow<Boolean> = _isEmployeeCredentialUpdate.asStateFlow()
 
     private val _isEmployeeDetailUpdate = MutableStateFlow(false)
-    val isEmployeeDetailUpdate  : StateFlow<Boolean> = _isEmployeeDetailUpdate.asStateFlow()
+    val isEmployeeDetailUpdate: StateFlow<Boolean> = _isEmployeeDetailUpdate.asStateFlow()
 
     private val _isEditMode = MutableStateFlow(false)
-    val isEditMode  : StateFlow<Boolean> = _isEditMode.asStateFlow()
+    val isEditMode: StateFlow<Boolean> = _isEditMode.asStateFlow()
 
 
     fun setIsEditMode(value: Boolean) {
@@ -347,7 +348,12 @@ var desingationId : Int? = null
         viewModelScope.launch(Dispatchers.IO) {
 
             desingationId?.let {
-                employeeRepo.updateEmployeeDesignation(it , designationName, permissions, clubId.toString())
+                employeeRepo.updateEmployeeDesignation(
+                    it,
+                    designationName,
+                    permissions,
+                    clubId.toString()
+                )
                     .collect { response ->
                         when (response) {
                             is DataState.Error -> {
@@ -419,7 +425,7 @@ var desingationId : Int? = null
         _employeeName.value = ""
         _employeeEmail.value = ""
         _employeeSalary.value = ""
-        _getClickedDesignation.value =null
+        _getClickedDesignation.value = null
         _employeeCountryId.value = ""
         _employeePhone.value = ""
         _employeeId.value = ""

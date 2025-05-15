@@ -52,10 +52,11 @@ class ItemDetailsBottomSheetFragment (val myId:Int=-1): BottomSheetDialogFragmen
                 is ApiResponse.Success -> {
                     response.data?.let {summary->
                         // Set order number safely
-                        binding.orderNoTv.text = summary.id.toString() ?: "N/A"
+                        binding.orderNoTv.text = summary.order_number.toString() ?: "N/A"
                         binding.grandTotalTv.text = summary.total_amount.toString() ?: "N/A"
-                        binding.itemNameTv.text = summary.items?.firstOrNull()?.inventory?.name.toString() ?: "N/A"
-                        binding.itemNameCountTv.text = summary.items?.firstOrNull()?.inventory?.quantity.toString() ?: "N/A"
+                        binding.itemNameTv.text = summary.items.firstOrNull()?.inventory?.name.toString() ?: "N/A"
+                        binding.orderNo.text = summary.items.firstOrNull()?.inventory?.name.toString() ?: "N/A"
+                        binding.itemNameCountTv.text = summary.items.firstOrNull()?.inventory?.quantity.toString() ?: "N/A"
 
                         // Set created date safely
                         summary.created_at.let { createdAt ->

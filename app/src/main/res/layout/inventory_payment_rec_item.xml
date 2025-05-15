@@ -2,23 +2,21 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_45sdp"
+    android:layout_marginVertical="@dimen/_3sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/_8sdp"
-        android:background="@drawable/background_stroke_gray"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/_10sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/childCard"
-        app:layout_constraintTop_toTopOf="@id/childCard">
+        android:paddingHorizontal="@dimen/_10sdp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center|start"
             android:text="Water Pack"
+            android:id="@+id/titleTv"
             android:textColor="#26334A"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
@@ -35,6 +33,6 @@
             android:textColor="#26334A"
             android:textSize="@dimen/_12ssp"
             />
-    </LinearLayout>-->
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -2,6 +2,7 @@ package ae.oleapp.abstraction.models
 
 import android.app.Activity
 import com.google.gson.annotations.SerializedName
+import okhttp3.MultipartBody
 
 
 data class GenericModelClass(
@@ -32,20 +33,27 @@ data class SalesOrderModelClass(
     val total_quantity: Int,
     val currency: String?
 )
-
-data class InventorySummary(
-    val date: String,
-    val total_sales: Double,
-    val total_purchase: Double,
-    val total_profit: Double,
-    val currency: String
-)
-
 data class InventorySummaryResponse(
     val data: InventorySummary,
     val status: Int,
     val message: String
 )
+
+data class InventorySummary(
+    val date: String,
+    val sales: InventoryMetric,
+    val purchase: InventoryMetric,
+    val profit: InventoryMetric,
+    val currency: String
+)
+
+data class InventoryMetric(
+    val total: Double,
+    val currency: String,
+    val percentage: String,
+    val trend: String
+)
+
 data class ProfitReport(
     val product_id: Int,
     val name: String,
@@ -143,11 +151,22 @@ data class LogUser(
 )
 
 
+data class UpdateProductResponse(
+    val data: InventoryProduct,
+    val status: Int,
+    val message: String
+)
 
 
 // InventoryProductResponse.kt
 data class InventoryProductResponse(
     val data: List<InventoryProduct>,
+    val status: Int,
+    val message: String
+)
+
+data class InventoryAddProductResponse(
+    val data: InventoryProduct,
     val status: Int,
     val message: String
 )
@@ -167,7 +186,8 @@ data class InventoryProduct(
     val unit_of_measure: String,
     val is_active: Boolean,
     val created_at: String,
-    val current_stock: Int
+    val current_stock: Int,
+    var count: Int
 )
 
 data class UpdateStockRequest(
@@ -252,4 +272,75 @@ data class SaleStats(
     val total_quantity: Int,
     val total_sales: Int,
     val total_discount: Int
+)
+
+
+data class EmployeeResponse(
+    val data: List<Employee>,
+    val status: Int,
+    val message: String
+)
+
+data class Employee(
+    val id: Int,
+    val name: String,
+    val email: String,
+    @SerializedName("is_active") val isActive: Boolean,
+    @SerializedName("country_id") val countryId: Int,
+    @SerializedName("country_code") val countryCode: String,
+    val number: String,
+    val phone: String,
+    val picture: String,
+    val currency: String,
+    @SerializedName("assigned_clubs") val assignedClub: AssignedClub,
+    val salary: Int,
+    @SerializedName("login_id") val loginId: String,
+    @SerializedName("total_ratings") val totalRatings: Int,
+    @SerializedName("average_ratings") val averageRatings: String,
+    @SerializedName("tip_amount") val tipAmount: Int,
+    @SerializedName("added_date") val addedDate: String,
+    val designation: Designation,
+    @SerializedName("employee_of_the_month") val employeeOfTheMonth: Boolean,
+    val month: String
+)
+
+data class AssignedClub(
+    val id: Int,
+    val name: String,
+    val country: String,
+    val currency: String
+)
+
+data class Designation(
+    val id: Int,
+    val name: String,
+    val permission: List<Permission>
+)
+
+data class Permission(
+    val id: Int,
+    val name: String
+)
+
+// Request body model
+data class SaleRequest(
+    @SerializedName("club_id") val clubId: String,  // Required (text)
+    @SerializedName("discount") val discount: String,  // Required (text)
+    @SerializedName("employee_id") val employeeId: String? = null,  // Optional (text)
+    @SerializedName("notes") val notes: String? = null,  // Optional (text)
+    @SerializedName("receipt") val receipt: MultipartBody.Part? = null,  // Optional (file)
+    @SerializedName("cart") val cart: List<CartItem>,  // Required (list of product_id + quantity)
+    @SerializedName("date") val date: String  // Required (text)
+)
+
+data class CartItem(
+    @SerializedName("product_id") val productId: Int,
+    @SerializedName("quantity") val quantity: Int
+)
+
+// Response model (adjust based on actual API response)
+data class NewSaleResponse(
+    val success: Boolean,
+    val message: String,
+    val saleId: Int? = null
 )

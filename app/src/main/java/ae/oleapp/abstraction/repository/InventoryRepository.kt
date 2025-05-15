@@ -1,12 +1,17 @@
 package ae.oleapp.abstraction.repository
 
 import ae.oleapp.abstraction.api_client.ApiClient
+import ae.oleapp.abstraction.models.CartItem
+import ae.oleapp.abstraction.models.Employee
+import ae.oleapp.abstraction.models.EmployeeResponse
+import ae.oleapp.abstraction.models.InventoryAddProductResponse
 import ae.oleapp.abstraction.models.InventoryProduct
 import ae.oleapp.abstraction.models.InventoryProductResponse
 import ae.oleapp.abstraction.models.InventoryStockData
 import ae.oleapp.abstraction.models.InventoryStockResponse
 import ae.oleapp.abstraction.models.InventorySummary
 import ae.oleapp.abstraction.models.InventorySummaryResponse
+import ae.oleapp.abstraction.models.NewSaleResponse
 import ae.oleapp.abstraction.models.ProfitReport
 import ae.oleapp.abstraction.models.ProfitReportResponse
 import ae.oleapp.abstraction.models.Sale
@@ -17,12 +22,17 @@ import ae.oleapp.abstraction.models.SalesOrderModelClass
 import ae.oleapp.abstraction.models.SalesOrderResponse
 import ae.oleapp.abstraction.models.StockUpdateData
 import ae.oleapp.abstraction.models.StockUpdateResponse
+import ae.oleapp.abstraction.models.UpdateProductResponse
 import ae.oleapp.abstraction.models.UpdateStockRequest
 import ae.oleapp.utils.TinyDB
 import android.content.Context
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
@@ -89,13 +99,13 @@ class InventoryRepository(private val context: Context) {
         )
 
         // Make the asynchronous API call
-        call.enqueue(object : Callback<InventoryProductResponse> {
+        call.enqueue(object : Callback<InventoryAddProductResponse> {
             override fun onResponse(
-                call: Call<InventoryProductResponse>,
-                response: Response<InventoryProductResponse>
+                call: Call<InventoryAddProductResponse>,
+                response: Response<InventoryAddProductResponse>
             ) {
                 if (response.isSuccessful) {
-                    val product = response.body()?.data?.firstOrNull()
+                    val product = response.body()?.data
                     if (product != null) {
                         callback(Result.success(product))
                     } else {
@@ -107,7 +117,7 @@ class InventoryRepository(private val context: Context) {
                 }
             }
 
-            override fun onFailure(call: Call<InventoryProductResponse>, t: Throwable) {
+            override fun onFailure(call: Call<InventoryAddProductResponse>, t: Throwable) {
                 callback(Result.failure(t))
             }
         })
@@ -122,79 +132,83 @@ class InventoryRepository(private val context: Context) {
         purchasePrice: Double,
         sellingPrice: Double,
         quantity: Int,
-        description: String? = null,
-        category: String? = null,
-        barcode: String? = null,
-        sku: String? = null,
         photoFile: File? = null,
         callback: (Result<InventoryProduct>) -> Unit
     ) {
-        // Convert all parameters to RequestBody
-        val productIdBody = productId.toRequestBody("text/plain".toMediaTypeOrNull())
-        val clubIdBody = clubId.toString().toRequestBody("text/plain".toMediaTypeOrNull())
-        val nameBody = name.toRequestBody("text/plain".toMediaTypeOrNull())
-        val purchasePriceBody = purchasePrice.toString().toRequestBody("text/plain".toMediaTypeOrNull())
-        val sellingPriceBody = sellingPrice.toString().toRequestBody("text/plain".toMediaTypeOrNull())
-        val quantityBody = quantity.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        try {
+            // Convert all parameters to RequestBody
+            val productIdBody = productId.toRequestBody("text/plain".toMediaTypeOrNull())
+            val clubIdBody = clubId.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+            val nameBody = name.toRequestBody("text/plain".toMediaTypeOrNull())
+            val purchasePriceBody = purchasePrice.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+            val sellingPriceBody = sellingPrice.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+            val quantityBody = quantity.toString().toRequestBody("text/plain".toMediaTypeOrNull())
 
-        // Optional parameters
-        val descriptionBody = description?.toRequestBody("text/plain".toMediaTypeOrNull())
-        val categoryBody = category?.toRequestBody("text/plain".toMediaTypeOrNull())
-        val barcodeBody = barcode?.toRequestBody("text/plain".toMediaTypeOrNull())
-        val skuBody = sku?.toRequestBody("text/plain".toMediaTypeOrNull())
-
-        // Prepare photo file if exists
-        val photoPart = photoFile?.let { file ->
-            file.asRequestBody("image/*".toMediaTypeOrNull()).let { requestFile ->
-                MultipartBody.Part.createFormData(
-                    "photo",
-                    file.name,
-                    requestFile
-                )
-            }
-        }
-
-        // Create the call to the Retrofit service
-        val call = ApiClient.inventoryService.updateInventoryProduct(
-            "Bearer $accessToken",
-            productIdBody,
-            clubIdBody,
-            nameBody,
-            purchasePriceBody,
-            sellingPriceBody,
-            quantityBody,
-            descriptionBody,
-            categoryBody,
-            barcodeBody,
-            skuBody,
-            photoPart
-        )
-
-        // Make the asynchronous API call
-        call.enqueue(object : Callback<InventoryProductResponse> {
-            override fun onResponse(
-                call: Call<InventoryProductResponse>,
-                response: Response<InventoryProductResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val product = response.body()?.data?.firstOrNull()
-                    if (product != null) {
-                        callback(Result.success(product))
-                    } else {
-                        callback(Result.failure(Throwable("No product data in response")))
-                    }
-                } else {
-                    val errorBody = response.errorBody()?.string() ?: "Unknown error"
-                    callback(Result.failure(Throwable("Error: ${response.code()} - $errorBody")))
+            // Prepare photo file if exists
+            val photoPart = photoFile?.let { file ->
+                file.asRequestBody("image/*".toMediaTypeOrNull()).let { requestFile ->
+                    MultipartBody.Part.createFormData(
+                        "photo",
+                        file.name,
+                        requestFile
+                    )
                 }
             }
 
-            override fun onFailure(call: Call<InventoryProductResponse>, t: Throwable) {
-                callback(Result.failure(t))
-            }
-        })
-    }
+            // Log the request details for debugging
+            Log.d("API_REQUEST", "Updating product with ID: $productId")
+            Log.d("API_REQUEST", "Club ID: $clubId, Name: $name")
+            Log.d("API_REQUEST", "Prices: $purchasePrice/$sellingPrice, Quantity: $quantity")
+            Log.d("API_REQUEST", "Photo: ${photoFile?.name ?: "null"}")
 
+            // Create the call to the Retrofit service
+            val call = ApiClient.inventoryService.updateInventoryProduct(
+                "Bearer $accessToken",
+                productIdBody,
+                clubIdBody,
+                nameBody,
+                purchasePriceBody,
+                sellingPriceBody,
+                quantityBody,
+                photoPart
+            )
+
+            // Make the asynchronous API call
+            call.enqueue(object : Callback<UpdateProductResponse> {
+                override fun onResponse(
+                    call: Call<UpdateProductResponse>,
+                    response: Response<UpdateProductResponse>
+                ) {
+                    val responseBody = response.body()
+
+                    if (response.isSuccessful && responseBody != null) {
+                        // Check the API-level status code
+                        if (responseBody.status == 200) { // Or whatever success code your API uses
+                            responseBody.data.let { product ->
+                                callback(Result.success(product))
+                            } ?: run {
+                                callback(Result.failure(Throwable("Product data is null")))
+                            }
+                        } else {
+                            // API-level error (like 400 in your case)
+                            callback(Result.failure(Throwable(responseBody.message ?: "API error ${responseBody.status}")))
+                        }
+                    } else {
+                        // HTTP-level error
+                        val errorBody = response.errorBody()?.string() ?: "Unknown error"
+                        callback(Result.failure(Throwable("HTTP error ${response.code()}: $errorBody")))
+                    }
+                }
+
+                override fun onFailure(call: Call<UpdateProductResponse>, t: Throwable) {
+                    callback(Result.failure(t))
+                }
+            })
+        } catch (e: Exception) {
+            Log.e("API_EXCEP_TION", "Failed to create request", e)
+            callback(Result.failure(e))
+        }
+    }
     fun updateStock(
         productId: String,
         quantity: Int,
@@ -268,7 +282,7 @@ class InventoryRepository(private val context: Context) {
 
     fun fetchSalesReport(
         clubId: Int = 1,
-        employeId: Int = 1,
+        employeId: Int?=null,
         callback: (Result<SaleReportData>) -> Unit
     ) {
         val call = ApiClient.inventoryService.getSalesReport("Bearer $accessToken", clubId, employeId)
@@ -431,6 +445,75 @@ class InventoryRepository(private val context: Context) {
             }
         })
     }
+
+    fun getEmployees(clubId: Int = 1, callback: (Result<List<Employee>>) -> Unit) {
+        val call = ApiClient.inventoryService.getEmployees(clubId,"Bearer $accessToken", )
+
+        call.enqueue(object : Callback<EmployeeResponse> {
+            override fun onResponse(
+                call: Call<EmployeeResponse>,
+                response: Response<EmployeeResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val summary = response.body()?.data
+                    if (summary != null) {
+                        callback(Result.success(summary))
+                    } else {
+                        callback(Result.failure(Throwable("Empty summary data")))
+                    }
+                } else {
+                    callback(Result.failure(Throwable("Error: ${response.code()} ${response.message()}")))
+                }
+            }
+
+            override fun onFailure(call: Call<EmployeeResponse>, t: Throwable) {
+                Log.e("InventoryRepository", "Inventory summary fetch failed: ${t.message}", t)
+                callback(Result.failure(t))
+            }
+        })
+    }
+
+    // For creating a sale
+    fun createSale(
+        clubId: RequestBody,
+        discount: RequestBody,
+        employeeId: RequestBody?,
+        notes: RequestBody?,
+        receipt: MultipartBody.Part?,
+        cart: RequestBody,
+        date: RequestBody,
+        token: String
+    ): LiveData<Result<NewSaleResponse>> {
+        val result = MutableLiveData<Result<NewSaleResponse>>()
+
+        ApiClient.inventoryService.createSale(
+            clubId,
+            discount,
+            employeeId,
+            notes,
+            receipt,
+            cart,
+            date,
+            token
+        ).enqueue(object : Callback<NewSaleResponse> {
+            override fun onResponse(call: Call<NewSaleResponse>, response: Response<NewSaleResponse>) {
+                if (response.isSuccessful) {
+                    result.postValue(Result.success(response.body()!!))
+                } else {
+                    result.postValue(Result.failure(Exception("Error: ${response.errorBody()?.string()}")))
+                }
+            }
+
+            override fun onFailure(call: Call<NewSaleResponse>, t: Throwable) {
+                result.postValue(Result.failure(t))
+            }
+        })
+
+        return result
+    }
+
+
+
 
 }
 

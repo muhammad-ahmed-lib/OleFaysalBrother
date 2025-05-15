@@ -6,14 +6,14 @@
     android:layout_marginTop="@dimen/_8sdp"
     android:padding="@dimen/_10sdp"
     android:background="@drawable/rounded_stroke_sh"
-    android:layout_height="@dimen/_70sdp">
+    android:layout_height="@dimen/_65sdp">
     <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:layout_width="@dimen/_84sdp"
+        android:layout_width="@dimen/_80sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="@dimen/_34sdp"
-        android:background="#C979C7EB"
+        android:layout_height="@dimen/_27sdp"
+        android:background="#EBEBEB"
         android:id="@+id/calBg"
         app:roundPercent="5"/>
     <TextView
@@ -21,9 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="1"
+        android:text="0"
         android:textColor="#26334A"
-        android:textSize="@dimen/_16ssp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/calBg"
         app:layout_constraintEnd_toEndOf="@id/calBg"
@@ -31,9 +31,9 @@
         app:layout_constraintBottom_toBottomOf="@id/calBg"
         />
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_22sdp"
-        android:layout_height="@dimen/_22sdp"
-        app:cardCornerRadius="@dimen/_11sdp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        app:cardCornerRadius="@dimen/_9sdp"
         android:id="@+id/minosBtn"
         app:cardElevation="@dimen/_1sdp"
         android:layout_marginStart="@dimen/_3sdp"
@@ -45,39 +45,31 @@
             android:background="@color/red"
             android:layout_marginHorizontal="@dimen/_6sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_2sdp"
+            android:layout_height="@dimen/_1sdp"
             android:layout_gravity="center"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_22sdp"
-        android:layout_height="@dimen/_22sdp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
         app:cardCornerRadius="@dimen/_11sdp"
         app:cardElevation="@dimen/_1sdp"
         android:id="@+id/plusBtn"
-
-        app:cardBackgroundColor="@color/greenColor"
+        app:cardBackgroundColor="@color/v5greenColor"
         android:layout_marginStart="@dimen/_3sdp"
         app:layout_constraintStart_toStartOf="@id/counterTv"
         app:layout_constraintEnd_toEndOf="@id/calBg"
         app:layout_constraintTop_toTopOf="@id/calBg"
         app:layout_constraintBottom_toBottomOf="@id/calBg">
-        <View
-            android:background="@color/yellowColor"
-            android:layout_marginHorizontal="@dimen/_6sdp"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_gravity="center"/>
-        <View
-            android:background="@color/yellowColor"
-            android:rotation="90"
-            android:layout_marginHorizontal="@dimen/_6sdp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_gravity="center"/>
+            android:layout_height="match_parent"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/plus_icon_yellow"
+            app:backgroundTint="@color/v5greenColor"/>
     </androidx.cardview.widget.CardView>
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:layout_width="@dimen/_60sdp"
-        android:padding="@dimen/_5sdp"
+        android:padding="@dimen/_8sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +83,7 @@
         android:gravity="center"
         android:text="AED 345"
         android:textColor="#26334A"
-        android:textSize="@dimen/_14ssp"
+        android:textSize="@dimen/_12ssp"
         android:textStyle="bold"
         android:layout_marginStart="@dimen/_10sdp"
         app:layout_constraintStart_toEndOf="@id/icon"
@@ -105,7 +97,7 @@
         android:gravity="center"
         android:textColor="#26334A"
         android:text="Stock: 32"
-        android:textSize="@dimen/_11ssp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="@id/amountTv"
         app:layout_constraintTop_toBottomOf="@id/amountTv"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -116,7 +108,7 @@
         android:gravity="center"
         android:textColor="#26334A"
         android:text="Water Pack"
-        android:textSize="@dimen/_11ssp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="@id/amountTv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/amountTv"/>

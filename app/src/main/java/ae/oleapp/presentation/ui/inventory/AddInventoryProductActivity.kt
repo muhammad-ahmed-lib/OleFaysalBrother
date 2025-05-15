@@ -1,19 +1,19 @@
 package ae.oleapp.presentation.ui.inventory
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import ae.oleapp.R
 import ae.oleapp.abstraction.errorhandling.ApiResponse
 import ae.oleapp.abstraction.repository.InventoryRepository
 import ae.oleapp.databinding.ActivityAddInventoryProductBinding
+import ae.oleapp.employee.utils.gone
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
+import ae.oleapp.utils.getPurchaseModel
 import ae.oleapp.utils.loadImage
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.core.net.toFile
 import androidx.lifecycle.ViewModelProvider
@@ -26,7 +26,7 @@ class AddInventoryProductActivity: AppCompatActivity() {
     private var selectedImageFile: File? = null
     private var isUpdateMode = false
     private var productId: String? = null
-
+    private val TAG="AddInventoryProductActivityInfo"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddInventoryProductBinding.inflate(layoutInflater)
@@ -52,14 +52,33 @@ class AddInventoryProductActivity: AppCompatActivity() {
     }
 
     private fun checkIntentForUpdate() {
-        intent?.extras?.let { bundle ->
+        intent?.getPurchaseModel("PURCHASE_MODEL")?.let {
+            if (it.isUpdate){
+                isUpdateMode = true
+                productId = it.editId
+                Log.d(TAG, "checkIntentForUpdate: will Update $productId")
+                binding.titleTv.text = getString(R.string.update_product)
+                binding.itemNameEd.setText(it.name)
+                binding.purchasePriceEd.setText(it.purchasePrice)
+                binding.salePriceEd.setText(it.salePrice)
+                binding.quantityEd.setText(it.quantity)
+                binding.clubIdEd.setText(it.clubId)
+
+                if (it.imageUrl != null) {
+                    binding.imagePreview.loadImage(it.imageUrl)
+                    binding.iamgehint.gone()
+                    binding.imageHintTv.gone()
+                }
+            }
+        }
+        /* intent?.extras?.let { bundle ->
             if (bundle.containsKey("PRODUCT_ID")) {
                 isUpdateMode = true
                 productId = bundle.getString("PRODUCT_ID")
                 binding.titleTv.text = getString(R.string.update_product)
                 // Load existing product data here if needed
             }
-        }
+        }*/
     }
 
     private fun setupUI() {

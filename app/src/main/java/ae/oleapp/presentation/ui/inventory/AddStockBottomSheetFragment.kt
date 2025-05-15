@@ -14,7 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class AddStockBottomSheetFragment(
-    private val productId: String?=null
+    private val productId: String? = null,
+    private val onDone: ((Boolean) -> Unit)? = null // Callback function
 ) : BottomSheetDialogFragment() {
 
     private var _binding: FragmentAddStockBottomSheetBinding? = null
@@ -61,11 +62,14 @@ class AddStockBottomSheetFragment(
                 is ApiResponse.Success -> {
                     showProgress(false)
                     showSuccess("Stock updated successfully!")
+                    onDone?.invoke(true)
                     dismiss()
+
                 }
                 is ApiResponse.Error -> {
                     showProgress(false)
                     showError(response.error.toString())
+                    onDone?.invoke(false)
                 }
             }
         }
@@ -112,8 +116,8 @@ class AddStockBottomSheetFragment(
     }
 
     companion object {
-        fun newInstance(productId: String): AddStockBottomSheetFragment {
-            return AddStockBottomSheetFragment(productId)
+        fun newInstance(productId: String,onDone: ((Boolean) -> Unit)? = null): AddStockBottomSheetFragment {
+            return AddStockBottomSheetFragment(productId,onDone)
         }
     }
 }

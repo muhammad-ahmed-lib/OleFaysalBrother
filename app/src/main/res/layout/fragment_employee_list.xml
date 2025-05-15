@@ -436,7 +436,7 @@
         android:src="@drawable/plus_icon_yellow"
         app:backgroundTint="@color/v5greenColor"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <View
         android:id="@+id/loaderBindingView"

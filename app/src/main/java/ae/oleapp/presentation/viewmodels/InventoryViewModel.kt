@@ -1,9 +1,12 @@
 package ae.oleapp.presentation.viewmodels
 
 import ae.oleapp.abstraction.errorhandling.ApiResponse
+import ae.oleapp.abstraction.models.Employee
+import ae.oleapp.abstraction.models.EmployeeResponse
 import ae.oleapp.abstraction.models.InventoryProduct
 import ae.oleapp.abstraction.models.InventoryStockData
 import ae.oleapp.abstraction.models.InventorySummary
+import ae.oleapp.abstraction.models.NewSaleResponse
 import ae.oleapp.abstraction.models.ProfitReport
 import ae.oleapp.abstraction.models.Sale
 import ae.oleapp.abstraction.models.SaleReportData
@@ -15,6 +18,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.io.File
 
@@ -42,13 +47,14 @@ class InventoryViewModel(
     val productsResponse: LiveData<ApiResponse<List<InventoryProduct>>> = _productsResponse
 
 
+
+
     init {
         getSales()
         getInventoryStockReport()  // Fetch inventory stock report initially
         getProfitReport()
         getHomePageSummary()
         getInventoryProducts()
-        fetchSalesReport(1,1)
     }
 
 
@@ -118,11 +124,6 @@ class InventoryViewModel(
                 purchasePrice = purchasePrice,
                 sellingPrice = sellingPrice,
                 quantity = quantity,
-                description = description,
-                category = category,
-                barcode = barcode,
-                sku = sku,
-                photoFile = photoFile
             ) { result ->
                 result.onSuccess { product ->
                     _updateProductResponse.postValue(ApiResponse.Success(product))
@@ -183,9 +184,8 @@ class InventoryViewModel(
     val salesReportResponse: LiveData<ApiResponse<SaleReportData>> = _salesReportResponse
 
 
-    fun fetchSalesReport( clubId: Int = 1,
-                          employeId: Int = 1) {
-        _productsResponse.postValue(ApiResponse.Loading())
+    fun fetchSalesReport( clubId: Int = 1, employeId: Int?=null) {
+        _salesReportResponse.postValue(ApiResponse.Loading())
         Log.d("InventoryViewModel", "Loading inventory products...")
 
         viewModelScope.launch {
@@ -288,4 +288,24 @@ class InventoryViewModel(
         }
     }
 
+
+    private val _emloyeRes = MutableLiveData<ApiResponse<List<Employee>>>()
+    val employeData: LiveData<ApiResponse<List<Employee>>> = _emloyeRes
+
+
+    fun fetchEmployees( clubId: Int = 1) {
+        _emloyeRes.postValue(ApiResponse.Loading())
+        Log.d("InventoryViewModel", "Loading inventory products...")
+
+        viewModelScope.launch {
+            repository.getEmployees(clubId) { result ->
+                result.onSuccess { productsList ->
+                    _emloyeRes.postValue(ApiResponse.Success(productsList))
+                }.onFailure { error ->
+                    Log.e("InventoryViewModel", "Failed to fetch products: ${error.message}", error)
+                    _emloyeRes.postValue(ApiResponse.Error(error.message ?: "Unknown error"))
+                }
+            }
+        }
+    }
 }

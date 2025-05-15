@@ -49,6 +49,7 @@ import ae.oleapp.owner.OleFastBookingActivity;
 import ae.oleapp.owner.OleOwnerMainTabsActivity;
 import ae.oleapp.booking.schedule.OleScheduleListActivity;
 import ae.oleapp.partner.PartnerHomeActivity;
+import ae.oleapp.presentation.ui.inventory.InventoryActivity;
 import ae.oleapp.promotions.PromotionActivity;
 import ae.oleapp.util.AppManager;
 import ae.oleapp.util.Constants;
@@ -416,7 +417,8 @@ public class OleClubListFragment extends BaseFragment implements View.OnClickLis
                     binding.relInventory.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent inventoryIntent = new Intent(getContext(), OleInventoryActivity.class);
+                          //  Intent inventoryIntent = new Intent(getContext(), OleInventoryActivity.class);
+                            Intent inventoryIntent = new Intent(getContext(), InventoryActivity.class);
                             inventoryIntent.putExtra("club_id", clubList.get(pos).getId());
                             startActivity(inventoryIntent);
                         }

@@ -12,9 +12,6 @@ import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-/**
- * https://medium.com/@rahmicemreunal/auto-inflated-cleared-view-binding-in-fragments-using-delegation-2ada0b43a8e4
- */
 
 class FragmentViewBindingDelegate<T : ViewBinding>(
     val fragment: Fragment,

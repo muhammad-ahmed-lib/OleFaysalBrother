@@ -92,32 +92,20 @@
                     tools:itemCount="2"
                     tools:listitem="@layout/inventory_sell_rec_item" />
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addItemBtn"
-                android:layout_width="@dimen/_44sdp"
-                android:layout_height="@dimen/_44sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:contentDescription="@string/add"
+                android:src="@drawable/plus_icon_yellow"
+                app:backgroundTint="@color/v5greenColor"
                 android:layout_marginBottom="@dimen/_20sdp"
-                app:cardCornerRadius="@dimen/_22sdp"
-                app:cardElevation="@dimen/_2sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                >
-                <View
-                    android:background="@color/yellowColor"
-                    android:layout_marginHorizontal="@dimen/_13sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp"
-                    android:layout_gravity="center"/>
-                <View
-                    android:background="@color/yellowColor"
-                    android:rotation="90"
-                    android:layout_marginHorizontal="@dimen/_13sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp"
-                    android:layout_gravity="center"/>
-            </androidx.cardview.widget.CardView>
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

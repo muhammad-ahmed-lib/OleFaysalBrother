@@ -80,6 +80,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#26334A"
+        android:maxLength="16"
         android:textStyle="bold"
 
         android:text="Water Pack"

@@ -18,10 +18,22 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
 import ae.oleapp.utils.openActivity
+import ae.oleapp.utils.putPurchaseModel
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+
+data class PurchasePassModelClass(
+    val editId: String,
+    val clubId: String?=null,
+    val name: String?=null,
+    val purchasePrice: String?=null,
+    val salePrice: String?=null,
+    val quantity: String?=null,
+    val imageUrl: String?=null,
+    val isUpdate: Boolean=false
+)
 
 class InventoryPurchaseActivity : AppCompatActivity() {
     private val list by lazy { ArrayList<InventoryProduct>() }
@@ -44,9 +56,9 @@ class InventoryPurchaseActivity : AppCompatActivity() {
             InventoryViewModelFactory(repository)
         )[InventoryViewModel::class.java]
 
-        observeSalesData()
 
     }
+
     private fun observeSalesData() {
         viewModel.productsResponse.observe(this) { response ->
             when (response) {
@@ -79,21 +91,38 @@ class InventoryPurchaseActivity : AppCompatActivity() {
             binding.stockTv.text = "Stock: "+item.current_stock.toString()
             binding.icon.loadImage(item.photo)
             binding.root.setOnClickListener {
+                Log.d(TAG, "rec: ${item.id}")
                 val i= Intent(this,AddInventoryProductActivity::class.java)
-                i.putExtra("PRODUCT_ID",item.id)
+                i.putPurchaseModel(model = PurchasePassModelClass(
+                    clubId = "1",
+                    name = item.name,
+                    purchasePrice = item.purchase_price.toString(),
+                    salePrice = item.selling_price.toString(),
+                    editId = item.id.toString(),
+                    imageUrl = item.photo.toString(),
+                    quantity = "0",
+                    isUpdate = true
+                ))
                 startActivity(i)
             }
 
         }
         binding.addItemBtn.setOnClickListener {
-            openActivity<AddInventoryProductActivity>()
+            val i= Intent(this,AddInventoryProductActivity::class.java)
+            i.putPurchaseModel(model = PurchasePassModelClass(
+                editId = "-1",
+                isUpdate = false
+            ))
+            startActivity(i)
+
         }
 
         binding.moneyRec.adapter = adapter
     }
     override fun onResume() {
         super.onResume()
-
+        viewModel.getInventoryProducts()
+        observeSalesData()
 
     }
 }

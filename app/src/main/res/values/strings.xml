@@ -1446,5 +1446,6 @@
     <string name="total_sell">Total Sell</string>
     <string name="add_product">Add Product</string>
     <string name="update_product">Update Product</string>
+    <string name="pos">POS</string>
 
 </resources>

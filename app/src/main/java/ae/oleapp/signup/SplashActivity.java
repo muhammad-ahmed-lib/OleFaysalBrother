@@ -25,6 +25,7 @@ import ae.oleapp.base.BaseActivity;
 import ae.oleapp.databinding.OleactivitySplashBinding;
 import ae.oleapp.models.CountryPhoneList;
 import ae.oleapp.models.UserInfo;
+import ae.oleapp.owner.OleOwnerMainTabsActivity;
 import ae.oleapp.presentation.ui.inventory.InventoryActivity;
 import ae.oleapp.util.AppManager;
 import ae.oleapp.util.Constants;
@@ -99,8 +100,8 @@ public class SplashActivity extends BaseActivity {
                     if (deepLinkUri != null){
                         Functions.showToast(getContext(), "You are currently logged in as Owner\nPlease login as player first.", FancyToast.ERROR);
                     }
-                   Intent i = new Intent(getContext(), InventoryActivity.class);
-                  //  Intent i = new Intent(getContext(), OleOwnerMainTabsActivity.class);
+                 //     Intent i = new Intent(getContext(), InventoryActivity.class);
+                   Intent i = new Intent(getContext(), OleOwnerMainTabsActivity.class);
                     startActivity(i);
                     finish();
                 }

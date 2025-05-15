@@ -1,24 +1,20 @@
 package ae.oleapp.presentation.ui.inventory
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import ae.oleapp.R
 import ae.oleapp.abstraction.errorhandling.ApiResponse
-import ae.oleapp.abstraction.models.GenericModelClass
 import ae.oleapp.abstraction.models.ProfitReport
-import ae.oleapp.abstraction.models.SaleReportData
 import ae.oleapp.abstraction.repository.InventoryRepository
-import ae.oleapp.databinding.ActivityInventoruSaleOrderBinding
 import ae.oleapp.databinding.ActivityInventoryProfitRateBinding
-import ae.oleapp.databinding.InventorySalesOrderRecItemBinding
+import ae.oleapp.databinding.InventoryProfitRateRecItemBinding
 import ae.oleapp.databinding.ProfiteDiscountRecItemBinding
 import ae.oleapp.presentation.ui.adapter.GenericAdapter
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.splitToDayMonthAndYear
+import android.annotation.SuppressLint
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -57,7 +53,7 @@ class InventoryProfitRateActivity : AppCompatActivity() {
                     response.data?.let { summary ->
                         list.clear()
                         list.addAll(summary)
-                        rec()
+                        rec(summary)
                     }
                 }
 
@@ -68,30 +64,29 @@ class InventoryProfitRateActivity : AppCompatActivity() {
             }
         }
     }
-    private fun rec(){
+    @SuppressLint("SetTextI18n")
+    private fun rec(summary: List<ProfitReport>) {
         val adapter = GenericAdapter(
             items = list,
-            bindingInflater = InventorySalesOrderRecItemBinding::inflate
+            bindingInflater = InventoryProfitRateRecItemBinding::inflate
         ) { binding, item, _ ->
-            binding.amountTv.text=item.selling_price.toString()
-            binding.orderByNameTv.text=item.name
-            binding.quantityTv.text="Qty: ${item.quantity_sold}"
+            binding.nameTv.text = item.name
+            binding.amountTv.text = "${item.total_profit}"
+            binding.soldQtTv.text = "Sold Qty: "+item.quantity_sold
+            binding.salePriceTv.text = "AED "+item.selling_price
+            binding.quantityTv.text = "Qty: ${item.quantity_sold}"
             binding.icon.loadImage(R.drawable.water_pack_img)
         }
-
         binding.rec.adapter = adapter
-    }
-    override fun onResume() {
-        super.onResume()
         profitDisList.clear()
-
+        val firstItem=summary.firstOrNull()
         profitDisList.add(
             InventorySellOrderModelClass(
                 orderNo = "Profit",
-                price = "AED 349",
-                orderedDate = "3-May-2023",
+                price = "AED "+firstItem?.total_profit,
+                orderedDate = null.splitToDayMonthAndYear().toString(),
                 orderBy = "Ahmed",
-                qnt = "341",
+                qnt = firstItem?.quantity_sold.toString(),
                 icon = R.drawable.sale_inventory
             )
         )
@@ -100,8 +95,8 @@ class InventoryProfitRateActivity : AppCompatActivity() {
         profitDisList.add(
             InventorySellOrderModelClass(
                 orderNo = "Discount",
-                price = "AED 349",
-                orderedDate = "3-May-2023",
+                price = "AED "+firstItem?.total_discount,
+                orderedDate = null.splitToDayMonthAndYear().toString(),
                 orderBy = "Ahmed",
                 qnt = "341",
                 icon = R.drawable.sale_inventory
@@ -119,6 +114,20 @@ class InventoryProfitRateActivity : AppCompatActivity() {
         }
 
         binding.profitDiscountRec.adapter = adpter
+
+        binding.currentAmountTv.text="AED "+firstItem?.total_sales.toString()
+        try {
+            val (dayMonth, year) = null.splitToDayMonthAndYear()
+            binding.currentDateMonthTv.text = dayMonth
+            binding.currentYearTv.text = year
+        } catch (e: Exception) {
+            binding.currentDateMonthTv.text = ""
+            binding.currentYearTv.text = ""
+        }
+    }
+    override fun onResume() {
+        super.onResume()
+
 
     }
 }

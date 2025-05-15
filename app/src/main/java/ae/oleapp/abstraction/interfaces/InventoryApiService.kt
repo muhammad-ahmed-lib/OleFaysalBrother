@@ -1,18 +1,23 @@
 package ae.oleapp.abstraction.interfaces
 
+import ae.oleapp.abstraction.models.EmployeeResponse
+import ae.oleapp.abstraction.models.InventoryAddProductResponse
 import ae.oleapp.abstraction.models.InventoryProductResponse
 import ae.oleapp.abstraction.models.InventoryStockResponse
 import ae.oleapp.abstraction.models.InventorySummaryResponse
+import ae.oleapp.abstraction.models.NewSaleResponse
 import ae.oleapp.abstraction.models.ProfitReportResponse
 import ae.oleapp.abstraction.models.Sale
 import ae.oleapp.abstraction.models.SaleReportResponse
 import ae.oleapp.abstraction.models.SaleResponse
 import ae.oleapp.abstraction.models.SalesOrderResponse
 import ae.oleapp.abstraction.models.StockUpdateResponse
+import ae.oleapp.abstraction.models.UpdateProductResponse
 import ae.oleapp.abstraction.models.UpdateStockRequest
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -26,12 +31,12 @@ import retrofit2.http.Query
 interface InventoryApiService {
 
 
+
     @GET("owner/inventory")
     fun getInventoryProducts(
         @Header("Authorization") token: String,
         @Query("club_id") clubId: Int
     ): Call<InventoryProductResponse>
-
 
 
     @GET("owner/inventory/sales/all")
@@ -84,10 +89,10 @@ interface InventoryApiService {
         @Part("barcode") barcode: RequestBody?,
         @Part("sku") sku: RequestBody?,
         @Part photo: MultipartBody.Part?
-    ): Call<InventoryProductResponse>
+    ): Call<InventoryAddProductResponse>
 
     @Multipart
-    @POST("owner/inventory") // Changed to update endpoint
+    @PUT("owner/inventory") // Changed to update endpoint
     fun updateInventoryProduct(
         @Header("Authorization") token: String,
         @Part("product_id") productId: RequestBody,
@@ -96,12 +101,8 @@ interface InventoryApiService {
         @Part("purchase_price") purchasePrice: RequestBody,
         @Part("selling_price") sellingPrice: RequestBody,
         @Part("quantity") quantity: RequestBody,
-        @Part("description") description: RequestBody?,
-        @Part("category") category: RequestBody?,
-        @Part("barcode") barcode: RequestBody?,
-        @Part("sku") sku: RequestBody?,
         @Part photo: MultipartBody.Part?
-    ): Call<InventoryProductResponse>
+    ): Call<UpdateProductResponse>
 
 
     @PUT("owner/inventory/stock")
@@ -115,6 +116,26 @@ interface InventoryApiService {
     fun getSalesReport(
         @Header("Authorization") token: String,
         @Query("club_id") clubId: Int,
-        @Query("employee_id") employeeId: Int
+        @Query("employee_id") employeeId: Int? = null  // Make it nullable and optional
     ): Call<SaleReportResponse>
+
+    @GET("owner/employees")
+    fun getEmployees(
+        @Query("club_id") clubId: Int,
+        @Header("Authorization") token: String,
+    ): Call<EmployeeResponse>
+
+
+    @Multipart
+    @POST("owner/inventory/sales")
+    fun createSale(
+        @Part("club_id") clubId: RequestBody,
+        @Part("discount") discount: RequestBody,
+        @Part("employee_id") employeeId: RequestBody?,
+        @Part("notes") notes: RequestBody?,
+        @Part receipt: MultipartBody.Part?,  // For file upload
+        @Part("cart") cart: RequestBody,  // Serialized JSON
+        @Part("date") date: RequestBody,
+        @Header("Authorization") token: String,
+        ): Call<NewSaleResponse>
 }
