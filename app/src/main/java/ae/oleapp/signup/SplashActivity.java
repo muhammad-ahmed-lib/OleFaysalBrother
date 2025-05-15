@@ -29,6 +29,7 @@ import ae.oleapp.presentation.ui.inventory.InventoryActivity;
 import ae.oleapp.util.AppManager;
 import ae.oleapp.util.Constants;
 import ae.oleapp.util.Functions;
+import ae.oleapp.utils.TinyDB;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -53,6 +54,9 @@ public class SplashActivity extends BaseActivity {
         makeStatusbarTransperant();
 
         getCountries(false);
+
+        new TinyDB(this).putToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW5fdHlwZSI6IkFDQ0VTUyIsImlhdCI6MTc0NzA1OTk5NywiZXhwIjoxNzUyMjQzOTk3fQ.TifhXxKctMMommy9XVR786v8u3gotqD24x-9c0oVNcQ");
+
 
         if (Functions.getAppLangStr(getContext()).isEmpty()) {
             Functions.setAppLang(getContext(), "en");

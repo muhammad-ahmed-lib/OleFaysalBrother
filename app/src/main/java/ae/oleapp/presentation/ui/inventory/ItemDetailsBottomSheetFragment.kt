@@ -1,60 +1,85 @@
 package ae.oleapp.presentation.ui.inventory
 
+import ae.oleapp.abstraction.errorhandling.ApiResponse
+import ae.oleapp.abstraction.repository.InventoryRepository
+import ae.oleapp.databinding.FragmentItemDetailsBottomSheetBinding
+import ae.oleapp.presentation.viewmodels.InventoryViewModel
+import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ae.oleapp.R
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ItemDetailsBottomSheetFragment (val myId:Int=-1): BottomSheetDialogFragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ItemDetailsBottomSheetFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ItemDetailsBottomSheetFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentItemDetailsBottomSheetBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var viewModel: InventoryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_details_bottom_sheet, container, false)
+    ): View {
+        _binding = FragmentItemDetailsBottomSheetBinding.inflate(inflater, container, false)
+
+        // Transparent background
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ItemDetailsBottomSheetFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ItemDetailsBottomSheetFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val repository = InventoryRepository(requireContext())
+        viewModel = ViewModelProvider(this, InventoryViewModelFactory(repository))[InventoryViewModel::class.java]
+
+        binding.backBtn.setOnClickListener {
+            dismiss()
+        }
+        observeSummary()
+
+    }
+    private fun observeSummary() {
+        if (id==-1)return
+        viewModel.getSaleDetails(myId)
+        viewModel.salesDetailResponse.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is ApiResponse.Loading -> {
+                    // Show loading if needed
+                }
+                is ApiResponse.Success -> {
+                    response.data?.let {summary->
+                        // Set order number safely
+                        binding.orderNoTv.text = summary.id.toString() ?: "N/A"
+                        binding.grandTotalTv.text = summary.total_amount.toString() ?: "N/A"
+                        binding.itemNameTv.text = summary.items?.firstOrNull()?.inventory?.name.toString() ?: "N/A"
+                        binding.itemNameCountTv.text = summary.items?.firstOrNull()?.inventory?.quantity.toString() ?: "N/A"
+
+                        // Set created date safely
+                        summary.created_at.let { createdAt ->
+                            binding.dateTv.text = createdAt // or use `date` if needed
+                        }
+
+                        // Set sale date safely
+                        summary.sale_date?.let { saleDate ->
+                            binding.discountTv.text = saleDate // or use `date` if needed
+                        }
+                    }
+
+                }
+                is ApiResponse.Error -> {
+                  //  binding.titleTv.text = "Error: ${response.error}"
                 }
             }
+        }
+    }
+
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

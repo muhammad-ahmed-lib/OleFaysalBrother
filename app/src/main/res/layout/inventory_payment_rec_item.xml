@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:background="@drawable/background_stroke_gray"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/childCard"
+        app:layout_constraintTop_toTopOf="@id/childCard">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|start"
+            android:text="Water Pack"
+            android:textColor="#26334A"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalItemTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:textStyle="bold"
+            android:text="452 AED"
+            android:textColor="#26334A"
+            android:textSize="@dimen/_12ssp"
+            />
+    </LinearLayout>-->
+
+</androidx.cardview.widget.CardView>

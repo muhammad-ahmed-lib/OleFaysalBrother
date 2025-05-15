@@ -24,34 +24,40 @@ import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface ApiService{
+interface ApiService {
 
     @GET("owner/employees")
     suspend fun getAllEmployees(@Query("club_id") id: Int): BaseResponse<List<GetAllEmployeeResponse>>
 
     @GET("owner/employees/designation/{clubId}")
-    suspend fun getEmployeeDesignations(@Path ("clubId") id: Int): BaseResponse<List<GetDesignationDataResponse>>
+    suspend fun getEmployeeDesignations(@Path("clubId") id: Int): BaseResponse<List<GetDesignationDataResponse>>
 
     @FormUrlEncoded
     @POST("owner/employees/designation/add")
-    suspend fun addEmployeeDesignation(@Field("designation_name") designationName: String,
-                                       @Field("permissions") permissions: String,
-                                       @Field("club_id") clubId: String): BaseResponse<GetDesignationDataResponse>
+    suspend fun addEmployeeDesignation(
+        @Field("designation_name") designationName: String,
+        @Field("permissions") permissions: String,
+        @Field("club_id") clubId: String
+    ): BaseResponse<GetDesignationDataResponse>
 
     @FormUrlEncoded
     @POST("owner/employees/designation/add")
-    suspend fun updateEmployeeDesignation(@Field("designation_id") designationId: Int?,
-                                       @Field("designation_name") designationName: String,
-                                       @Field("permissions") permissions: String,
-                                       @Field("club_id") clubId: String): BaseResponse<GetDesignationDataResponse>
+    suspend fun updateEmployeeDesignation(
+        @Field("designation_id") designationId: Int?,
+        @Field("designation_name") designationName: String,
+        @Field("permissions") permissions: String,
+        @Field("club_id") clubId: String
+    ): BaseResponse<GetDesignationDataResponse>
 
     @GET("owner/club")
-    suspend fun getOwnerClubList(@Query("latitude") latitude : Double,
-                                 @Query("longitude")  longitude : Double,
-                                 @Query("date")  date : String) : BaseResponse<List<GetClub>>
+    suspend fun getOwnerClubList(
+        @Query("latitude") latitude: Double,
+        @Query("longitude") longitude: Double,
+        @Query("date") date: String
+    ): BaseResponse<List<GetClub>>
 
     @GET("general/utils/permissions")
-    suspend fun getPermissions() : BaseResponse<List<Permission>>
+    suspend fun getPermissions(): BaseResponse<List<Permission>>
 
     @Multipart
     @POST("owner/employees")
@@ -66,7 +72,7 @@ interface ApiService{
         @Part("salary") salary: RequestBody,
         @Part("login_id") loginId: RequestBody,
         @Part("password") password: RequestBody
-    ) : BaseResponse<EmployeeResponse>
+    ): BaseResponse<EmployeeResponse>
 
     @Multipart
     @PUT("owner/employees")
@@ -82,24 +88,29 @@ interface ApiService{
         @Part("salary") salary: RequestBody?,
         @Part("login_id") loginId: RequestBody?,
         @Part("password") password: RequestBody?
-    ) : BaseResponse<EmployeeResponse>
+    ): BaseResponse<EmployeeResponse>
 
     @GET("owner/employees/single")
-    suspend fun getEmployeeDetails(@Query("employee_id") employeeId: Int,
-                                   @Query("club_id") clubId: Int) : BaseResponse<GetEmployeeDetails>
+    suspend fun getEmployeeDetails(
+        @Query("employee_id") employeeId: Int,
+        @Query("club_id") clubId: Int
+    ): BaseResponse<GetEmployeeDetails>
 
     @FormUrlEncoded
     @POST("owner/employees/task/add")
-    suspend fun addEmployeeNote(@Field("employee_id") employeeId: String,
-                                @Field("club_id") clubId: String,
-                                @Field("description") description: String,
-                                @Field("due_date") dueDate: String): BaseResponse<EmployeeNotes>
+    suspend fun addEmployeeNote(
+        @Field("employee_id") employeeId: String,
+        @Field("club_id") clubId: String,
+        @Field("description") description: String,
+        @Field("due_date") dueDate: String
+    ): BaseResponse<EmployeeNotes>
 
     @FormUrlEncoded
     @PUT("owner/employees/{id}/tasks")
     suspend fun updateEmployeeNote(
-                                @Path("id") taskId: String,
-                                @Field("description") description: String, ): BaseResponse<EmployeeNotes>
+        @Path("id") taskId: String,
+        @Field("description") description: String,
+    ): BaseResponse<EmployeeNotes>
 
 
     @DELETE("owner/employees/{id}/tasks")
@@ -108,8 +119,10 @@ interface ApiService{
 
     @FormUrlEncoded
     @POST("owner/employees/assign-club")
-    suspend fun assignClub(@Field("employee_id") employeeId: String,
-                                @Field("club_id") clubId: String): BaseResponse<AssignedClub>
+    suspend fun assignClub(
+        @Field("employee_id") employeeId: String,
+        @Field("club_id") clubId: String
+    ): BaseResponse<AssignedClub>
 
     @GET("owner/employees/{employee_id}/reviews")
     suspend fun getEmployeeRatings(@Path("employee_id") employeeId: Int): BaseResponse<List<ReviewData>>

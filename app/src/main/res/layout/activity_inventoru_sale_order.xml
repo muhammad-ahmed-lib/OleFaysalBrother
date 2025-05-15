@@ -30,7 +30,7 @@
                 android:id="@+id/backBtn"
                 app:roundPercent="1"
                 android:padding="@dimen/_8sdp"
-                android:src="@drawable/back_btn_ic"
+                android:src="@drawable/back_icon"
                 android:background="@color/black20Color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/backBtn"
                 android:textStyle="bold"
                 android:textSize="@dimen/_14ssp"
-                android:text="@string/inventory"
+                android:text="@string/sales_orders"
                 android:gravity="center"
                 android:textColor="@color/white"/>
             <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -54,7 +54,7 @@
                 app:roundPercent="1"
                 android:padding="@dimen/_8sdp"
                 android:rotation="180"
-                android:src="@drawable/menu_icon"
+                android:src="@drawable/inventory_menu_img"
                 android:background="@color/black20Color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +73,17 @@
                 android:id="@+id/searchCard"
                 app:layout_constraintTop_toBottomOf="@id/backBtn"
                 android:layout_marginHorizontal="@dimen/_15sdp">
+                <EditText
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Search..."
+                    android:id="@+id/searchViewEd"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/search_view_icon"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView

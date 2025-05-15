@@ -9,8 +9,11 @@ class TinyDB(context: Context) {
 
     private val preferences: SharedPreferences =
         context.getSharedPreferences("TinyDB", Context.MODE_PRIVATE)
+    private val TOKEN="TOKEN"
 
 
+    fun putToken(value: String)=putString(TOKEN,value)
+    fun getToken()=getString(TOKEN)
     fun putString(key: String, value: String) {
         preferences.edit() { putString(key, value) }
     }

@@ -1444,5 +1444,7 @@
     <string name="water_pack">Water Pack</string>
     <string name="enter_the_quantity_of_the_current_available_stock">Enter the quantity of the current available stock.</string>
     <string name="total_sell">Total Sell</string>
+    <string name="add_product">Add Product</string>
+    <string name="update_product">Update Product</string>
 
 </resources>

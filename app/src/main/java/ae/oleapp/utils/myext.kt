@@ -13,6 +13,7 @@ import androidx.annotation.DrawableRes
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import java.io.File
 
 fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     requireActivity().showToast(message,duration)
@@ -73,6 +74,14 @@ fun ImageView.loadImage(url: String?) {
         .into(this)
 }
 
+fun ImageView.loadImage(url: File?) {
+    if (!canLoadImage()) return
+    Glide.with(this.context)
+        .load(url)
+        .placeholder(android.R.color.darker_gray)
+        .into(this)
+}
+
 // Load from drawable resource
 fun ImageView.loadImage(@DrawableRes resId: Int) {
     if (!canLoadImage()) return
@@ -95,4 +104,20 @@ fun ImageView.loadImage(bitmap: Bitmap?) {
     Glide.with(this.context)
         .load(bitmap)
         .into(this)
+}
+
+
+fun String.splitToDayMonthAndYear(): Pair<String, String> {
+    return try {
+        val parts = this.split("-")
+        if (parts.size >= 3) {
+            val dayMonth = "${parts[2]}-${parts[1]}"
+            val year = parts[0]
+            Pair(dayMonth, year)
+        } else {
+            Pair("Invalid", "Invalid")
+        }
+    } catch (e: Exception) {
+        Pair("Invalid", "Invalid")
+    }
 }
