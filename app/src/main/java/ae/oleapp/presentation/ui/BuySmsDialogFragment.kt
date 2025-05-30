@@ -7,14 +7,18 @@ import ae.oleapp.abstraction.repository.SmsRepository
 import ae.oleapp.databinding.FragmentBuySmsDialogBinding
 import ae.oleapp.presentation.viewmodels.SmsViewModel
 import ae.oleapp.presentation.viewmodels.SmsViewModelFactory
+import ae.oleapp.utils.InsetsWithKeyboardCallback
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -49,6 +53,10 @@ class BuySmsDialogFragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+        return super.onCreateDialog(savedInstanceState)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

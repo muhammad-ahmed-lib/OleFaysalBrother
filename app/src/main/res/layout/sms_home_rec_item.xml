@@ -5,8 +5,8 @@
     android:background="@drawable/rounded_stroke_sh"
     android:padding="@dimen/_10sdp"
     android:layout_marginHorizontal="@dimen/_4sdp"
-    android:layout_marginTop="@dimen/_4sdp"
-    android:layout_height="@dimen/_60sdp">
+    android:layout_marginTop="@dimen/_6sdp"
+    android:layout_height="@dimen/_54sdp">
     <ImageView
         android:layout_width="@dimen/_27sdp"
         android:layout_height="@dimen/_27sdp"
@@ -30,6 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/mm"
         android:id="@+id/line"
+        android:background="@color/ebebeb"
         android:layout_marginStart="@dimen/_10sdp"/>
     <ImageView
         android:layout_width="@dimen/_8sdp"

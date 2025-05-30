@@ -23,7 +23,7 @@
             <ImageView
                 android:id="@+id/p_club_bg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_140sdp"
+                android:layout_height="@dimen/_110sdp"
                 android:layout_centerInParent="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/v5_owner_bg"
@@ -251,6 +251,7 @@
                         android:id="@+id/rec"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        tools:listitem="@layout/messages_rec_item"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:layout_constraintTop_toBottomOf="@id/messageEd"
                         app:layout_constraintStart_toStartOf="parent"
@@ -266,7 +267,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnSend"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_44sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:cardBackgroundColor="#146141"

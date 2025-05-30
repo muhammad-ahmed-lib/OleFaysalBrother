@@ -13,6 +13,7 @@ import ae.oleapp.presentation.ui.adapter.GenericAdapter
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.showKProgress
 import ae.oleapp.utils.splitToDayMonthAndYear
 import android.annotation.SuppressLint
 import android.util.Log
@@ -46,10 +47,12 @@ class InventoryProfitRateActivity : AppCompatActivity() {
         viewModel.profitReport.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
                     Log.d(TAG, "observeSalesData: Loading")
                 }
 
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
                     response.data?.let { summary ->
                         list.clear()
                         list.addAll(summary)
@@ -58,6 +61,7 @@ class InventoryProfitRateActivity : AppCompatActivity() {
                 }
 
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT)
                         .show()
                 }

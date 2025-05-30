@@ -10,14 +10,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
+
 import com.google.gson.Gson;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+
 import ae.oleapp.BuildConfig;
 import ae.oleapp.R;
 import ae.oleapp.activities.LoginActivity;
@@ -73,7 +77,7 @@ public class SplashActivity extends BaseActivity {
         try {
             pkgInfo = pm.getPackageInfo(pkgName, 0);
             String ver = BuildConfig.VERSION_NAME;
-            version_name.setText("Version "+ver);
+            version_name.setText("Version " + ver);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -99,18 +103,17 @@ public class SplashActivity extends BaseActivity {
         public void run() {
             if (Functions.getPrefValue(getContext(), Constants.kIsSignIn).equalsIgnoreCase("1")) {
                 getProfileAPI(false);
-             if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kOwnerType)) {
-                    if (deepLinkUri != null){
+                if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kOwnerType)) {
+                    if (deepLinkUri != null) {
                         Functions.showToast(getContext(), "You are currently logged in as Owner\nPlease login as player first.", FancyToast.ERROR);
                     }
-                 //     Intent i = new Intent(getContext(), InventoryActivity.class);
-                   Intent i = new Intent(getContext(), StatictsActivity.class);
+                    //     Intent i = new Intent(getContext(), InventoryActivity.class);
+                    Intent i = new Intent(getContext(), StatictsActivity.class);
                     startActivity(i);
                     finish();
                 }
-            }
-            else {
-                if (deepLinkUri != null){
+            } else {
+                if (deepLinkUri != null) {
                     Functions.showToast(getContext(), "Please login first to join the game.", FancyToast.ERROR);
                 }
                 Intent i = new Intent(getContext(), StatictsActivity.class);
@@ -123,14 +126,14 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(handler != null) {
+        if (handler != null) {
             handler.removeCallbacks(runnable);
         }
 
     }
 
     private void getProfileAPI(boolean isLoader) {
-        KProgressHUD hud = isLoader ? Functions.showLoader(getContext(), "Image processing"): null;
+        KProgressHUD hud = isLoader ? Functions.showLoader(getContext(), "Image processing") : null;
         Call<ResponseBody> call = AppManager.getInstance().apiInterfaceNew.getProfile();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -158,6 +161,7 @@ public class SplashActivity extends BaseActivity {
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Functions.hideLoader(hud);

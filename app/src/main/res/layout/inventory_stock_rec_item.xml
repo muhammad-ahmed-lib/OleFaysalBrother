@@ -6,13 +6,13 @@
     android:layout_marginTop="@dimen/_8sdp"
     android:padding="@dimen/_10sdp"
     android:background="@drawable/rounded_stroke_sh"
-    android:layout_height="@dimen/_63sdp">
+    android:layout_height="@dimen/_57sdp">
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_95sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="@dimen/_30sdp"
+        android:layout_height="@dimen/_26sdp"
         app:cardCornerRadius="@dimen/_17sdp"
         app:cardBackgroundColor="#146141"
         app:cardElevation="@dimen/_2sdp"
@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Add Stock"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             android:textStyle="normal"
 
             />

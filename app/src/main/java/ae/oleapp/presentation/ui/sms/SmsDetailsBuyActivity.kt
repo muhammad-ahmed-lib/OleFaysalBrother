@@ -16,6 +16,7 @@ import ae.oleapp.utils.SmsCalculator
 import ae.oleapp.utils.currentFormattedDate
 import ae.oleapp.utils.currentFormattedTime
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.showKProgress
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -198,24 +199,34 @@ class SmsDetailsBuyActivity : AppCompatActivity() {
     private fun observeData() {
         viewModel.playerCount.observe(this) { response ->
             when (response) {
-                is ApiResponse.Loading -> Log.d(TAG, "Loading player counts")
-                is ApiResponse.Success -> handlePlayerCountSuccess(response.data?.data)
-                is ApiResponse.Error -> showError(response.error.toString())
+                is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
+                    Log.d(TAG, "Loading player counts")
+                }
+                is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
+                    handlePlayerCountSuccess(response.data?.data)
+                }
+                is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
+                    showError(response.error.toString())
+                }
             }
         }
 
         viewModel.smsResponse.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
-
+                    binding.root.showKProgress(true)
                 }
 
                 is ApiResponse.Success -> {
-
+                    binding.root.showKProgress(false)
                     handleSmsSendSuccess()
                 }
 
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     handleSmsSendError(response.error)
                 }
             }

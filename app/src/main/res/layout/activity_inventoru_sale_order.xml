@@ -26,7 +26,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="@dimen/_35sdp"
+                android:layout_width="@dimen/_30sdp"
                 android:id="@+id/backBtn"
                 app:roundPercent="1"
                 android:padding="@dimen/_8sdp"
@@ -36,7 +36,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_15sdp"
-                android:layout_height="@dimen/_35sdp"/>
+                android:layout_height="@dimen/_30sdp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                 android:gravity="center"
                 android:textColor="@color/white"/>
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="@dimen/_35sdp"
+                android:layout_width="@dimen/_30sdp"
                 android:id="@+id/menuBtn"
                 app:roundPercent="1"
                 android:padding="@dimen/_8sdp"
@@ -60,16 +60,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_height="@dimen/_35sdp"/>
+                android:layout_height="@dimen/_30sdp"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_36sdp"
+                android:layout_height="@dimen/_33sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:roundPercent="0.3"
                 app:cardCornerRadius="@dimen/_18sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                app:cardBackgroundColor="#004025"
+                app:cardBackgroundColor="#40000000"
                 android:id="@+id/searchCard"
                 app:layout_constraintTop_toBottomOf="@id/backBtn"
                 android:layout_marginHorizontal="@dimen/_15sdp">
@@ -101,7 +101,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:paddingHorizontal="@dimen/_18sdp"
-                    android:paddingVertical="@dimen/_13sdp"
+                    android:paddingVertical="@dimen/_10sdp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardView"
-                tools:listitem="@layout/inventory_rec_item" />
+                tools:listitem="@layout/inventory_sales_order_rec_item" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

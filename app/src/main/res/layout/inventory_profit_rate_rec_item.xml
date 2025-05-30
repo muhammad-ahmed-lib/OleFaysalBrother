@@ -6,7 +6,7 @@
     android:layout_marginTop="@dimen/_8sdp"
     android:padding="@dimen/_10sdp"
     android:background="@drawable/rounded_stroke_sh"
-    android:layout_height="@dimen/_70sdp">
+    android:layout_height="@dimen/_64sdp">
     <TextView
         android:id="@+id/quantityTv"
         android:layout_width="wrap_content"
@@ -14,9 +14,8 @@
         android:gravity="center"
         android:text="AED 345"
         android:textColor="#26334A"
-        android:textSize="@dimen/_13ssp"
+        android:textSize="@dimen/_12ssp"
         android:layout_marginTop="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gC"
         />
@@ -34,7 +33,7 @@
         android:text="Water Pack"
         android:textColor="#26334A"
         android:textStyle="bold"
-        android:textSize="@dimen/_13ssp"
+        android:textSize="@dimen/_12ssp"
         android:layout_marginBottom="@dimen/_2sdp"
         android:layout_marginStart="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +81,7 @@
         android:maxLength="16"
         android:textStyle="bold"
         android:text="Water Pack"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_11ssp"
         app:layout_constraintStart_toStartOf="@id/soldQtTv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/soldQtTv"/>

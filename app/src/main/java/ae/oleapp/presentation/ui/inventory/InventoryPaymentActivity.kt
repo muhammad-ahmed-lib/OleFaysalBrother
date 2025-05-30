@@ -24,6 +24,7 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.TinyDB
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.showKProgress
 import ae.oleapp.utils.showToast
 import android.content.Context
 import android.util.Log
@@ -184,10 +185,12 @@ class InventoryPaymentActivity : AppCompatActivity() {
         viewModel.employeData.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
                     Log.d(TAG, "observeSalesData: Loading")
                 }
 
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
                     response.data?.let { employees ->
                         val adapter = EmployeeSpinnerAdapter(this@InventoryPaymentActivity, employees)
                         binding.employeSpinner.adapter = adapter
@@ -216,6 +219,7 @@ class InventoryPaymentActivity : AppCompatActivity() {
                 }
 
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT)
                         .show()
                 }

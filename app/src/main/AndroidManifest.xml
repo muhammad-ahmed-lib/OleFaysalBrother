@@ -63,6 +63,7 @@
             android:exported="false" />
         <activity
             android:name=".presentation.ui.sms.SmsModuleActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.inventory.AddInventoryProductActivity"

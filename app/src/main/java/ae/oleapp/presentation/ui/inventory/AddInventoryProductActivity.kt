@@ -11,6 +11,7 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.getPurchaseModel
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.showKProgress
 import android.app.Activity
 import android.content.Intent
 import android.util.Log
@@ -233,6 +234,8 @@ class AddInventoryProductActivity: AppCompatActivity() {
 
     private fun showProgress(show: Boolean) {
         // Implement your progress dialog
+        binding.root.showKProgress(show)
+
     }
 
     private fun showSuccess(message: String) {

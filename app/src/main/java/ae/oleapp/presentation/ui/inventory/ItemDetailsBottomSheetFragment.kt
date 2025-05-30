@@ -5,6 +5,7 @@ import ae.oleapp.abstraction.repository.InventoryRepository
 import ae.oleapp.databinding.FragmentItemDetailsBottomSheetBinding
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
+import ae.oleapp.utils.showKProgress
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -47,9 +48,11 @@ class ItemDetailsBottomSheetFragment (val myId:Int=-1): BottomSheetDialogFragmen
         viewModel.salesDetailResponse.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
                     // Show loading if needed
                 }
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
                     response.data?.let {summary->
                         // Set order number safely
                         binding.orderNoTv.text = summary.order_number.toString() ?: "N/A"
@@ -71,7 +74,9 @@ class ItemDetailsBottomSheetFragment (val myId:Int=-1): BottomSheetDialogFragmen
 
                 }
                 is ApiResponse.Error -> {
-                  //  binding.titleTv.text = "Error: ${response.error}"
+                    binding.root.showKProgress(false)
+
+                    //  binding.titleTv.text = "Error: ${response.error}"
                 }
             }
         }

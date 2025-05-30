@@ -1,40 +1,29 @@
 package ae.oleapp.presentation.ui.sms
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import ae.oleapp.R
 import ae.oleapp.abstraction.errorhandling.ApiResponse
 import ae.oleapp.abstraction.models.GenericModelClass
-import ae.oleapp.abstraction.models.InventoryProduct
 import ae.oleapp.abstraction.models.SmsData
-import ae.oleapp.abstraction.repository.InventoryRepository
 import ae.oleapp.abstraction.repository.SmsRepository
-import ae.oleapp.databinding.ActivityInventorySellBinding
 import ae.oleapp.databinding.ActivitySmsModuleBinding
-import ae.oleapp.databinding.InventorySellRecItemBinding
 import ae.oleapp.databinding.SmsHomeRecItemBinding
 import ae.oleapp.databinding.SmsTopRecItemBinding
 import ae.oleapp.presentation.ui.BuySmsDialogFragment
 import ae.oleapp.presentation.ui.adapter.GenericAdapter
-import ae.oleapp.presentation.ui.inventory.AddInventoryProductActivity
-import ae.oleapp.presentation.ui.inventory.AddStockBottomSheetFragment
-import ae.oleapp.presentation.ui.inventory.CartItemModel
-import ae.oleapp.presentation.ui.inventory.InventoryMoneyModelClass
-import ae.oleapp.presentation.ui.inventory.InventoryPaymentActivity
-import ae.oleapp.presentation.viewmodels.InventoryViewModel
-import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.presentation.viewmodels.SmsViewModel
 import ae.oleapp.presentation.viewmodels.SmsViewModelFactory
-import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.InsetsWithKeyboardCallback
 import ae.oleapp.utils.openActivity
+import ae.oleapp.utils.showKProgress
 import ae.oleapp.utils.showToast
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.ViewModelProvider
 
 class SmsModuleActivity : AppCompatActivity() {
@@ -53,9 +42,9 @@ class SmsModuleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySmsModuleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Initialize total amount display
-
+        val insetsWithKeyboardCallback = InsetsWithKeyboardCallback(window)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main, insetsWithKeyboardCallback)
+        ViewCompat.setWindowInsetsAnimationCallback(binding.main, insetsWithKeyboardCallback)
         val repository = SmsRepository(this)
         viewModel = ViewModelProvider(
             this,
@@ -81,9 +70,11 @@ class SmsModuleActivity : AppCompatActivity() {
         viewModel.smsHomeResponse.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
                     Log.d(TAG, "observeSalesData: Loading")
                 }
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
                     response.data?.let { summary ->
                         binding.addItemBtn.setOnClickListener {
                             val i=Intent(this,SmsDetailsBuyActivity::class.java)
@@ -117,6 +108,7 @@ class SmsModuleActivity : AppCompatActivity() {
                     }
                 }
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT).show()
                 }
             }

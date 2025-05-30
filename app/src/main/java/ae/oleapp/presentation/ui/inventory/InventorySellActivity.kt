@@ -11,6 +11,7 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
 import ae.oleapp.utils.openActivity
+import ae.oleapp.utils.showKProgress
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -63,9 +64,11 @@ class InventorySellActivity : AppCompatActivity() {
         viewModel.productsResponse.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                     binding.root.showKProgress(true)
                     Log.d(TAG, "observeSalesData: Loading")
                 }
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(false)
                     response.data?.let { summary ->
                         list.clear()
                         list.addAll(summary.map { it.copy(count = 0) }) // Initialize count to 0
@@ -73,6 +76,7 @@ class InventorySellActivity : AppCompatActivity() {
                     }
                 }
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT).show()
                 }
             }

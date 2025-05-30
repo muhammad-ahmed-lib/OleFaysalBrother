@@ -8,6 +8,7 @@ import ae.oleapp.databinding.DeliveredSmsRecItemBinding
 import ae.oleapp.presentation.ui.adapter.GenericAdapter
 import ae.oleapp.presentation.viewmodels.SmsViewModel
 import ae.oleapp.presentation.viewmodels.SmsViewModelFactory
+import ae.oleapp.utils.showKProgress
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -59,16 +60,19 @@ class DeliveredSmsActivity : AppCompatActivity() {
         viewModel.smsResponse.observe(this) { response ->
             when (response) {
                 is ApiResponse.Loading -> {
+                    binding.root.showKProgress(true)
                     Log.d(TAG, "observeSalesData: Loading")
                 }
 
                 is ApiResponse.Success -> {
+                    binding.root.showKProgress(true)
                     response.data?.let { summary ->
 
                     }
                 }
 
                 is ApiResponse.Error -> {
+                    binding.root.showKProgress(false)
                     Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT)
                         .show()
                 }

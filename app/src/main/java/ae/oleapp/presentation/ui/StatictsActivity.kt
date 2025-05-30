@@ -278,7 +278,7 @@ class StatictsActivity : AppCompatActivity() {
         lineChart.xAxis.apply {
             position = XAxis.XAxisPosition.BOTTOM
             setDrawGridLines(false)
-            textColor = Color.BLACK
+            textColor = Color.WHITE
             axisLineColor = "#BDBDBD".toColorInt()
             granularity = 1f
             valueFormatter = object : ValueFormatter() {
@@ -302,7 +302,7 @@ class StatictsActivity : AppCompatActivity() {
         val maxYValue = max(maxEarnings, maxCancellations) * 1.1f // Add 10% padding
 
         lineChart.axisLeft.apply {
-            textColor = Color.BLACK
+            textColor = Color.WHITE
             axisLineColor = "#BDBDBD".toColorInt()
             setDrawGridLines(true)
             gridColor = "#EEEEEE".toColorInt()
@@ -319,7 +319,7 @@ class StatictsActivity : AppCompatActivity() {
             data = lineData
             description.isEnabled = false
             legend.isEnabled = true
-            legend.textColor = Color.BLACK
+            legend.textColor = Color.WHITE
             legend.formSize = 12f
             legend.form = Legend.LegendForm.LINE
             legend.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM

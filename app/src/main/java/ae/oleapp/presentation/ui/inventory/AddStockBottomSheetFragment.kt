@@ -5,6 +5,7 @@ import ae.oleapp.abstraction.repository.InventoryRepository
 import ae.oleapp.databinding.FragmentAddStockBottomSheetBinding
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
+import ae.oleapp.utils.showKProgress
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -98,6 +99,7 @@ class AddStockBottomSheetFragment(
     }
 
     private fun showProgress(show: Boolean) {
+        binding.root.showKProgress(show)
         // Implement your progress indicator
         binding.submitBtn.isEnabled = !show
     }

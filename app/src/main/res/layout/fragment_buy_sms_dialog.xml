@@ -1,135 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_10sdp"
-    android:layout_height="wrap_content">
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/backBtn"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_30sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:background="#146141"
-        android:padding="@dimen/_6sdp"
-        android:src="@drawable/cross_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:roundPercent="1" />
-    <TextView
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/titleTv"
-        app:layout_constraintTop_toTopOf="@id/backBtn"
-        app:layout_constraintBottom_toBottomOf="@id/backBtn"
-        android:textStyle="bold"
-        android:textSize="@dimen/_14ssp"
-        android:text="@string/buy_sms"
-        android:gravity="center"
-        android:textColor="#26334A"/>
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/card"
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_65sdp"
-        android:background="#146141"
-        android:layout_marginTop="@dimen/_15sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTv"
-        app:roundPercent="0.2" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_2sdp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@id/gc"
-        app:layout_constraintEnd_toEndOf="@+id/card"
-        app:layout_constraintStart_toStartOf="@id/card">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginEnd="@dimen/_1sdp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp"
-            android:id="@+id/totalAmountTv"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/_1sdp"
-            android:text="@string/aed"
-            android:id="@+id/amountEd"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_8ssp"
-          />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_2sdp"
-        android:gravity="center"
-        android:text="@string/total_"
-        android:textAllCaps="true"
-        android:textColor="#EBEBEB"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toEndOf="@+id/card"
-        app:layout_constraintStart_toStartOf="@id/card"
-        app:layout_constraintTop_toBottomOf="@id/gc" />
-
-    <View
-        android:id="@+id/gc"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="@id/card"
-        app:layout_constraintBottom_toBottomOf="@id/card"
-       />
-    <EditText
-        app:layout_constraintTop_toBottomOf="@id/card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:textColor="#868686"
-        android:textColorHint="#868686"
-        android:layout_marginHorizontal="@dimen/_20sdp"
-        android:id="@+id/qtyEd"
-        android:hint="Qty SMS"
-        android:paddingHorizontal="@dimen/_14sdp"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:background="@drawable/ed_bg_sh"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/submitBtn"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_44sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_26sdp"
-        app:cardBackgroundColor="#146141"
-        app:cardCornerRadius="@dimen/_6sdp"
-        app:cardElevation="@dimen/_2sdp"
-        android:layout_marginHorizontal="@dimen/_5sdp"
-        app:layout_constraintTop_toBottomOf="@+id/qtyEd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="#146141"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/cross_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/titleTv"
+            app:layout_constraintTop_toTopOf="@id/backBtn"
+            app:layout_constraintBottom_toBottomOf="@id/backBtn"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14ssp"
+            android:text="@string/buy_sms"
             android:gravity="center"
-            android:text="@string/confirm_pay"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
-            />
-    </androidx.cardview.widget.CardView>
+            android:textColor="#26334A"/>
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/card"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:background="#146141"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            app:roundPercent="0.2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/gc"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@id/card">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                android:id="@+id/totalAmountTv"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:text="@string/aed"
+                android:id="@+id/amountEd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="center"
+            android:text="@string/total_"
+            android:textAllCaps="true"
+            android:textColor="#EBEBEB"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@id/gc" />
+
+        <View
+            android:id="@+id/gc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/card"
+            app:layout_constraintBottom_toBottomOf="@id/card"
+            />
+        <EditText
+            app:layout_constraintTop_toBottomOf="@id/card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textColor="#868686"
+            android:textColorHint="#868686"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/qtyEd"
+            android:hint="Qty SMS"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/ed_bg_sh"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/submitBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_26sdp"
+            app:cardBackgroundColor="#146141"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/qtyEd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/confirm_pay"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
