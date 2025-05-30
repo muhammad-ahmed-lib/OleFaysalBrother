@@ -344,3 +344,91 @@ data class NewSaleResponse(
     val message: String,
     val saleId: Int? = null
 )
+
+
+data class SmsRequest(
+    @SerializedName("club_id") val clubId: String,
+    @SerializedName("total_sms") val totalSms: Int,
+    @SerializedName("type") val type: String,
+    @SerializedName("amount") val amount: Double,
+    @SerializedName("sms_date") val smsDate: String,
+    @SerializedName("sms_time") val smsTime: String,
+    @SerializedName("sms_text") val smsText: String
+)
+
+data class SmsResponse(
+    @SerializedName("error") val error: Map<String, Any> = emptyMap(), // Changed from String to Map
+    @SerializedName("status") val status: Int,
+    @SerializedName("message") val message: String
+)
+
+data class UpdateSmsRequest(
+    @SerializedName("request_id") val requestId: String,
+    @SerializedName("club_id") val clubId: String,
+    @SerializedName("total_sms") val totalSms: Int,
+    @SerializedName("type") val type: String,
+    @SerializedName("amount") val amount: Double,
+    @SerializedName("sms_date") val smsDate: String,
+    @SerializedName("sms_time") val smsTime: String,
+    @SerializedName("sms_text") val smsText: String
+)
+
+data class SmsPurchaseRequest(
+    @SerializedName("club_id") val clubId: String,
+    @SerializedName("amount") val amount: Double,
+    @SerializedName("quantity") val quantity: Int
+)
+
+data class SmsPurchaseResponse(
+    @SerializedName("message") val message: String,
+    @SerializedName("status") val status: Int
+)
+
+data class SmsHomeResponse(
+    @SerializedName("data") val data: List<SmsData>,
+    @SerializedName("status") val status: Int,
+    @SerializedName("message") val message: String,
+    @SerializedName("total_purchased") val totalPurchased: Int,
+    @SerializedName("total_used") val totalUsed: Int,
+    @SerializedName("remaining") val remaining: Int,
+    @SerializedName("sms_cost") val smsCost: Double,
+    @SerializedName("currency") val currency: String
+)
+
+data class SmsData(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name") val name: String,
+    @SerializedName("amount") val amount: Int,
+    @SerializedName("total_sms") val totalSms: Int,
+    @SerializedName("sms_text") val smsText: String,
+    @SerializedName("sms_date") val smsDate: String,
+    @SerializedName("sms_time") val smsTime: String,
+    @SerializedName("status") val status: String,
+    @SerializedName("created_at") val createdAt: String,
+    @SerializedName("currency") val currency: String
+)
+
+data class PlayersCountResponse(
+    @SerializedName("data") val data: List<PlayerCountData>,
+    @SerializedName("status") val status: Int,
+    @SerializedName("message") val message: String,
+    @SerializedName("sms_cost") val smsCost: Double
+)
+
+data class PlayerCountData(
+    @SerializedName("type") val type: String,
+    @SerializedName("count") val count: Int
+)
+
+data class SmsUsageResponse(
+    @SerializedName("data") val usageHistory: List<SmsUsageRecord>,
+    @SerializedName("status") val status: Int,
+    @SerializedName("message") val message: String
+)
+
+data class SmsUsageRecord(
+    @SerializedName("username") val username: String,
+    @SerializedName("phone") val phone: String,
+    @SerializedName("sms_used_count") val smsUsed: Int,
+    @SerializedName("date") val date: String  // Format: "30/04/2025 08:32 PM"
+)

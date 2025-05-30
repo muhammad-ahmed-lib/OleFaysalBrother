@@ -11,6 +11,7 @@ import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
 import ae.oleapp.utils.openActivity
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -159,6 +160,7 @@ class InventorySellActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateTotalAmount(price: Double, isAdd: Boolean) {
         totalAmount = if (isAdd) {
             totalAmount + price

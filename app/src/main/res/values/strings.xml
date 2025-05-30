@@ -874,6 +874,7 @@
     <string name="statistics_of_these_results">Statistics of these results</string>
     <string name="totals">Totals</string>
     <string name="total">Total:</string>
+    <string name="total_">Total</string>
     <string name="expected">Expected: </string>
     <string name="expectedx">Expected</string>
     <string name="players_that_i_played_most_with">Players that I played most with</string>
@@ -1447,5 +1448,10 @@
     <string name="add_product">Add Product</string>
     <string name="update_product">Update Product</string>
     <string name="pos">POS</string>
+    <string name="confirm_pay">Confirm Pay</string>
+    <string name="buy">Buy</string>
+    <string name="delivered_sms">Delivered SMS</string>
+    <string name="view_delivered_sms">View Delivered SMS</string>
+    <string name="compare_data">Compare Data</string>
 
 </resources>

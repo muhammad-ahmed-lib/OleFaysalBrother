@@ -47,6 +47,18 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".presentation.ui.StatictsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.sms.SmsDetailsBuyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.sms.DeliveredSmsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.sms.SmsModuleActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.inventory.AddInventoryProductActivity"
             android:exported="false" />
         <activity
@@ -437,7 +449,6 @@
             android:name=".owner.OleTipPaymentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/LoginTheme" />
-
         <activity
             android:name=".owner.OleEmployeeReviewsActivity"
             android:screenOrientation="portrait"
@@ -605,7 +616,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.OleUpdateAppActivity"
             android:screenOrientation="portrait"
@@ -621,7 +631,6 @@
         <activity
             android:name=".base.BaseTabActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activities.OleContactUsActivity"
             android:screenOrientation="portrait"

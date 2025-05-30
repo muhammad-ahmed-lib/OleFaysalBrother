@@ -26,7 +26,9 @@ import ae.oleapp.databinding.OleactivitySplashBinding;
 import ae.oleapp.models.CountryPhoneList;
 import ae.oleapp.models.UserInfo;
 import ae.oleapp.owner.OleOwnerMainTabsActivity;
+import ae.oleapp.presentation.ui.StatictsActivity;
 import ae.oleapp.presentation.ui.inventory.InventoryActivity;
+import ae.oleapp.presentation.ui.sms.SmsModuleActivity;
 import ae.oleapp.util.AppManager;
 import ae.oleapp.util.Constants;
 import ae.oleapp.util.Functions;
@@ -57,6 +59,7 @@ public class SplashActivity extends BaseActivity {
         getCountries(false);
 
         new TinyDB(this).putToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW5fdHlwZSI6IkFDQ0VTUyIsImlhdCI6MTc0NzA1OTk5NywiZXhwIjoxNzUyMjQzOTk3fQ.TifhXxKctMMommy9XVR786v8u3gotqD24x-9c0oVNcQ");
+        new TinyDB(this).putOwnerToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW5fdHlwZSI6IkFDQ0VTUyIsImlhdCI6MTc0NzA1OTk5NywiZXhwIjoxNzUyMjQzOTk3fQ.TifhXxKctMMommy9XVR786v8u3gotqD24x-9c0oVNcQ");
 
 
         if (Functions.getAppLangStr(getContext()).isEmpty()) {
@@ -101,7 +104,7 @@ public class SplashActivity extends BaseActivity {
                         Functions.showToast(getContext(), "You are currently logged in as Owner\nPlease login as player first.", FancyToast.ERROR);
                     }
                  //     Intent i = new Intent(getContext(), InventoryActivity.class);
-                   Intent i = new Intent(getContext(), OleOwnerMainTabsActivity.class);
+                   Intent i = new Intent(getContext(), StatictsActivity.class);
                     startActivity(i);
                     finish();
                 }

@@ -12,6 +12,7 @@ attr? progressColor
 attr? progressMargin
 attr? progressStrokeWidth
 attr? progressTextColor
+color messageProgressYellowColor
 color orange
 color primary
 color white

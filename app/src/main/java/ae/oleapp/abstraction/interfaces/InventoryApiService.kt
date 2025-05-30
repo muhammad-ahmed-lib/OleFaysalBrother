@@ -6,13 +6,21 @@ import ae.oleapp.abstraction.models.InventoryProductResponse
 import ae.oleapp.abstraction.models.InventoryStockResponse
 import ae.oleapp.abstraction.models.InventorySummaryResponse
 import ae.oleapp.abstraction.models.NewSaleResponse
+import ae.oleapp.abstraction.models.PlayersCountResponse
 import ae.oleapp.abstraction.models.ProfitReportResponse
 import ae.oleapp.abstraction.models.Sale
 import ae.oleapp.abstraction.models.SaleReportResponse
 import ae.oleapp.abstraction.models.SaleResponse
 import ae.oleapp.abstraction.models.SalesOrderResponse
+import ae.oleapp.abstraction.models.SmsHomeResponse
+import ae.oleapp.abstraction.models.SmsPurchaseRequest
+import ae.oleapp.abstraction.models.SmsPurchaseResponse
+import ae.oleapp.abstraction.models.SmsRequest
+import ae.oleapp.abstraction.models.SmsResponse
+import ae.oleapp.abstraction.models.SmsUsageResponse
 import ae.oleapp.abstraction.models.StockUpdateResponse
 import ae.oleapp.abstraction.models.UpdateProductResponse
+import ae.oleapp.abstraction.models.UpdateSmsRequest
 import ae.oleapp.abstraction.models.UpdateStockRequest
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -32,11 +40,52 @@ interface InventoryApiService {
 
 
 
+    @GET("owner/club/sms/delivered/history")
+    fun getSmsDeliveryHistory(
+        @Header("Authorization") token: String,
+        @Query("club_id") clubId: Int
+    ): Call<SmsUsageResponse>
+
+
+    @POST("owner/club/sms/purchase")
+    suspend fun purchaseSms(
+        @Header("Authorization") accessToken: String,
+        @Body request: SmsPurchaseRequest
+    ): Response<SmsPurchaseResponse>
+
+
+    @PUT("owner/club/sms/request")
+    suspend fun updateSmsRequest(
+        @Header("Authorization") accessToken: String,
+        @Body request: UpdateSmsRequest
+    ): Response<SmsResponse>
+
+
+    @POST("owner/club/sms/request")
+    suspend fun sendSmsRequest(
+        @Header("Authorization") authHeader: String, // Add this
+        @Body request: SmsRequest
+    ): Response<SmsResponse>
+
+
     @GET("owner/inventory")
     fun getInventoryProducts(
         @Header("Authorization") token: String,
         @Query("club_id") clubId: Int
     ): Call<InventoryProductResponse>
+
+
+    @GET("owner/club/sms/home/data")
+    fun getSmsHome(
+        @Header("Authorization") token: String,
+        @Query("club_id") clubId: Int
+    ): Call<SmsHomeResponse>
+
+    @GET("owner/club/sms")
+    fun getPlayersCount(
+        @Header("Authorization") token: String,
+        @Query("club_id") clubId: Int
+    ): Call<PlayersCountResponse>
 
 
     @GET("owner/inventory/sales/all")

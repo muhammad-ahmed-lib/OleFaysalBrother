@@ -6,9 +6,9 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.fragment.app.Fragment
@@ -18,7 +18,37 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.Date
 import java.util.Locale
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.kaopiz.kprogresshud.KProgressHUD
+
+private const val KPROGRESS_TAG = "kprogress_loader"
+
+fun View.showKProgress(show: Boolean) {
+
+    val activity = context as? AppCompatActivity ?: return
+
+    val existingHud = this.getTag(KPROGRESS_TAG.hashCode()) as? KProgressHUD
+
+    if (show) {
+        if (existingHud == null) {
+            val hud = KProgressHUD.create(activity)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show()
+
+            this.setTag(KPROGRESS_TAG.hashCode(), hud)
+        }
+    } else {
+        existingHud?.dismiss()
+        this.setTag(KPROGRESS_TAG.hashCode(), null)
+    }
+}
+
 
 fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     requireActivity().showToast(message,duration)
@@ -165,5 +195,44 @@ fun Intent.getPurchaseModel(keyPrefix: String="PURCHASE_MODEL"): PurchasePassMod
         )
     } catch (e: Exception) {
         null
+    }
+}
+
+// Extension property for TextView (Date)
+var TextView.currentFormattedDate: String
+    get() = this.text.toString()
+    set(value) {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        this.text = dateFormat.format(Date())
+    }
+
+// Extension property for TextView (Time)
+var TextView.currentFormattedTime: String
+    get() = this.text.toString()
+    set(value) {
+        val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        this.text = timeFormat.format(Date())
+    }
+
+fun String.toFormattedDate(inputFormat: String = "yyyy-MM-dd"): String {
+    return try {
+        val inputDateFormat = SimpleDateFormat(inputFormat, Locale.getDefault())
+        val date = inputDateFormat.parse(this)
+        val outputDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        outputDateFormat.format(date)
+    } catch (e: Exception) {
+        "" // or handle the error as you prefer
+    }
+}
+
+// Extension function to parse a String to Date and then format time as HH:mm:ss
+fun String.toFormattedTime(inputFormat: String = "HH:mm:ss"): String {
+    return try {
+        val inputTimeFormat = SimpleDateFormat(inputFormat, Locale.getDefault())
+        val date = inputTimeFormat.parse(this)
+        val outputTimeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        outputTimeFormat.format(date)
+    } catch (e: Exception) {
+        "" // or handle the error as you prefer
     }
 }

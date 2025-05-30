@@ -5,13 +5,13 @@
 5    <uses-sdk android:minSdkVersion="19" />
 6
 7    <application
-7-->C:\Users\Ahmed\AndroidStudioProjects\olev5master\stepsview\src\main\AndroidManifest.xml:3:5-6:19
+7-->D:\and\olev5master\stepsview\src\main\AndroidManifest.xml:3:5-6:19
 8        android:allowBackup="true"
-8-->C:\Users\Ahmed\AndroidStudioProjects\olev5master\stepsview\src\main\AndroidManifest.xml:3:18-44
+8-->D:\and\olev5master\stepsview\src\main\AndroidManifest.xml:3:18-44
 9        android:label="@string/app_name"
-9-->C:\Users\Ahmed\AndroidStudioProjects\olev5master\stepsview\src\main\AndroidManifest.xml:3:45-77
+9-->D:\and\olev5master\stepsview\src\main\AndroidManifest.xml:3:45-77
 10        android:supportsRtl="true" >
-10-->C:\Users\Ahmed\AndroidStudioProjects\olev5master\stepsview\src\main\AndroidManifest.xml:4:9-35
+10-->D:\and\olev5master\stepsview\src\main\AndroidManifest.xml:4:9-35
 11    </application>
 12
 13</manifest>

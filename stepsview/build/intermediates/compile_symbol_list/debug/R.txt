@@ -357,6 +357,7 @@ int color material_grey_600 0x0
 int color material_grey_800 0x0
 int color material_grey_850 0x0
 int color material_grey_900 0x0
+int color messageProgressYellowColor 0x0
 int color notification_action_color_filter 0x0
 int color notification_icon_bg_color 0x0
 int color orange 0x0

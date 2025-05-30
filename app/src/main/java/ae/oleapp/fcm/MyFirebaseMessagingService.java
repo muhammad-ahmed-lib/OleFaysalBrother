@@ -21,6 +21,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.Objects;
 
 import ae.oleapp.R;
 import ae.oleapp.activities.OleNotificationsActivity;
@@ -51,7 +52,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.putExtra("game_id", gameId);
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
-            sendMyNotification(remoteMessage.getNotification().getBody(), notType, gameId);
+            sendMyNotification(Objects.requireNonNull(remoteMessage.getNotification()).getBody(), notType, gameId);
 
             if (notType.equalsIgnoreCase("lineupGameRemoved")
 //                   || notType.equalsIgnoreCase("oleUserAddedAsFriend") //Remove these type so you can receive notification body

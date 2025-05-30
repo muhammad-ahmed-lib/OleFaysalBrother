@@ -2,6 +2,7 @@ package ae.oleapp.employee.ui.addemployee
 
 import ae.oleapp.R
 import ae.oleapp.databinding.FragmentAddEmployeeBinding
+import ae.oleapp.employee.data.bindingAdapters.KProgressBindingAdapter
 import ae.oleapp.employee.data.model.response.GetDesignationDataResponse
 import ae.oleapp.employee.utils.viewBinding
 import android.net.Uri
@@ -57,7 +58,6 @@ class AddEmployeeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
-
         init()
         setupClicks()
         setupObserver()
