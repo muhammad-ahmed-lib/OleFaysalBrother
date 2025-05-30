@@ -1453,5 +1453,8 @@
     <string name="delivered_sms">Delivered SMS</string>
     <string name="view_delivered_sms">View Delivered SMS</string>
     <string name="compare_data">Compare Data</string>
+    <string name="subscription">Subscription</string>
+    <string name="logout">Logout</string>
+    <string name="register_users">Register Users</string>
 
 </resources>

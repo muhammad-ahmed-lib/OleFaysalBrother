@@ -113,7 +113,7 @@ public class SplashActivity extends BaseActivity {
                 if (deepLinkUri != null){
                     Functions.showToast(getContext(), "Please login first to join the game.", FancyToast.ERROR);
                 }
-                Intent i = new Intent(getContext(), LoginActivity.class);
+                Intent i = new Intent(getContext(), StatictsActivity.class);
                 startActivity(i);
                 finish();
             }

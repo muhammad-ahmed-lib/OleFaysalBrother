@@ -1,21 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:2:1-7:12
+ADDED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:2:1-7:12
 	package
-		ADDED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:3:11-43
-		INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml
+		ADDED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:3:11-43
+		INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:5:11-36
+		ADDED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:5:11-36
 	xmlns:android
-		ADDED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from D:\and\olev5master\ResideMenu\AndroidManifest.xml:4:11-34
+		ADDED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml:4:11-34
 uses-sdk
-INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml
-INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml
+INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml
+INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml
+		INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\and\olev5master\ResideMenu\AndroidManifest.xml
+		INJECTED from C:\Users\sc\StudioProjects\OleFaysalBrother\ResideMenu\AndroidManifest.xml

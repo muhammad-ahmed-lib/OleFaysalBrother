@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/_6sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_13sdp"
+    app:cardBackgroundColor="#146141"
+    app:cardElevation="0dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/_9sdp"
+        android:paddingHorizontal="@dimen/_11sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/topLay"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/subscriptionNameTv"
+                android:layout_height="wrap_content"
+                android:text="Monthly"
+                android:gravity="start"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/white" />
+            <TextView
+                android:layout_width="0dp"
+                android:fontFamily="@font/archivo_semibold"
+                android:layout_weight="1"
+                android:text="Save 20%"
+                android:gravity="end"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="#FFE200"
+                android:id="@+id/subOfferTv"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <TextView
+            android:background="@drawable/bg_down_opacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subscriptionPriceTv"
+            app:layout_constraintStart_toStartOf="@id/overlay"
+            android:textSize="@dimen/_10ssp"
+            android:text="AED 49389"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            android:paddingHorizontal="@dimen/_9sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/overlay"
+            app:layout_constraintBottom_toBottomOf="@id/overlay"
+            app:layout_constraintTop_toTopOf="@id/overlay"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:id="@+id/smsTypeTv"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:text="Include SMS"
+                android:gravity="start"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/white"
+
+               />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="@dimen/_18sdp"
+                android:id="@+id/backBtn"
+                app:roundPercent="1"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/next_arro_wh_img"
+                android:background="@color/black20Color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="@dimen/_18sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

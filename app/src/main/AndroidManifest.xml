@@ -47,6 +47,12 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".presentation.ui.DataUserRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.SubscriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.StatictsActivity"
             android:exported="false" />
         <activity

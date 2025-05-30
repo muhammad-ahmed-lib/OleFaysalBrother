@@ -15,20 +15,24 @@ import ae.oleapp.presentation.ui.inventory.InventoryMoneyModelClass
 import ae.oleapp.presentation.viewmodels.InventoryViewModel
 import ae.oleapp.presentation.viewmodels.InventoryViewModelFactory
 import ae.oleapp.utils.loadImage
+import ae.oleapp.utils.openActivity
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.toColorInt
 import androidx.lifecycle.ViewModelProvider
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
+import kotlin.math.max
 
 class StatictsActivity : AppCompatActivity() {
     private val monthList by lazy { ArrayList<GenericModelClass>() }
@@ -95,6 +99,9 @@ class StatictsActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             finish()
         }
+        binding.titleTv.setOnClickListener {
+            AlerSideMenuDialogFragment().show(supportFragmentManager,"")
+        }
     }
 
     override fun onResume() {
@@ -103,8 +110,7 @@ class StatictsActivity : AppCompatActivity() {
         monthRec()
         yearRec()
         matchesRec()
-        cancelLineChart()
-        bookingLineChart()
+        lineChart()
     }
 
     private fun matchesRec() {
@@ -201,153 +207,80 @@ class StatictsActivity : AppCompatActivity() {
         }
         binding.monthRec.adapter = monthRecAdapter
     }
-    private fun cancelLineChart(){
-        val lineChart=binding.cancelLineChart as LineChart
-// Sample data - replace with your actual data
-        val entries = listOf(
-            Entry(0f, 4f),  // Day 1
-            Entry(1f, 8f),  // Day 2
-            Entry(2f, 6f),  // Day 3
-            Entry(3f, 2f),  // Day 4
-            Entry(4f, 7f),  // Day 5
-            Entry(5f, 5f)   // Day 6
+    private fun lineChart(){
+        val lineChart = findViewById<LineChart>(R.id.lineChart)
+
+        // Sample data for both datasets
+        val earningsEntries = listOf(
+            Entry(0f, 45f),  // Mon
+            Entry(1f, 60f),  // Tue
+            Entry(2f, 75f),  // Wed
+            Entry(3f, 50f),  // Thu
+            Entry(4f, 65f),  // Fri
+            Entry(5f, 80f)   // Sat
         )
-// Create dataset with cubic line configuration
-        val dataSet = LineDataSet(entries, "Performance Metrics").apply {
-            color = Color.parseColor("#4CAF50")  // Green color
-            valueTextColor = Color.BLACK
+
+        val cancellationsEntries = listOf(
+            Entry(0f, 15f),  // Mon
+            Entry(1f, 25f),  // Tue
+            Entry(2f, 30f),  // Wed
+            Entry(3f, 20f),  // Thu
+            Entry(4f, 18f),  // Fri
+            Entry(5f, 22f)   // Sat
+        )
+
+// Create Earnings dataset (Green)
+        val earningsDataSet = LineDataSet(earningsEntries, "Earnings").apply {
+            color = Color.parseColor("#4CAF50")  // Green line
+            valueTextColor = Color.WHITE
             lineWidth = 3f
             setDrawCircles(true)
             circleRadius = 5f
             circleHoleRadius = 3f
-            setCircleColor(Color.parseColor("#FBE14C"))
-            setDrawValues(false)  // Hide values on points
+            setCircleColor(Color.parseColor("#4CAF50"))
+            setDrawValues(false)
 
             // Cubic line configuration
             mode = LineDataSet.Mode.CUBIC_BEZIER
-            cubicIntensity = 0.2f  // Adjust curve intensity (0-1)
-
-            // Area fill configuration
-            fillDrawable = ContextCompat.getDrawable(this@StatictsActivity, R.drawable.cancel_line_chart_bg)
-            setDrawFilled(true)
-            fillAlpha = 100  // Transparency (0-255)
-        }
-
-
-
-// Create line data
-        val lineData = LineData(dataSet)
-
-// Configure X axis
-        lineChart.xAxis.apply {
-
-          //  position = XAxix.XAxisPosition.BOTTOM
-            setDrawGridLines(false)
-            textColor = Color.BLACK
-            axisLineColor = Color.parseColor("#BDBDBD")
-            granularity = 1f  // Interval between labels
-            valueFormatter = object : ValueFormatter() {
-                override fun getFormattedValue(value: Float): String {
-                    return when (value.toInt()) {
-                        0 -> "Mon"
-                        1 -> "Tue"
-                        2 -> "Wed"
-                        3 -> "Thu"
-                        4 -> "Fri"
-                        5 -> "Sat"
-                        else -> ""
-                    }
-                }
-            }
-        }
-
-// Configure left Y axis
-        lineChart.axisLeft.apply {
-            textColor = Color.BLACK
-            axisLineColor = Color.parseColor("#BDBDBD")
-            setDrawGridLines(true)
-            gridColor = Color.parseColor("#EEEEEE")
-            axisMinimum = 0f  // Start from 0
-            granularity = 1f  // Interval between grid lines
-        }
-
-// Disable right Y axis
-        lineChart.axisRight.isEnabled = false
-
-// Configure chart appearance
-        lineChart.apply {
-            data = lineData
-            description.isEnabled = false
-            legend.isEnabled = true
-            legend.textColor = Color.BLACK
-            legend.formSize = 12f
-            legend.form = Legend.LegendForm.LINE
-
-            // Touch and zoom configuration
-            setTouchEnabled(true)
-            isDragEnabled = true
-            setScaleEnabled(true)
-            setPinchZoom(true)
-            setDrawGridBackground(false)
-            setDrawBorders(false)
-
-            // Animation
-            animateY(1500, Easing.EaseInOutCubic)
-
-            // Extra styling
-            setNoDataText("No data available")
-            setNoDataTextColor(Color.GRAY)
-            setDrawMarkers(true)
-        }
-
-// Refresh chart
-        lineChart.invalidate()
-    }
-    private fun bookingLineChart(){
-        val lineChart=binding.bookingLineChart as LineChart
-// Sample data - replace with your actual data
-        val entries = listOf(
-            Entry(0f, 4f),  // Day 1
-            Entry(1f, 8f),  // Day 2
-            Entry(2f, 6f),  // Day 3
-            Entry(3f, 2f),  // Day 4
-            Entry(4f, 7f),  // Day 5
-            Entry(5f, 5f)   // Day 6
-        )
-// Create dataset with cubic line configuration
-        val dataSet = LineDataSet(entries, "Booking Metrics").apply {
-            color = Color.parseColor("#E62348")  // Green color
-            valueTextColor = Color.BLACK
-            lineWidth = 3f
-            setDrawCircles(true)
-            circleRadius = 5f
-            circleHoleRadius = 3f
-            setCircleColor(Color.parseColor("#E62348"))
-            setDrawValues(false)  // Hide values on points
-
-            // Cubic line configuration
-            mode = LineDataSet.Mode.CUBIC_BEZIER
-            cubicIntensity = 0.2f  // Adjust curve intensity (0-1)
+            cubicIntensity = 0.2f
 
             // Area fill configuration
             fillDrawable = ContextCompat.getDrawable(this@StatictsActivity, R.drawable.booking_line_chart_bg)
             setDrawFilled(true)
-            fillAlpha = 100  // Transparency (0-255)
+            fillAlpha = 100
         }
 
+// Create Cancellations dataset (Red)
+        val cancellationsDataSet = LineDataSet(cancellationsEntries, "Cancellations").apply {
+            color = Color.parseColor("#F44336")  // Red line
+            valueTextColor = Color.WHITE
+            lineWidth = 3f
+            setDrawCircles(true)
+            circleRadius = 5f
+            circleHoleRadius = 3f
+            setCircleColor(Color.parseColor("#F44336"))
+            setDrawValues(false)
 
+            // Cubic line configuration
+            mode = LineDataSet.Mode.CUBIC_BEZIER
+            cubicIntensity = 0.2f
 
-// Create line data
-        val lineData = LineData(dataSet)
+            // Area fill configuration
+            fillDrawable = ContextCompat.getDrawable(this@StatictsActivity, R.drawable.cancel_line_chart_bg)
+            setDrawFilled(true)
+            fillAlpha = 100
+        }
 
-// Configure X axis
+// Create combined line data
+        val lineData = LineData(earningsDataSet, cancellationsDataSet)
+
+// Configure X axis (same as before)
         lineChart.xAxis.apply {
-
-            //  position = XAxix.XAxisPosition.BOTTOM
+            position = XAxis.XAxisPosition.BOTTOM
             setDrawGridLines(false)
             textColor = Color.BLACK
-            axisLineColor = Color.parseColor("#BDBDBD")
-            granularity = 1f  // Interval between labels
+            axisLineColor = "#BDBDBD".toColorInt()
+            granularity = 1f
             valueFormatter = object : ValueFormatter() {
                 override fun getFormattedValue(value: Float): String {
                     return when (value.toInt()) {
@@ -363,14 +296,19 @@ class StatictsActivity : AppCompatActivity() {
             }
         }
 
-// Configure left Y axis
+// Configure Y axis to accommodate both datasets
+        val maxEarnings = earningsEntries.maxOf { it.y }
+        val maxCancellations = cancellationsEntries.maxOf { it.y }
+        val maxYValue = max(maxEarnings, maxCancellations) * 1.1f // Add 10% padding
+
         lineChart.axisLeft.apply {
             textColor = Color.BLACK
-            axisLineColor = Color.parseColor("#BDBDBD")
+            axisLineColor = "#BDBDBD".toColorInt()
             setDrawGridLines(true)
-            gridColor = Color.parseColor("#EEEEEE")
-            axisMinimum = 0f  // Start from 0
-            granularity = 1f  // Interval between grid lines
+            gridColor = "#EEEEEE".toColorInt()
+            axisMinimum = 0f
+            axisMaximum = maxYValue
+            granularity = (maxYValue / 5) // 5 grid lines
         }
 
 // Disable right Y axis
@@ -384,6 +322,9 @@ class StatictsActivity : AppCompatActivity() {
             legend.textColor = Color.BLACK
             legend.formSize = 12f
             legend.form = Legend.LegendForm.LINE
+            legend.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+            legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+            legend.orientation = Legend.LegendOrientation.HORIZONTAL
 
             // Touch and zoom configuration
             setTouchEnabled(true)
