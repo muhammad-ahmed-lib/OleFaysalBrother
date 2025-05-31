@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/_50sdp"
+    android:layout_width="wrap_content"
     android:background="@drawable/statis_selected_rec_item"
     android:text="2023"
+    android:paddingHorizontal="@dimen/_12sdp"
     android:layout_gravity="center"
     android:layout_marginHorizontal="@dimen/_4sdp"
     android:gravity="center"

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/rounded_stroke_sh"
+        android:layout_height="@dimen/_63sdp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50"
+            android:id="@+id/gC"/>
+        <ImageView
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:src="@drawable/call_img"
+            android:id="@+id/call"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="@dimen/_60sdp"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent"
+            android:id="@+id/icon"
+            android:src="@drawable/ic_logo_mastercard"/>
+        <TextView
+            android:id="@+id/userNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ahmed"
+            android:textColor="#26334A"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/gC"
+            />
+        <TextView
+            android:id="@+id/joinedDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#26334A"
+            android:text="Joined: 12 Jan, 2023"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="@id/userNameTv"
+            app:layout_constraintTop_toBottomOf="@id/gC"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_background"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_3sdp"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/countryFlagImg"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/flag_uae"/>
+        <TextView
+            android:id="@+id/countryNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:gravity="center"
+            android:text="@string/payment_detail"
+            android:textColor="#26334A"
+            android:textSize="@dimen/_12ssp"
+           />
+    </LinearLayout>
+
+</LinearLayout>

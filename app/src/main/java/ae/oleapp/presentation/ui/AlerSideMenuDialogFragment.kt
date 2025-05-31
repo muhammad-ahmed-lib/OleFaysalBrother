@@ -78,7 +78,8 @@ class AlerSideMenuDialogFragment : DialogFragment() {
             screen = DataUserRegisterActivity::class.java))
         menuList.add(GenericModelClass(
             title = "Live Chat",
-            icon = 0))
+            icon = 0,
+            screen = DataDetailsActivity::class.java))
         menuList.add(GenericModelClass(
             title = "Terms & Conditions",
             icon = 0))

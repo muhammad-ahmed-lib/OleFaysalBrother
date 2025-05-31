@@ -70,24 +70,7 @@ class StatictsActivity : AppCompatActivity() {
     }
 
     private fun observeSalesData() {
-        viewModel.homePageSummary.observe(this) { response ->
-            when (response) {
-                is ApiResponse.Loading -> {
-                    Log.d(TAG, "observeSalesData: Loading")
-                }
 
-                is ApiResponse.Success -> {
-                    response.data?.let { summary ->
-                        updateMoneyData(summary)
-                    }
-                }
-
-                is ApiResponse.Error -> {
-                    Toast.makeText(this, response.error ?: "Error occurred", Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        }
     }
 
     private fun updateMoneyData(summary: InventorySummary) {

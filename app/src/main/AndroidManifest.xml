@@ -47,6 +47,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".presentation.ui.DataDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.DataUserRegisterActivity"
             android:exported="false" />
         <activity
@@ -63,8 +66,8 @@
             android:exported="false" />
         <activity
             android:name=".presentation.ui.sms.SmsModuleActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".presentation.ui.inventory.AddInventoryProductActivity"
             android:exported="false" />
